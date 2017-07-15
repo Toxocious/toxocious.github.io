@@ -1,0 +1,31 @@
+/* General Styling */
+html {
+	height: 100%;
+}
+
+body {
+	background: url('../images/background.jpg') no-repeat center center fixed;
+	height: 100%;
+}
+
+.content {
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
+.content .slide {
+	color: #fff;
+}
+
+/* Slide One */
+.content #slide_one {
+	display: inline-block;
+	position: relative;
+}
+.content #slide_one h1, .content #slide_one h5 {
+	display: inline-block;
+  vertical-align: middle;
+}
