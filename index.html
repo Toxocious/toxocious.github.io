@@ -1,70 +1,181 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta name='description' content='The Software Development Portfolio Of Toxocious.'>
-    <meta name='author' content='Toxocious'>
-		
-    <title>Absolute Studio</title>
-    
-    <link rel='shortcut icon' href='images/favicon.png'>
-    <link rel='stylesheet' href='css/libs/icomoon.css'>
-    <link rel='stylesheet' href='css/default.css'>
-  </head>
-  
-  <body>
-    <!-- Navigation Bar -->
-    <div class='navigation'>
-      <div class='links'>
-        <div class='active'>
-          <a rel='index' href='index'>
-            <i class='icon-home'></i>
-          </a>
-        </div>
-        <div>
-          <a rel='projects' href='projects'>
-            <i class='icon-display'></i>
-          </a>
-        </div>
-        <div>
-          <a rel='about' href='about'>
-            <i class='icon-user'></i>
-          </a>
-        </div>
-        <div>
-          <a rel='contact' href='contact'>
-            <i class='icon-bubbles2'></i>
-          </a>
-        </div>
-      </div>
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jesse Mack &#8211; Software Engineer</title>
 
-      <div class='social'>
-        <div>
-          <a href='https://www.linkedin.com/in/toxocious/'>
-            <i class='icon-linkedin'></i>
-          </a>
-        </div>
-        <div>
-          <a href='https://github.com/Toxocious'>
-            <i class='icon-github'></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- Navigation Bar -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <!-- CSS Preloader -->
-    <div id='preloader'>
-      <div id='status'>
-        <div class='spinner'></div>
-      </div>
-    </div>
-    <!-- CSS Preloader -->
-    
-    <!-- Required JS -->
-    <script type='text/javascript' src='js/libs/jquery.min.js'></script>
-    <script type='text/javascript' src='js/main.js'></script>
-    <!-- Required JS -->
-  </body>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript>
+			<link rel="stylesheet" href="assets/css/noscript.css" />
+		</noscript>
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<div class="logo">
+					<span class="icon fa-star"></span>
+				</div>
+
+				<div class="content">
+					<div class="inner">
+						<h1>Jesse Mack</h1>
+						<p>
+							Software developer with a passion for exploring new<br />
+							fundamentals, languages, and projects.
+						</p>
+
+						<a class="icon fa-gitlab" href="https://gitlab.com/Toxocious">&nbsp;&nbsp;&nbsp;Toxocious</a><br />
+						<a class="icon fa-linkedin" href="https://www.linkedin.com/in/mackjesse/">&nbsp;&nbsp;&nbsp;mackjesse</a><br />
+						<a class="icon fa-envelope" href="mailto:mackjessed@gmail.com">&nbsp;&nbsp;&nbsp;mackjessed@gmail.com</a><br />
+					</div>
+				</div>
+				<nav>
+					<ul>
+						<li>
+							<a href="#projects">Projects</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<div id="main" style="display: none;">
+				<!-- Projects -->
+				<article id="projects" style="display: none;">
+					<h2 class="major">Projects</h2>
+
+					<!-- Project #01 -->
+					<div>
+						<!-- Project Name -->
+						<h3>Pok&eacute;mon Absolute</h3>
+
+						<!-- Languages Used -->
+						<h4 style='font-weight: normal;'>HTML, CSS, PHP, JavaScript, jQuery, Node.JS</h4>
+
+						<!-- Image Carousel -->
+						<div id='Project_01' class='carousel slide' data-ride='carousel' data-interval='2000'>
+							<ol class='carousel-indicators'>
+								<li data-target='#Project_01' data-slide-to='0' class='active'></li>
+								<li data-target='#Project_01' data-slide-to='1'></li>
+								<li data-target='#Project_01' data-slide-to='2'></li>
+								<li data-target='#Project_01' data-slide-to='3'></li>
+								<li data-target='#Project_01' data-slide-to='4'></li>
+							</ol>
+	
+							<div class='carousel-inner'>
+								<div class='item active'>
+									<img src='assets/images/project_01/0.png' alt='Home/News Page' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_01/1.png' alt='Profile Page' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_01/2.png' alt='Map Image #1' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_01/3.png' alt='Battle System Image' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_01/4.png' alt='Trade System Image' style='width: 100%;'>
+								</div>
+							</div>
+	
+							<a class='left carousel-control' href='#Project_01' data-slide='prev'></a>
+							<a class='right carousel-control' href='#Project_01' data-slide='next'></a>
+						</div>
+						
+						<!-- Demo + Gitlab Repo Buttons -->
+						<div style='margin-left: 1.25%;'>
+							<button onclick='window.open("https:\/\/pkmnabsolute.000webhostapp.com/login.php?guest", "_blank");'>Live Demo</button>
+							<button onclick='window.open("https:\/\/gitlab.com/Toxocious/Absolute", "_blank");'>Repository</button>
+						</div>
+
+						<!-- Project Description -->
+						<div>
+							Pok&eacute;mon Absolute is an online Pok&eacute;mon based RPG with a core built upon PHP and jQuery, while integrating Node.JS into a socket based chat system.
+						</div>
+					</div>
+
+					<hr style='margin: 15px 0px;' />
+
+					<!-- Project #02 -->
+					<div>
+						<!-- Project Name -->
+						<h3>League of Legends API</h3>
+
+						<!-- Languages Used -->
+						<h4 style='font-weight: normal;'>HTML, CSS, PHP</h4>
+
+						<!-- Image Carousel -->
+						<div id='Project_02' class='carousel slide' data-ride='carousel' data-interval='2000'>
+							<ol class='carousel-indicators'>
+								<li data-target='#Project_02' data-slide-to='0' class='active'></li>
+								<li data-target='#Project_02' data-slide-to='1'></li>
+								<li data-target='#Project_02' data-slide-to='2'></li>
+							</ol>
+	
+							<div class='carousel-inner'>
+								<div class='item active'>
+									<img src='assets/images/project_02/0.png' alt='Landing Page' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_02/1.png' alt='Summoner Page - Match History' style='width: 100%;'>
+								</div>
+								<div class='item'>
+									<img src='assets/images/project_02/2.png' alt='Summoner Page - Masteries' style='width: 100%;'>
+								</div>
+							</div>
+	
+							<a class='left carousel-control' href='#Project_02' data-slide='prev'></a>
+							<a class='right carousel-control' href='#Project_02' data-slide='next'></a>
+						</div>
+						
+						<!-- Demo + Gitlab Repo Buttons -->
+						<div style='margin-left: 1.25%;'>
+							<button onclick='window.open("https:\/\/lolapiphp.000webhostapp.com/", "_blank");'>Live Demo</button>
+							<button onclick='window.open("https:\/\/gitlab.com/Toxocious/lol-api-php", "_blank");'>Repository</button>
+						</div>
+
+						<!-- Project Description -->
+						<div>
+							Using the League of Legends official API endpoints, we recall data of specific players via PHP in order to display some of their data.<br />
+						</div>
+					</div>
+					
+					<div class="close">Close</div>
+				</article>
+
+				<!-- About Me -->
+				<article id="about" style="display: none;">
+					<h2 class="major">About</h2>
+
+					<p>I am Jesse Mack. {{further description here; omitting this from the live page}}</p>
+
+					<div class="close">Close</div>
+				</article>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer"></footer>
+		</div>
+
+		<!-- Particles.js Container -->
+		<div id="particles-js"></div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/particles.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
 </html>
