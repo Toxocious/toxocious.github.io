@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > .home-description {
+    text-align: center;
+
+    & > img {
+      border-radius: 0.5em;
+    }
+  }
+}

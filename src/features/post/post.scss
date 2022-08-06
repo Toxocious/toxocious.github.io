@@ -1,0 +1,95 @@
+main.post-page {
+  width: min(1000px, calc(100% - 2em));
+  max-width: 1000px;
+
+  &>.post-container {
+    margin: 0 auto;
+
+    width: min(1000px, calc(100% - 2em));
+    max-width: 1000px;
+
+    &>.post-banner {
+      img {
+        border-radius: 0.5em;
+
+        width: 100%;
+      }
+    }
+
+    &>.post-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &>.tags {
+        text-align: left;
+        max-width: 320px;
+      }
+    }
+
+    &>.post-content {
+      max-width: 1000px;
+
+      &>* {
+        max-width: 1000px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main.post-page {
+    width: min(1000px, calc(100% - 2em));
+    max-width: 100%;
+
+    &>.post-container {
+      width: min(1000px, 100%);
+      max-width: 1000px;
+
+      &>.post-banner {
+        margin: -1em;
+
+        img {
+          border-radius: 0;
+          min-height: 4em;
+        }
+      }
+
+      &>.post-header {
+        background: linear-gradient(rgb(var(--ui-monochrome-04-rgb)),
+            rgb(var(--ui-monochrome-01-rgb)));
+
+        margin: 0.5em -1em;
+        flex-direction: column;
+      }
+
+      &>.post-content {
+        width: min(1000px, calc(100% - 2em));
+        max-width: 1000px;
+        word-wrap: break-word;
+
+        &>* {
+          width: min(1000px, 100%);
+          max-width: 100%;
+        }
+
+        &>pre,
+        &>pre>code {
+          white-space: pre-wrap;
+          /* css-3 */
+          white-space: -moz-pre-wrap;
+          /* Mozilla, since 1999 */
+          white-space: -pre-wrap;
+          /* Opera 4-6 */
+          white-space: -o-pre-wrap;
+          /* Opera 7 */
+          word-wrap: break-word;
+          /* Internet Explorer 5.5+ */
+
+          overflow-x: auto;
+        }
+      }
+    }
+  }
+}

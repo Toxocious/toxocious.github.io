@@ -1,0 +1,31 @@
+footer {
+  background-color: rgb(var(--ui-monochrome-04-rgb));
+
+  margin-top: auto;
+  position: relative;
+
+  &::before {
+    align-items: center;
+    animation: animation-wave-x 10s linear infinite reverse;
+    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #fff0 70%, #fff6 95%, #fff0);
+    background-size: 500% 500%;
+    content: " ";
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  & > .footer_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    max-width: min(1000px, 100%);
+    margin: 0 auto;
+    padding: 1em;
+  }
+}
