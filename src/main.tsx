@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, HashRouter } from 'react-router-dom';
 
 import { Header } from './components/header';
 import { Footer } from './components/footer';
@@ -19,7 +19,7 @@ import './animations.scss';
 import './main.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <BrowserRouter>
+  <HashRouter>
     <Header />
     <Nav />
 
@@ -36,5 +36,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </Routes>
 
     <Footer />
-  </BrowserRouter>
+  </HashRouter>
 );
