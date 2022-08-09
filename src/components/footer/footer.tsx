@@ -8,8 +8,7 @@ export const Footer = () => {
           &copy; 2022{' '}
           <a href='https://github.com/toxocious' target='_blank' rel='noopener'>
             Jesse Mack
-          </a>{' '}
-          ~ Some rights reserved.
+          </a>
         </div>
       </div>
     </footer>

@@ -43,6 +43,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     height: 100%;
     max-width: 1000px;
@@ -67,7 +68,8 @@ header {
         width: 4em;
       }
 
-      & > .name > * {
+      & > .name > *,
+      & > .occupation > * {
         letter-spacing: 2px;
         text-transform: uppercase;
 
