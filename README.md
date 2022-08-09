@@ -108,6 +108,12 @@ Once you've followed these steps and the deployment has completed, you can navig
 ### Adding Blog Posts
 Adding a blog post is as easy as adding a new Markdown file to the `./public/posts` directory.
 
+File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
+
+**Example**
+- Markdown Title: 'Example Blog Post'
+- Markdown File Name: 'example-blog-post.md'
+
 The codebase requires posts to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
 
 Posts are ordered from most to least recent.
@@ -127,6 +133,12 @@ I'm the content of the markdown post that will be rendered on the full markdown 
 
 ### Adding Project Posts
 Adding a blog project is as easy as adding a new Markdown file to the `./public/projects` directory.
+
+File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
+
+**Example**
+- Markdown Title: 'Example Project'
+- Markdown File Name: 'example-project.md'
 
 The codebase requires projects to have three header fields, **title**, **description**, and **timestamp**.
 
@@ -169,7 +181,38 @@ order: 1
 Information about some example project should go here! Show off and let us know what it's all about.
 ```
 
+### Adding Work History Pages
+Adding a blog post is as easy as adding a new Markdown file to the `./public/works` directory.
 
+File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
+
+**Example**
+- Markdown Title: 'Example Work Post'
+- Markdown File Name: 'example-work-post.md'
+
+The codebase requires work pages to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
+
+Posts are ordered from most to least recent.
+
+**NOTE :: Both the `timestamp` and `endTimestamp` field should be unix time * 1000**
+
+Optional header fields are:
+- banner: example-banner
+  - The image name for the banner.
+  - The code base will look inside of `./public/works_banners/` for a .png file with this name
+- endTimestamp: A unix epoch timestamp of when you finished working there
+  - If omitted, the work post will default to 'Present', implying that you still work there or on the application
+
+Here's an example `works` file.
+```markdown
+---
+title: Example Work Post
+timestamp: 1655667600000
+description: I was one of eight developers who worked to patch bug fixes, implement new features, enhance existing features, and handle dev ops.
+---
+
+I'm the content of the markdown work page that will be rendered on the full markdown work page when visited.
+```
 
 
 ## License
