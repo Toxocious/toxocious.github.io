@@ -43,6 +43,17 @@
         align-items: center;
         justify-content: center;
       }
+
+      & > img {
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+
+        object-fit: cover;
+        object-position: right;
+
+        height: 100%;
+        width: 100%;
+      }
     }
 
     & > .post-card-content {

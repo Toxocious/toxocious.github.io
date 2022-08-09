@@ -9,6 +9,7 @@ type PostCardType = {
   description: string;
   timestamp: string;
   banner: string;
+  type: string;
 };
 
 export const PostCard = ({
@@ -16,15 +17,16 @@ export const PostCard = ({
   description,
   timestamp,
   banner,
+  type,
 }: PostCardType) => {
   const DATE_STRING = formatDate(new Date(timestamp));
   const ROUTE_PATH = title.replaceAll(' ', '-').toLowerCase();
 
   return (
-    <Link className='post-card button' to={`/posts/${ROUTE_PATH}`}>
+    <Link className='post-card button' to={`/${type}/${ROUTE_PATH}`}>
       <div className='post-card-banner'>
         {banner ? (
-          <img src={`/posts_banners/${banner}.png`} />
+          <img src={`/${type}_banners/${banner}.png`} />
         ) : (
           <div className='post-card-no-banner'></div>
         )}

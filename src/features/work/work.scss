@@ -1,14 +1,14 @@
-main.post-page {
+main.work-page {
   width: min(1000px, calc(100% - 2em));
   max-width: 1000px;
 
-  &>.post-container {
+  &>.work-container {
     margin: 0 auto;
 
     width: min(1000px, calc(100% - 2em));
     max-width: 1000px;
 
-    &>.post-banner {
+    &>.work-banner {
       img {
         -webkit-box-shadow: 0px 10px 25px -6px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 10px 25px -6px rgba(0, 0, 0, 0.75);
@@ -19,7 +19,7 @@ main.post-page {
       }
     }
 
-    &>.post-header {
+    &>.work-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -31,7 +31,7 @@ main.post-page {
       }
     }
 
-    &>.post-content {
+    &>.work-content {
       max-width: 1000px;
 
       &>* {
@@ -42,15 +42,15 @@ main.post-page {
 }
 
 @media screen and (max-width: 450px) {
-  main.post-page {
+  main.work-page {
     width: min(1000px, calc(100% - 2em));
     max-width: 100%;
 
-    &>.post-container {
+    &>.work-container {
       width: min(1000px, 100%);
       max-width: 1000px;
 
-      &>.post-banner {
+      &>.work-banner {
         margin: -1em;
 
         img {
@@ -63,17 +63,18 @@ main.post-page {
         }
       }
 
-      &>.post-header {
+      &>.work-header {
         background: linear-gradient(
           rgb(var(--ui-monochrome-05-rgb)),
           rgb(var(--ui-monochrome-01-rgb))
         );
 
         margin: -1em;
+        padding: 0 0 1em;
         flex-direction: column;
       }
 
-      &>.post-content {
+      &>.work-content {
         width: min(1000px, calc(100% - 2em));
         max-width: 1000px;
         word-wrap: break-word;

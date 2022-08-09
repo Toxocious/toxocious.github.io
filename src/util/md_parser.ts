@@ -1,10 +1,11 @@
 export type MarkdownDataType = {
-  title?: string;
-  tags?: string;
-  description?: string;
-  banner?: string;
+  title: string;
+  description: string;
+  timestamp: string;
+  endTimestamp?: string;
   content?: string;
-  timestamp?: string;
+  tags?: string;
+  banner?: string;
   repo_path?: string;
   show_issues?: string;
   show_forks?: string;
@@ -22,6 +23,7 @@ export const MarkdownParser = (Markdown: string): MarkdownDataType => {
     banner: '',
     content: '',
     timestamp: '',
+    endTimestamp: '',
     repo_path: '',
     show_issues: '',
     show_forks: '',
@@ -40,6 +42,7 @@ export const MarkdownParser = (Markdown: string): MarkdownDataType => {
       banner: '',
       content: Markdown,
       timestamp: '',
+      endTimestamp: '',
       repo_path: '',
       show_issues: '',
       show_forks: '',

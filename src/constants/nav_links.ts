@@ -12,9 +12,15 @@ export const NavigationItems = [
     active: true,
   },
   {
-    id: 0,
+    id: 2,
     label: 'Projects',
     link: '/projects',
+    active: true,
+  },
+  {
+    id: 3,
+    label: 'Work History',
+    link: '/works',
     active: true,
   },
 ];
