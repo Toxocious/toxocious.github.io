@@ -34,7 +34,7 @@
 # About The Project
 ## Screenshots
 <div align="center">
-  <img src="./public/page_preview.png" title="Picture of the user-interface" alt="Picture of the user-interface" />
+  <img src="./public/images/page_preview.png" title="Picture of the user-interface" alt="Picture of the user-interface" />
 </div>
 
 ## Tech Stack

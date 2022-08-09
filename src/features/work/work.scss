@@ -2,31 +2,34 @@ main.work-page {
   width: min(1000px, calc(100% - 2em));
   max-width: 1000px;
 
-  &>.work-container {
+  & > .work-container {
     margin: 0 auto;
 
     width: min(1000px, calc(100% - 2em));
     max-width: 1000px;
 
-    &>.work-banner {
+    & > .work-banner {
       img {
         -webkit-box-shadow: 0px 10px 25px -6px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 10px 25px -6px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 10px 25px -6px rgba(0, 0, 0, 0.75);
 
         border-radius: 0.5em;
+
+        object-fit: cover;
+        max-height: 130px;
         width: 100%;
       }
     }
 
-    &>.work-header {
+    & > .work-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       padding: 0.5em 0;
 
-      &>.tags {
+      & > .tags {
         text-align: left;
         max-width: 320px;
 
@@ -36,10 +39,10 @@ main.work-page {
       }
     }
 
-    &>.work-content {
+    & > .work-content {
       max-width: 1000px;
 
-      &>* {
+      & > * {
         max-width: 1000px;
       }
     }
@@ -51,11 +54,11 @@ main.work-page {
     width: min(1000px, calc(100% - 2em));
     max-width: 100%;
 
-    &>.work-container {
+    & > .work-container {
       width: min(1000px, 100%);
       max-width: 1000px;
 
-      &>.work-banner {
+      & > .work-banner {
         margin: -1em;
 
         img {
@@ -68,7 +71,7 @@ main.work-page {
         }
       }
 
-      &>.work-header {
+      & > .work-header {
         background: linear-gradient(
           rgb(var(--ui-monochrome-05-rgb)),
           rgb(var(--ui-monochrome-01-rgb))
@@ -79,28 +82,23 @@ main.work-page {
         flex-direction: column;
       }
 
-      &>.work-content {
+      & > .work-content {
         width: min(1000px, calc(100% - 2em));
         max-width: 1000px;
         word-wrap: break-word;
 
-        &>* {
+        & > * {
           width: min(1000px, 100%);
           max-width: 100%;
         }
 
-        &>pre,
-        &>pre>code {
+        & > pre,
+        & > pre > code {
           white-space: pre-wrap;
-          /* css-3 */
           white-space: -moz-pre-wrap;
-          /* Mozilla, since 1999 */
           white-space: -pre-wrap;
-          /* Opera 4-6 */
           white-space: -o-pre-wrap;
-          /* Opera 7 */
           word-wrap: break-word;
-          /* Internet Explorer 5.5+ */
 
           overflow-x: auto;
         }
