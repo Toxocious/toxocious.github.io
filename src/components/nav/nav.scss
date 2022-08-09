@@ -21,7 +21,7 @@ nav {
     width: 100%;
   }
 
-  &>.nav_container {
+  & > .nav_container {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -36,21 +36,7 @@ nav {
 
     width: min(1000px, 100%);
 
-    &.active {
-      &>.nav-item {
-        border-color: #FAB28E;
-        color: var(--syntax-gold);
-      }
-    }
-
-    &:not(.active) {
-      &>.nav-item {
-        border-color: transparent;
-        color: var(--syntax-grey);
-      }
-    }
-
-    &>.nav-item {
+    & > .nav-item {
       color: #FAB28E;
 
       display: flex;
@@ -64,6 +50,16 @@ nav {
 
       transition: all 150ms ease-in-out;
 
+      &.active {
+        border-color: #FAB28E;
+        color: var(--syntax-gold);
+      }
+
+      &:not(.active) {
+        border-color: transparent;
+        color: var(--syntax-grey);
+      }
+
       &:hover {
         border-color: #F09383;
         color: #F09383;
@@ -71,11 +67,11 @@ nav {
         cursor: pointer;
       }
 
-      &>.nav-item-label {
+      & > .nav-item-label {
         display: flex;
       }
 
-      &>.nav-item-icon {
+      & > .nav-item-icon {
         display: flex;
       }
     }

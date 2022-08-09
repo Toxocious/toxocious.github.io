@@ -40,12 +40,14 @@
 ### Tech Stack
 - Typescript
 - React
-  - Vite
+- Vite
 - SASS
 
 ### Features
+- Responsive layout and styling for mobile devices
 - Create and display blog `posts`
 - Create and display `projects`
+- Create and display `work` history entries
 
 
 
@@ -62,10 +64,10 @@ Clone the repository, install the necessary packages, and run the dev environmen
 
 ```sh
 ## Clone via HTTPS
-# git clone https://github.com/Toxocious/FFXIV-Idle.git
+# git clone https://github.com/Toxocious/toxocious.github.io.git
 
 ## Clone via SSH
-# git clone git@github.com:Toxocious/FFXIV-Idle.git
+# git clone git@github.com:Toxocious/toxocious.github.io.git
 
 ## CD into the repository directory
 cd toxocious.github.io
