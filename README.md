@@ -11,14 +11,14 @@
   <img src='https://img.shields.io/github/forks/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
   <img src='https://img.shields.io/github/stars/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
   <img src='https://img.shields.io/github/license/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
-  <a href="https://hits.seeyoufarm.com">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FToxocious%2Ftoxocious.github.io&count_bg=%234A618F&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+  <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FToxocious%toxocious.github.io">
+    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FToxocious%toxocious.github.io&countColor=%2337d67a" />
   </a>
 </div>
 
 
 
-## Table of Contents
+# Table of Contents
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
   - [Screenshots](#screenshots)
@@ -31,19 +31,19 @@
 
 
 
-## About The Project
-### Screenshots
+# About The Project
+## Screenshots
 <div align="center">
   <img src="./public/page_preview.png" title="Picture of the user-interface" alt="Picture of the user-interface" />
 </div>
 
-### Tech Stack
+## Tech Stack
 - Typescript
 - React
 - Vite
 - SASS
 
-### Features
+## Features
 - Responsive layout and styling for mobile devices
 - Create and display blog `posts`
 - Create and display `projects`
@@ -51,15 +51,15 @@
 
 
 
-## Getting Started
-### Prequisites
+# Getting Started
+## Prequisites
 This project uses the **Yarn** package manager.
 
 ```sh
 npm i -g yarn
 ```
 
-### Installation
+## Installation
 Clone the repository, install the necessary packages, and run the dev environment.
 
 ```sh
@@ -79,7 +79,7 @@ yarn install
 yarn dev
 ```
 
-### Building And Previewing
+## Building And Previewing
 Build the project so that you can run it statically locally or remotely.
 
 ```sh
@@ -92,7 +92,7 @@ Preview the build on a local network IP to preview the static generated site.
 yarn preview
 ```
 
-### Deploying To Github
+# Deploying To Github
 The app can now be deployed to the provider of your choice, but we'll cover deployment to Github here.
 
 1. Navigate to the `Actions` tab of your repository
@@ -107,7 +107,7 @@ The app can now be deployed to the provider of your choice, but we'll cover depl
 
 Once you've followed these steps and the deployment has completed, you can navigate to the URL associated with the Github Pages deployment in order to view your blog/portfolio.
 
-### Adding Blog Posts
+# Adding Blog Posts
 Adding a blog post is as easy as adding a new Markdown file to the `./public/posts` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
@@ -133,7 +133,7 @@ description: Example Blog Post Description! I show up in the mini card when all 
 I'm the content of the markdown post that will be rendered on the full markdown post page when visited.
 ```
 
-### Adding Project Posts
+# Adding Project Posts
 Adding a blog project is as easy as adding a new Markdown file to the `./public/projects` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
@@ -183,7 +183,7 @@ order: 1
 Information about some example project should go here! Show off and let us know what it's all about.
 ```
 
-### Adding Work History Pages
+# Adding Work History Pages
 Adding a blog post is as easy as adding a new Markdown file to the `./public/works` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
@@ -217,7 +217,10 @@ I'm the content of the markdown work page that will be rendered on the full mark
 ```
 
 
-## License
+
+
+
+# License
 Licensed under GNU GPL 3.
 
 For more information, check out [LICENSE](LICENSE).
