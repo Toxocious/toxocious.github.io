@@ -24,10 +24,15 @@ main.work-page {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding: 0.5em 0;
 
       &>.tags {
         text-align: left;
         max-width: 320px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
       }
     }
 

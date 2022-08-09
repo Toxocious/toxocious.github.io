@@ -4,10 +4,11 @@ timestamp: 1533137880000
 endTimestamp: Present
 description: I was one of two developers responsible for bug fixes, feature planning and development, and some dev ops.
 banner: the-pokemon-kingdom
+site_link: https://tpkrpg.net/
 ---
 
 ## What Is The Pokemon Kingdom?
-The Pokémon Kingdom is a up-to-date online Pokémon RPG with a wide variety of gameplay to offer. We have a widespread and active community of Pokémon fans, both new and old.
+The Pokémon Kingdom is a up-to-date online Pokémon RPG and features a wide variety of gameplay to offer. We have a widespread and active community of many tens of thousands of Pokémon fans, both new and old,
 
 
 
@@ -29,5 +30,3 @@ All of this applies to both the current version of the game, the current "old-sc
 - Fixed a bug where account-locked Pok&eacute;mon were able to be sold and traded
 - Fixed a bug where integers were getting parsed as strings and thus displaying as exponents
 - Fixed a bug where a Pok&eacute;mon's stats in battle were being incorrectly calculated
-
-

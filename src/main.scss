@@ -296,6 +296,29 @@ button,
     cursor: default;
     pointer-events: none;
   }
+
+  &.gap {
+    gap: 1em;
+  }
+
+  & > .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  & > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > svg {
+      stroke: var(--syntax-grey);
+
+      height: 24px;
+      width: 24px;
+    }
+  }
 }
 
 @media (hover: hover) {

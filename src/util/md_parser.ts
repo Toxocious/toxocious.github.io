@@ -6,6 +6,7 @@ export type MarkdownDataType = {
   content?: string;
   tags?: string;
   banner?: string;
+  site_link?: string;
   repo_path?: string;
   show_issues?: string;
   show_forks?: string;
@@ -18,39 +19,13 @@ export type MarkdownDataType = {
 export const MarkdownParser = (Markdown: string): MarkdownDataType => {
   let MARKDOWN_DATA: MarkdownDataType = {
     title: '',
-    tags: '',
-    description: '',
-    banner: '',
-    content: '',
     timestamp: '',
-    endTimestamp: '',
-    repo_path: '',
-    show_issues: '',
-    show_forks: '',
-    show_stars: '',
-    show_license: '',
-    show_lines_of_code: '',
-    order: '',
+    description: '',
   };
 
   const MARKDOWN_CHUNKS = Markdown.trim().split('---');
   if (MARKDOWN_CHUNKS.length < 3) {
-    return {
-      title: '',
-      tags: '',
-      description: '',
-      banner: '',
-      content: Markdown,
-      timestamp: '',
-      endTimestamp: '',
-      repo_path: '',
-      show_issues: '',
-      show_forks: '',
-      show_stars: '',
-      show_license: '',
-      show_lines_of_code: '',
-      order: '',
-    };
+    return MARKDOWN_DATA;
   }
 
   MARKDOWN_DATA.content = MARKDOWN_CHUNKS[2];
