@@ -93,17 +93,17 @@ yarn preview
 ### Deploying To Github
 The app can now be deployed to the provider of your choice, but we'll cover deployment to Github here.
 
-Included with this repository is a ``./deploy.sh`` script, which will automatically push your code to the Github repository.
+1. Navigate to the `Actions` tab of your repository
+2. Find the `Node.js` action, and click `Configure`
+3. In the editor, change line 19 from `node-version: [12.x, 14.x, 16.x]` to `node-version: [16.x]`
+4. Add the `--force` flag to `npm ci` on line 29
+  - Should look like this: `npm ci --force`
+5. Commit the file
+6. Navigate to the `Settings` tab of your repository
+7. On the left-hand sidebar, click on the `Pages` link
+8. Set the `Branch` to `gh-pages` and press `Save`
 
-Be sure to set the correct repository URL inside of the ``./deploy.sh`` script before attempting to run it.
-
-Once you've fixed the repository URL inside of the script, you can run the following command in your terminal to deploy.
-
-**NOTE:: The script 
-
-```sh
-./deploy.sh
-```
+Once you've followed these steps and the deployment has completed, you can navigate to the URL associated with the Github Pages deployment in order to view your blog/portfolio.
 
 ### Adding Blog Posts
 Adding a blog post is as easy as adding a new Markdown file to the `./public/posts` directory.
