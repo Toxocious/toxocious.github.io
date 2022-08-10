@@ -1,4 +1,5 @@
 import { CONFIGURATION } from '../../config';
+import { SocialLinks } from '../../features/social_links';
 
 import './footer.scss';
 
@@ -12,6 +13,8 @@ export const Footer = () => {
             {CONFIGURATION.name}
           </a>
         </div>
+
+        <SocialLinks />
       </div>
     </footer>
   );
