@@ -32,7 +32,7 @@
 - [Updating Your Personal Information](#updating-your-personal-information)
 - [Adding Blog Posts](#adding-blog-posts)
 - [Adding Project Posts](#adding-project-posts)
-- [Adding Job History Pages](#adding-work-history-pages)
+- [Adding Job History Pages](#adding-job-history-pages)
 - [License](#license)
 
 
@@ -129,9 +129,10 @@ export const CONFIGURATION = {
   occupation: 'JOB TITLE',
   location: 'SOMEWHERE, OVER HERE',
 
+  email: 'example@example.com',
   git: 'https://github.com/USERNAME',
   linked_in: 'https://linkedin.com/in/USERNAME_OR_ID',
-  email: 'example@example.com',
+  twitter: '',
 };
 ```
 
