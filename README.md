@@ -32,7 +32,7 @@
 - [Updating Your Personal Information](#updating-your-personal-information)
 - [Adding Blog Posts](#adding-blog-posts)
 - [Adding Project Posts](#adding-project-posts)
-- [Adding Work History Pages](#adding-work-history-pages)
+- [Adding Job History Pages](#adding-work-history-pages)
 - [License](#license)
 
 
@@ -211,13 +211,13 @@ order: 1
 Information about some example project should go here! Show off and let us know what it's all about.
 ```
 
-# Adding Work History Pages
-Adding a blog post is as easy as adding a new Markdown file to the `./public/works` directory.
+# Adding Job History Pages
+Adding a blog post is as easy as adding a new Markdown file to the `./public/jobs` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
 **Example**
-- Markdown Title: 'Example Work Post'
+- Markdown Title: 'Example Job Post'
 - Markdown File Name: 'example-work-post.md'
 
 The codebase requires work pages to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
@@ -229,14 +229,14 @@ Posts are ordered from most to least recent.
 Optional header fields are:
 - banner: example-banner
   - The image name for the banner.
-  - The code base will look inside of `./public/works_banners/` for a .png file with this name
+  - The code base will look inside of `./public/jobs_banners/` for a .png file with this name
 - endTimestamp: A unix epoch timestamp of when you finished working there
   - If omitted, the work post will default to 'Present', implying that you still work there or on the application
 
-Here's an example `works` file.
+Here's an example `jobs` file.
 ```markdown
 ---
-title: Example Work Post
+title: Example Job Post
 timestamp: 1655667600000
 description: I was one of eight developers who worked to patch bug fixes, implement new features, enhance existing features, and handle dev ops.
 ---

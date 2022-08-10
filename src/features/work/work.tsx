@@ -16,10 +16,10 @@ type workStateType = {
   content: any;
 };
 
-export const Work = () => {
+export const Job = () => {
   const [loadError, setLoadError] = useState('');
 
-  const [work, setWork]: [
+  const [work, setJob]: [
     workStateType,
     React.Dispatch<
       React.SetStateAction<{
@@ -35,12 +35,12 @@ export const Work = () => {
   const file_name = useParams().id;
 
   useEffect(() => {
-    fetch(`${DIR_PATHS.works}/${file_name}.md`)
+    fetch(`${DIR_PATHS.jobs}/${file_name}.md`)
       .then((res: Response) => res.text())
       .then((res) => {
         const parsed_markdown: MarkdownDataType = MarkdownParser(res);
 
-        setWork({
+        setJob({
           headingData: {
             banner: parsed_markdown.banner,
             description: parsed_markdown.description,
@@ -79,7 +79,7 @@ export const Work = () => {
       <div className='work-container'>
         {work.headingData.banner && (
           <div className='work-banner'>
-            <img src={`/works_banners/${work.headingData.banner}.png`} />
+            <img src={`/jobs_banners/${work.headingData.banner}.png`} />
           </div>
         )}
 

@@ -10,12 +10,12 @@ import { Nav } from './components/nav';
 import { HomePage } from './pages/home';
 import { PostsPage } from './pages/posts';
 import { ProjectsPage } from './pages/projects';
-import { WorksPage } from './pages/works';
+import { JobsPage } from './pages/jobs';
 import { Http404Page } from './pages/404';
 
 import { Post } from './features/post';
 import { Project } from './features/project';
-import { Work } from './features/work';
+import { Job } from './features/work';
 
 import './animations.scss';
 import './main.scss';
@@ -34,8 +34,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Route path='/projects' element={<ProjectsPage />} />
       <Route path='/projects/:id' element={<Project />} />
 
-      <Route path='/works' element={<WorksPage />} />
-      <Route path='/works/:id' element={<Work />} />
+      <Route path='/jobs' element={<JobsPage />} />
+      <Route path='/jobs/:id' element={<Job />} />
 
       <Route path='*' element={<Http404Page />} />
     </Routes>

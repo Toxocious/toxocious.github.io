@@ -18,4 +18,4 @@ To list a few of these things:
 
 - Talking about my largest personal project Pokémon Absolute which can be found here — go take a look if you like Pokémon!
 - Documenting my process learning data structures and algorithms, even picking up and doing leetcode-style problems.
-- Mentioning new frameworks, libraries, and whatnot that I find to be awesome and/or useful.
+- Mentioning new framejobs, libraries, and whatnot that I find to be awesome and/or useful.

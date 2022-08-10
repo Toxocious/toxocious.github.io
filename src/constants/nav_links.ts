@@ -19,8 +19,8 @@ export const NavigationItems = [
   },
   {
     id: 3,
-    label: 'Work History',
-    link: '/works',
+    label: 'Jobs',
+    link: '/jobs',
     active: true,
   },
 ];
