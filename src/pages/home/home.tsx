@@ -1,3 +1,5 @@
+import { CONFIGURATION } from '../../config';
+
 import { SocialLinks } from '../../features/social_links';
 
 import './home.scss';
@@ -12,7 +14,10 @@ export const HomePage = () => {
           <SocialLinks />
         </div>
 
-        <p>Hello! I am Jesse Mack, a Washington-based software engineer.</p>
+        <p>
+          Hello! I am {CONFIGURATION.name}, a software engineer based in{' '}
+          {CONFIGURATION.location}.
+        </p>
 
         <p>
           This is my blog and development portfolio, where I'll post about
@@ -29,8 +34,8 @@ export const HomePage = () => {
         <p>
           My set of skills is diverse, ranging from front-end technologies like
           HTML, CSS, and JavaScript (TypeScript also, of course), all the way to
-          PHP, some C+ and C++! I've even managed administrated some Linux
-          servers.
+          PHP, Java, some C#, and even C++! I've even managed and administrated
+          some Linux servers.
         </p>
       </div>
     </main>

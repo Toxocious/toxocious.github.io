@@ -1,3 +1,5 @@
+import { CONFIGURATION } from '../../config';
+
 import './header.scss';
 
 export const Header = () => {
@@ -7,8 +9,8 @@ export const Header = () => {
         <div className='logo'>
           <img src='/favicons/android-chrome-192x192.png' />
           <div className='name'>
-            <h2>Jesse Mack</h2>
-            <h3>Software Engineer</h3>
+            <h2>{CONFIGURATION.name}</h2>
+            <h3>{CONFIGURATION.occupation}</h3>
           </div>
         </div>
       </div>

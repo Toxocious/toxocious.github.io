@@ -27,6 +27,12 @@
 - [Getting Started](#getting-started)
   - [Prequisites](#prequisites)
   - [Installation](#installation)
+  - [Building And Previewing](#building-and-previewing)
+- [Deploying To Github](#deploying-to-github)
+- [Updating Your Personal Information](#updating-your-personal-information)
+- [Adding Blog Posts](#adding-blog-posts)
+- [Adding Project Posts](#adding-project-posts)
+- [Adding Work History Pages](#adding-work-history-pages)
 - [License](#license)
 
 
@@ -106,6 +112,28 @@ The app can now be deployed to the provider of your choice, but we'll cover depl
 8. Set the `Branch` to `gh-pages` and press `Save`
 
 Once you've followed these steps and the deployment has completed, you can navigate to the URL associated with the Github Pages deployment in order to view your blog/portfolio.
+
+# Updating Your Personal Information
+For ease of use and to allow for quick updating of your personal information, a configuration file is included (`./src/config/config.ts`).
+
+Various aspects of the site will grab your information from the values set in this file, such as your name, job title, and social links.
+
+Currently, this file supports six key value pairs, which should be updated to use your specific information.
+
+For any social links (git, linked_in, email, etc.), if you would like to omit the applicable buttons and links from your site, simply provide an empty string ('', quotes with nothing inside) and they will not be rendered to the page.
+
+**Example Configuration**
+```ts
+export const CONFIGURATION = {
+  name: 'FIRST LAST',
+  occupation: 'JOB TITLE',
+  location: 'SOMEWHERE, OVER HERE',
+
+  git: 'https://github.com/USERNAME',
+  linked_in: 'https://linkedin.com/in/USERNAME_OR_ID',
+  email: 'example@example.com',
+};
+```
 
 # Adding Blog Posts
 Adding a blog post is as easy as adding a new Markdown file to the `./public/posts` directory.

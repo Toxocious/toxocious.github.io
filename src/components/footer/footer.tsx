@@ -1,3 +1,5 @@
+import { CONFIGURATION } from '../../config';
+
 import './footer.scss';
 
 export const Footer = () => {
@@ -6,8 +8,8 @@ export const Footer = () => {
       <div className='footer_container'>
         <div className='copyright'>
           &copy; 2022{' '}
-          <a href='https://github.com/toxocious' target='_blank' rel='noopener'>
-            Jesse Mack
+          <a href={CONFIGURATION.git} target='_blank' rel='noopener'>
+            {CONFIGURATION.name}
           </a>
         </div>
       </div>
