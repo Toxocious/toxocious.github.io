@@ -67,15 +67,12 @@ export const Work = () => {
     return <h2>{loadError}</h2>;
   }
 
-  const START_DATE = formatDate(
-    new Date(parseInt(work.headingData.timestamp)),
-    false
-  );
+  const START_DATE = formatDate(new Date(parseInt(work.headingData.timestamp)));
 
   const END_DATE =
     work.headingData.endTimestamp === 'Present'
       ? 'Present'
-      : formatDate(new Date(parseInt(work.headingData.endTimestamp)), false);
+      : formatDate(new Date(parseInt(work.headingData.endTimestamp)));
 
   return (
     <main className='work-page'>

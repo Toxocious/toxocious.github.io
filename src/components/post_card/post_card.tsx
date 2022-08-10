@@ -10,6 +10,7 @@ type PostCardType = {
   timestamp: string;
   banner: string;
   type: string;
+  endTimestamp?: string;
 };
 
 export const PostCard = ({
@@ -18,8 +19,16 @@ export const PostCard = ({
   timestamp,
   banner,
   type,
+  endTimestamp,
 }: PostCardType) => {
-  const DATE_STRING = formatDate(new Date(timestamp));
+  let DATE_STRING = formatDate(new Date(timestamp));
+  if (endTimestamp) {
+    DATE_STRING = DATE_STRING.concat(
+      endTimestamp === 'Present'
+        ? ' — Present'
+        : ` — ${formatDate(new Date(parseInt(endTimestamp)))}`
+    );
+  }
   const ROUTE_PATH = title.replaceAll(' ', '-').toLowerCase();
 
   return (
