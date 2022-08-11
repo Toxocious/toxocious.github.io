@@ -1,9 +1,9 @@
 <div align="center">
   <h1 align="center">Toxocious' React (w/ Vite) Blogfolio</h1>
 
-  I created this blog/portfolio repository in order to showcase my own projects, as well as my own thoughts on a variety of topics through a personalized blog.
+  I created this blog/portfolio repository in order to showcase my own projects, blog about things that really pique my interest or to document things that I've experienced as a software engineer, and to showcase freelance jobs that I've done.
 
-  Other blog/portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, add to, and painless to deploy to the web.
+  Other blog/portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, easy to add to, and painless to deploy to the web.
 
   If you're interested in using this repository as a template, please fork it and star it!
 
@@ -64,7 +64,8 @@
     <img src="./public/images/mobile_job_post_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" />
   </details>
 </div>
-<br />
+
+
 
 ## Tech Stack
 - Typescript
@@ -144,6 +145,8 @@ Various aspects of the site will grab your information from the values set in th
 Currently, this file supports six key value pairs, which should be updated to use your specific information.
 
 For any social links (git, linked_in, email, etc.), if you would like to omit the applicable buttons and links from your site, simply provide an empty string ('', quotes with nothing inside) and they will not be rendered to the page.
+
+**NOTE:: Your summary on the home page has to manually be edited in the `./src/pages/home/home.tsx` file.**
 
 **Example Configuration**
 ```ts
@@ -236,17 +239,15 @@ Information about some example project should go here! Show off and let us know 
 ```
 
 # Adding Job History Pages
-Adding a blog post is as easy as adding a new Markdown file to the `./public/jobs` directory.
+Adding a job history post is as easy as adding a new Markdown file to the `./public/jobs` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
 **Example**
 - Markdown Title: 'Example Job Post'
-- Markdown File Name: 'example-work-post.md'
+- Markdown File Name: 'example-job-post.md'
 
-The codebase requires work pages to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
-
-Posts are ordered from most to least recent.
+The codebase requires job pages to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
 
 **NOTE :: Both the `timestamp` and `endTimestamp` field should be unix time * 1000**
 
