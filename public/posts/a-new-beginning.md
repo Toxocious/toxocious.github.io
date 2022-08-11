@@ -1,7 +1,7 @@
 ---
 title: A New Beginning
 timestamp: 1655667600000
-description: Over the time that I’ve invested over the past number of years, I never really thought to document any of the processes that I’ve taken or have gone through.
+description: I've spent a number of years developing personal projects and taking on freelance jobs, but I never thought to talk about the process that I've gone through to get here. Starting today, that all changes.
 ---
 
 Over the time that I’ve invested over the past number of years, I never really thought to document any of the processes that I’ve taken or have gone through.

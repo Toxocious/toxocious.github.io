@@ -2,7 +2,7 @@
 title: The Pokemon Kingdom
 timestamp: 1533137880000
 endTimestamp: Present
-description: I was one of two developers responsible for bug fixes, feature planning and development, and some dev ops.
+description: I was to fix any reported bugs that were reported, as well as to expand upon existing features and implement new features from the ground up. I maintain constant and consistent interaction with the player-base as well.
 banner: the-pokemon-kingdom
 site_link: https://tpkrpg.net/
 ---

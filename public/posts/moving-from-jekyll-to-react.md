@@ -1,7 +1,7 @@
 ---
 title: Moving From Jekyll To React
 timestamp: 1659748419000
-description: I spent some time over the past week moving my current blog/portfolio (blogfolio, if you will) from a Jekyll template to a completely custom React (w/ Vite) code-base.
+description: I spent some time over the past week moving my current blog/portfolio (blogfolio, if you will) from a Jekyll template to a completely custom React (w/ Vite) code-base, and I've put my thoughts together on how I feel about Jekyll.
 ---
 
 Over the past week, I've spent some time and have worked on moving my blog's code base over from Jekyll to React, and in that time, I've come to not like Jekyll very much.

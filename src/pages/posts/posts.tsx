@@ -39,6 +39,9 @@ export const PostsPage = () => {
       <div>
         I like to talk about things that generally pique my interest, and you
         can read about those things here.
+        <br />
+        <br />
+        Click on any entry to learn more.
       </div>
       <br />
 

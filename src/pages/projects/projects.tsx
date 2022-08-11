@@ -37,10 +37,11 @@ export const ProjectsPage = () => {
       </h1>
 
       <div>
-        <p>
-          All personal projects that I've worked on &mdash; and are in a
-          complete or mostly complete state &mdash; are displayed below.
-        </p>
+        All personal projects that I've worked on &mdash; and are in a complete
+        or mostly complete state &mdash; are displayed below.
+        <br />
+        <br />
+        Click on any entry to learn more.
       </div>
       <br />
 

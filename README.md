@@ -40,8 +40,31 @@
 # About The Project
 ## Screenshots
 <div align="center">
-  <img src="./public/images/page_preview.png" title="Picture of the user-interface" alt="Picture of the user-interface" />
+  <details>
+    <summary>Desktop Previews</summary>
+    <img src="./public/images/desktop_home_preview.png" title="Picture of the home page" alt="Picture of the home page" />
+    <img src="./public/images/desktop_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" />
+    <img src="./public/images/desktop_blog_post_preview.png" title="Picture of a blog entry" alt="Picture of a blog entry" />
+    <img src="./public/images/desktop_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
+    <img src="./public/images/desktop_project_post_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
+    <img src="./public/images/desktop_job_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
+    <img src="./public/images/desktop_job_post_preview.png" title="Picture of a job entry" alt="Picture of a job entry" />
+  </details>
+
+  <br />
+
+  <details>
+    <summary>Mobile Previews</summary>
+    <img src="./public/images/mobile_home_preview.png" title="Picture of the home page" alt="Picture of the home page" />
+    <img src="./public/images/mobile_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" />
+    <img src="./public/images/mobile_blog_post_preview.png" title="PPicture of a blog entry" alt="PPicture of a blog entry" />
+    <img src="./public/images/mobile_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
+    <img src="./public/images/mobile_project_post_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
+    <img src="./public/images/mobile_jobs_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
+    <img src="./public/images/mobile_job_post_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" />
+  </details>
 </div>
+<br />
 
 ## Tech Stack
 - Typescript
