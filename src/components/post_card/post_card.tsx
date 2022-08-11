@@ -31,19 +31,19 @@ export const PostCard = ({
   }
   const ROUTE_PATH = title.replaceAll(' ', '-').toLowerCase();
 
+  let DATE_PREFIX = type === 'posts' ? 'Posted On' : 'Duration';
+
   return (
     <Link className='post-card button' to={`/${type}/${ROUTE_PATH}`}>
-      <div className='post-card-banner'>
-        {banner ? (
-          <img src={`/${type}_banners/${banner}.png`} />
-        ) : (
-          <div className='post-card-no-banner'></div>
-        )}
+      <div className={'post-card-banner' + (!banner ? ' no-banner' : '')}>
+        {banner && <img src={`/${type}_banners/${banner}.png`} />}
       </div>
-      <div className='post-card-content'>
+      <div className={'post-card-content' + (!banner ? ' no-banner' : '')}>
         <div className='post-card-header'>
           <div className='post-card-title'>{title}</div>
-          <div className='post-card-date'>{DATE_STRING}</div>
+          <div className='post-card-date'>
+            <b>{DATE_PREFIX}</b>: {DATE_STRING}
+          </div>
         </div>
         <div className='post-card-description'>
           <div>{description ?? 'No Description'}</div>

@@ -28,7 +28,7 @@
       height: 140px;
       width: 140px;
 
-      & > .post-card-no-banner {
+      &.no-banner {
         background: linear-gradient(
           rgb(var(--ui-monochrome-06-rgb)),
           rgb(var(--ui-monochrome-05-rgb))
@@ -36,8 +36,6 @@
 
         border-top-left-radius: 0.5em;
         border-bottom-left-radius: 0.5em;
-
-        height: 100%;
 
         display: flex;
         align-items: center;
@@ -109,7 +107,21 @@
       width: 100%;
 
       & > .post-card-banner {
-        display: none;
+        border-radius: 0.5em 0.5em 0 0;
+
+        max-height: 100px;
+        width: 100%;
+
+        & > img {
+          border-radius: 0.5em 0.5em 0 0;
+          object-fit: cover;
+          max-height: 100px;
+          width: 100%;
+        }
+
+        &.no-banner {
+          display: none;
+        }
       }
 
       & > .post-card-content {
@@ -118,31 +130,47 @@
         height: auto;
         width: 100%;
 
+        &.no-banner {
+          & > .post-card-header,
+          & > .post-card-header > .post-card-title {
+            border-radius: 0.5em 0.5em 0 0;
+          }
+        }
+
         & > .post-card-header {
           background: linear-gradient(
             rgb(var(--ui-monochrome-05-rgb)),
             rgb(var(--ui-monochrome-04-rgb))
           );
 
-          border-radius: 0.5em;
-          padding: 0.5em;
-
           display: flex;
           flex-direction: column;
-          gap: 0.5em;
+
+          padding: 0;
 
           & > .post-card-title {
             font-weight: bold;
-            font-size: 1.5em;
+            text-align: center;
+
+            padding: 0.5em 0;
+            width: 100%;
+
+            background: linear-gradient(
+              rgb(var(--ui-monochrome-04-rgb)),
+              rgb(var(--ui-monochrome-01-rgb))
+            );
           }
 
           & > .post-card-date {
-            margin: 0;
+            padding: 0.5em 0;
+            width: 100%;
+
+            background: rgb(var(--ui-monochrome-05-rgb));
           }
         }
 
         & > .post-card-description {
-          display: none;
+          padding: 0.5em;
         }
       }
     }
