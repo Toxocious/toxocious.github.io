@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PostCard } from '../../components/post_card';
 
-const data = import.meta.glob('/public/posts/*.md');
+const data = import.meta.glob('/public/posts/**/*.md');
 
 export const PostsPage = () => {
   const [posts, setPosts]: [any, any] = useState({

@@ -163,9 +163,21 @@ export const CONFIGURATION = {
 ```
 
 # Adding Blog Posts
-Adding a blog post is as easy as adding a new Markdown file to the `./public/posts` directory.
+Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./public/posts` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
+
+An example for a new blog post in the `./public/posts` directory would look like something like this:
+```
+├─── public
+│   └─── posts
+│       └─── example-post
+|           ├─── example-post.md
+|           └─── example-post.png
+│       └─── blog-post-about-astro-js
+|           ├─── blog-post-about-astro-js.md
+|           └─── blog-post-about-astro-js.png
+```
 
 **Example**
 - Markdown Title: 'Example Blog Post'
@@ -189,9 +201,21 @@ I'm the content of the markdown post that will be rendered on the full markdown 
 ```
 
 # Adding Project Posts
-Adding a blog project is as easy as adding a new Markdown file to the `./public/projects` directory.
+Adding a blog project is as easy as adding a new folder that contains a Markdown file to the `./public/projects` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
+
+An example for a new blog post in the `./public/projects` directory would look like something like this:
+```
+├─── public
+│   └─── projects
+│       └─── example-project
+|           ├─── example-project.md
+|           └─── example-project.png
+│       └─── runescape-api-project
+|           ├─── runescape-api-project.md
+|           └─── runescape-api-project.png
+```
 
 **Example**
 - Markdown Title: 'Example Project'
@@ -202,7 +226,7 @@ The codebase requires projects to have three header fields, **title**, **descrip
 Optional header fields are:
 - banner: pokemon-absolute
   - The image name for the banner.
-  - The code base will look inside of `./public/projects_banners/` for a .png file with this name
+  - The code base will look inside of `./public/projects/<PROJECT_DIR>/` for a .png file with this name
 - repo_path: git_username/repository_name
   - This will display a button linking to the repository's source code if filled out
 - show_issues: true
@@ -243,6 +267,18 @@ Adding a job history post is as easy as adding a new Markdown file to the `./pub
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
+An example for a new blog post in the `./public/jobs` directory would look like something like this:
+```
+├─── public
+│   └─── jobs
+│       └─── example-job
+|           ├─── example-job.md
+|           └─── example-job.png
+│       └─── google-internship
+|           ├─── google-internship.md
+|           └─── google-internship.png
+```
+
 **Example**
 - Markdown Title: 'Example Job Post'
 - Markdown File Name: 'example-job-post.md'
@@ -254,7 +290,7 @@ The codebase requires job pages to have three header fields, **title**, **descri
 Optional header fields are:
 - banner: example-banner
   - The image name for the banner.
-  - The code base will look inside of `./public/jobs_banners/` for a .png file with this name
+  - The code base will look inside of `./public/jobs/<JOB_DIRECTORY>` for a .png file with this name
 - endTimestamp: A unix epoch timestamp of when you finished working there
   - If omitted, the work post will default to 'Present', implying that you still work there or on the application
 

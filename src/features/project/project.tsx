@@ -34,7 +34,7 @@ export const Project = () => {
   const file_name = useParams().id;
 
   useEffect(() => {
-    fetch(`${DIR_PATHS.projects}/${file_name}.md`)
+    fetch(`${DIR_PATHS.projects}/${file_name}/${file_name}.md`)
       .then((res: Response) => res.text())
       .then((res) => {
         const parsed_markdown: MarkdownDataType = MarkdownParser(res);
@@ -75,7 +75,9 @@ export const Project = () => {
       <div className='project-container'>
         {project.headingData.banner && (
           <div className='project-banner'>
-            <img src={`/projects_banners/${project.headingData.banner}.png`} />
+            <img
+              src={`/projects/${file_name}/${project.headingData.banner}.png`}
+            />
           </div>
         )}
 
@@ -97,8 +99,8 @@ export const Project = () => {
                   stroke-width='1.5'
                   stroke='#6f32be'
                   fill='none'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 >
                   <path stroke='none' d='M0 0h24v24H0z' fill='none' />
                   <path d='M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5' />

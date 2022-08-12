@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ProjectCard } from '../../components/project_card';
 
-const data = import.meta.glob('/public/projects/*.md');
+const data = import.meta.glob('/public/projects/**/*.md');
 
 export const ProjectsPage = () => {
   const [projects, setProjects]: [any, any] = useState({

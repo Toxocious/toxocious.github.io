@@ -20,7 +20,7 @@ export const ProjectCard = ({
     <Link className='project-card button' to={`/projects/${ROUTE_PATH}`}>
       <div className='project-card-banner'>
         {banner ? (
-          <img src={`/projects_banners/${banner}.png`} />
+          <img src={`/projects/${ROUTE_PATH}/${banner}.png`} />
         ) : (
           <div className='project-card-no-banner'>NO BANNER</div>
         )}

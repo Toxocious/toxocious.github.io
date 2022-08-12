@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PostCard } from '../../components/post_card';
 
-const data = import.meta.glob('/public/jobs/*.md');
+const data = import.meta.glob('/public/jobs/**/*.md');
 
 export const JobsPage = () => {
   const [jobs, setJobs]: [any, any] = useState({

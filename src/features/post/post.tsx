@@ -35,7 +35,7 @@ export const Post = () => {
   const file_name = useParams().id;
 
   useEffect(() => {
-    fetch(`${DIR_PATHS.posts}/${file_name}.md`)
+    fetch(`${DIR_PATHS.posts}/${file_name}/${file_name}.md`)
       .then((res: Response) => res.text())
       .then((res) => {
         const parsed_markdown: MarkdownDataType = MarkdownParser(res);
@@ -69,12 +69,14 @@ export const Post = () => {
     new Date(parseInt(post.headingData.timestamp))
   );
 
+  const ROUTE_PATH = post.headingData.title.replaceAll(' ', '-').toLowerCase();
+
   return (
     <main className='post-page'>
       <div className='post-container'>
         {post.headingData.banner && (
           <div className='post-banner'>
-            <img src={`/post_banners/${post.headingData.banner}.png`} />
+            <img src={`/posts/${ROUTE_PATH}/${post.headingData.banner}.png`} />
           </div>
         )}
 
