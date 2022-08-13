@@ -15,7 +15,7 @@ import { Http404Page } from './pages/404';
 
 import { Post } from './features/post';
 import { Project } from './features/project';
-import { Job } from './features/work';
+import { Job } from './features/job';
 
 import './animations.scss';
 import './main.scss';

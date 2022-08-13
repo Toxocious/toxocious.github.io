@@ -9,7 +9,7 @@ import { DIR_PATHS } from '../../util/dir_path';
 import { formatDate } from '../../util/date_format';
 import { MarkdownParser, MarkdownDataType } from '../../util/md_parser';
 
-import './work.scss';
+import './job.scss';
 
 type workStateType = {
   headingData: any;
