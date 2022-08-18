@@ -8,10 +8,7 @@ export const Footer = () => {
     <footer>
       <div className='footer_container'>
         <div className='copyright'>
-          &copy; 2022{' '}
-          <a href={CONFIGURATION.git} target='_blank' rel='noopener'>
-            {CONFIGURATION.name}
-          </a>
+          &copy; {new Date().getFullYear()} <b>{CONFIGURATION.name}</b>
         </div>
 
         <SocialLinks />
