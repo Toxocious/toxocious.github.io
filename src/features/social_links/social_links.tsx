@@ -8,7 +8,7 @@ export const SocialLinks = () => {
       {CONFIGURATION.github && (
         <a
           className='button'
-          href={CONFIGURATION.github}
+          href={`https://github.com/${CONFIGURATION.github}`}
           target='_blank'
           rel='noopener'
           title='View My Github Profile'
@@ -27,10 +27,10 @@ export const SocialLinks = () => {
       {CONFIGURATION.gitlab && (
         <a
           className='button'
-          href={CONFIGURATION.github}
+          href={`https://gitlab.com/${CONFIGURATION.github}`}
           target='_blank'
           rel='noopener'
-          title='View My Github Profile'
+          title='View My Gitlab Profile'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
