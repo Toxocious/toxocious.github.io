@@ -156,9 +156,16 @@ export const CONFIGURATION = {
   location: 'SOMEWHERE, OVER HERE',
 
   email: 'example@example.com',
-  git: 'https://github.com/USERNAME',
-  linked_in: 'https://linkedin.com/in/USERNAME_OR_ID',
-  twitter: '',
+  github: 'USERNAME',
+  gitlab: 'USERNAME'
+  linked_in: 'PROFILE_ID',
+  twitter: 'USERNAME',
+
+  // File name of your resume.
+  // This needs to be placed inside of the
+  //    /public/resume
+  // directory
+  resume: 'software_engineer_resume.pdf'
 };
 ```
 

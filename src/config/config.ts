@@ -3,8 +3,11 @@ export const CONFIGURATION = {
   occupation: 'Software Engineer',
   location: 'Washington, United States',
 
-  git: 'https://github.com/toxocious',
-  linked_in: 'https://linkedin.com/in/mackjesse',
-  twitter: 'https://twitter.com/toxocious',
+  github: 'toxocious',
+  gitlab: '',
+  linked_in: 'mackjesse',
+  twitter: 'toxocious',
   email: 'toxocious@gmail.com',
+
+  resume: 'software-engineer-resume.pdf',
 };
