@@ -8,7 +8,10 @@ export const HomePage = () => {
   return (
     <main className='home'>
       <div className='home-description'>
-        <img src='/favicons/android-chrome-192x192.png' />
+        <img
+          src='/favicons/android-chrome-192x192.png'
+          alt='Image depicting the owner'
+        />
 
         <div className='home-contact'>
           <SocialLinks />

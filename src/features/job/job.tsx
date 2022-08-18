@@ -79,7 +79,10 @@ export const Job = () => {
       <div className='work-container'>
         {work.headingData.banner && (
           <div className='work-banner'>
-            <img src={`/jobs/${file_name}/${work.headingData.banner}.png`} />
+            <img
+              src={`/jobs/${file_name}/${work.headingData.banner}.png`}
+              alt='Image representing the job.'
+            />
           </div>
         )}
 

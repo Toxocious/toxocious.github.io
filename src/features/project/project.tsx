@@ -77,6 +77,7 @@ export const Project = () => {
           <div className='project-banner'>
             <img
               src={`/projects/${file_name}/${project.headingData.banner}.png`}
+              alt='Image representing the project.'
             />
           </div>
         )}

@@ -36,7 +36,12 @@ export const PostCard = ({
   return (
     <Link className='post-card button' to={`/${type}/${ROUTE_PATH}`}>
       <div className={'post-card-banner' + (!banner ? ' no-banner' : '')}>
-        {banner && <img src={`/${type}/${ROUTE_PATH}/${banner}.png`} />}
+        {banner && (
+          <img
+            src={`/${type}/${ROUTE_PATH}/${banner}.png`}
+            alt='Image representing the blog post.'
+          />
+        )}
       </div>
       <div className={'post-card-content' + (!banner ? ' no-banner' : '')}>
         <div className='post-card-header'>

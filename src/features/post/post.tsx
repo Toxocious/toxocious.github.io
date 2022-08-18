@@ -76,7 +76,10 @@ export const Post = () => {
       <div className='post-container'>
         {post.headingData.banner && (
           <div className='post-banner'>
-            <img src={`/posts/${ROUTE_PATH}/${post.headingData.banner}.png`} />
+            <img
+              src={`/posts/${ROUTE_PATH}/${post.headingData.banner}.png`}
+              alt='Image representing the blog post.'
+            />
           </div>
         )}
 
