@@ -2,6 +2,7 @@
 title: A First Look Into tRPC
 timestamp: 1660422931604
 description: After hearing about tRPC through both Twitter and some videos and livestreams by Theo (@t3dotgg), and hearing about how it's a great way to make end-to-end APIs with full type support, I knew I had to check it out.
+banner: trpc_logo
 ---
 
 

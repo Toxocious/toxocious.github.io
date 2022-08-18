@@ -34,16 +34,19 @@ export const PostCard = ({
   let DATE_PREFIX = type === 'posts' ? 'Posted On' : 'Duration';
 
   return (
-    <Link className='post-card button' to={`/${type}/${ROUTE_PATH}`}>
-      <div className={'post-card-banner' + (!banner ? ' no-banner' : '')}>
-        {banner && (
+    <Link
+      className={'post-card button' + (!banner ? ' no-banner' : '')}
+      to={`/${type}/${ROUTE_PATH}`}
+    >
+      {banner && (
+        <div className='post-card-banner'>
           <img
             src={`/${type}/${ROUTE_PATH}/${banner}.png`}
             alt='Image representing the blog post.'
           />
-        )}
-      </div>
-      <div className={'post-card-content' + (!banner ? ' no-banner' : '')}>
+        </div>
+      )}
+      <div className='post-card-content'>
         <div className='post-card-header'>
           <div className='post-card-title'>{title}</div>
           <div className='post-card-date'>
