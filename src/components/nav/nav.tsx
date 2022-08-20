@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { NavigationItems } from '../../constants/nav_links';
@@ -9,9 +8,11 @@ export const Nav = () => {
   return (
     <nav>
       <div className='nav_container'>
-        {NavigationItems.map((link: any) => (
-          <NavItem key={link.label} {...link} />
-        ))}
+        {NavigationItems.filter((link: any) => !link.hidden).map(
+          (link: any) => (
+            <NavItem key={link.label} {...link} />
+          )
+        )}
       </div>
     </nav>
   );
@@ -21,8 +22,6 @@ export const Nav = () => {
  * Render individual nav links.
  */
 const NavItem = (link_data: any) => {
-  const [active, setActive] = useState(false);
-
   return (
     <NavLink
       to={link_data.link ?? ''}
