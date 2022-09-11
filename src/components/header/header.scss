@@ -17,7 +17,7 @@ header {
     content: '';
 
     position: absolute;
-    height: 6em;
+    height: 5em;
     width: 100%;
   }
 
@@ -40,10 +40,23 @@ header {
   }
 
   & > .header_container {
-    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
     max-width: 1000px;
     width: min(1000px, 100%);
 
     margin: 0 auto;
+    text-align: center;
+
+    & > h3 {
+      font-size: 1.1rem;
+      margin: 0.5em auto;
+
+      position: relative;
+      z-index: 2;
+    }
   }
 }
