@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ReactMarkdown from 'react-markdown';
+import { marked } from 'marked';
 
 import { LoadingSpinner } from '../../components/loading_spinner';
 
@@ -125,9 +125,10 @@ export const Job = () => {
 
         <hr />
 
-        <ReactMarkdown skipHtml={true} className='work-content'>
-          {work.content}
-        </ReactMarkdown>
+        <div
+          className='work-content'
+          dangerouslySetInnerHTML={{ __html: marked(work.content) }}
+        ></div>
       </div>
     </main>
   );
