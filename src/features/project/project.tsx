@@ -97,7 +97,7 @@ export const Project = () => {
                   width='44'
                   height='44'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='#6f32be'
                   fill='none'
                   strokeLinecap='round'

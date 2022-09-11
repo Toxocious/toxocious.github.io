@@ -14,7 +14,7 @@ export const Header = () => {
     const RANDOM_QUOTE = QUOTES[Math.floor(Math.random() * QUOTES.length)];
 
     setQuote(RANDOM_QUOTE);
-  }, [quote]);
+  }, []);
 
   return (
     <header>
