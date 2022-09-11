@@ -12,13 +12,16 @@ nav {
   &::after {
     align-items: center;
     animation: animation-wave-x 10s linear infinite reverse;
+
     background-repeat: no-repeat;
     background: linear-gradient(90deg, #fff0 70%, #fff6 95%, #fff0);
     background-size: 500% 500%;
-    content: " ";
-    height: 1px;
+
+    content: "";
+
     position: absolute;
-    bottom: 0;
+
+    height: 1px;
     width: 100%;
   }
 

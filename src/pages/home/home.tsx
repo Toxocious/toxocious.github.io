@@ -8,18 +8,27 @@ export const HomePage = () => {
   return (
     <main className='home'>
       <div className='home-description'>
-        <img
-          src='/favicons/android-chrome-192x192.png'
-          alt='Image depicting the owner'
-        />
+        <div className='home-profile'>
+          <img
+            src='/favicons/android-chrome-192x192.png'
+            alt='Image depicting the owner'
+          />
 
-        <div className='home-contact'>
-          <SocialLinks />
+          <div className='home-profile-details'>
+            <div className='home-profile-info'>
+              <h1>{CONFIGURATION.name}</h1>
+              <h2>{CONFIGURATION.occupation}</h2>
+            </div>
+
+            <SocialLinks />
+          </div>
         </div>
 
+        <hr />
+
         <p>
-          Hello! I am {CONFIGURATION.name}, a software engineer based in{' '}
-          {CONFIGURATION.location}.
+          Hello! I am {CONFIGURATION.name}, a {CONFIGURATION.occupation} based
+          in {CONFIGURATION.location}.
         </p>
 
         <p>
