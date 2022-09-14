@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { marked } from 'marked';
 
 import { LoadingSpinner } from '../../components/loading_spinner';
+import { ShareLinks } from '../../features/share_links';
 
 import { DIR_PATHS } from '../../util/dir_path';
 import { formatDate } from '../../util/date_format';
@@ -71,6 +72,8 @@ export const Post = () => {
 
   const ROUTE_PATH = post.headingData.title.replaceAll(' ', '-').toLowerCase();
 
+  const SHARE_DESCRIPTION = `Check out this awesome blog post!\n\n${post.headingData.title} ->`;
+
   return (
     <main className='post-page'>
       <div className='post-container'>
@@ -84,11 +87,20 @@ export const Post = () => {
         )}
 
         <div className='post-header'>
-          <h2>{post.headingData.title}</h2>
-          <div className='tags'>{DATE_STRING}</div>
-        </div>
+          <div className='title'>
+            <h2>{post.headingData.title}</h2>
+            <h4>{DATE_STRING}</h4>
+          </div>
 
-        <hr />
+          <div className='tags'>
+            <ShareLinks
+              twitter
+              linkedin
+              title={post.headingData.title}
+              description={SHARE_DESCRIPTION}
+            />
+          </div>
+        </div>
 
         <div
           className='post-content'
