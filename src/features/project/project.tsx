@@ -113,9 +113,6 @@ export const Project = () => {
           </div>
         </div>
 
-        <hr />
-        <br />
-
         {project.headingData.repo_path && (
           <div className='project-badges'>
             {project.headingData.show_issues && (
@@ -150,9 +147,6 @@ export const Project = () => {
             )}
           </div>
         )}
-
-        <br />
-        <hr />
 
         <div
           className='project-content'
