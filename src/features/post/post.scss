@@ -9,6 +9,14 @@ main.post-page {
     max-width: 1000px;
 
     & > .post-banner {
+      width: 100%;
+
+      background-color: rgba(var(--ui-monochrome-03-rgb), 1.00);
+      border: 1px solid var(--ui-monochrome-05-hex);
+      border-radius: 0.5em;
+
+      filter: drop-shadow(0px 0px 6px var(--ui-monochrome-05-hex));
+
       img {
         filter: drop-shadow(2px 4px 8px #000);
 
@@ -21,6 +29,17 @@ main.post-page {
     }
 
     & > .post-header {
+      width: calc(100% - 2em);
+
+      background-color: rgba(var(--ui-monochrome-04-rgb), 1.00);
+      border: 1px solid var(--ui-monochrome-05-hex);
+      border-radius: 0.5em;
+
+      filter: drop-shadow(0px 0px 6px var(--ui-monochrome-04-hex));
+
+      margin-top: 1em;
+      padding: 0 1em;
+
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -48,11 +67,15 @@ main.post-page {
     max-width: 100%;
 
     & > .post-container {
+      text-align: center;
+
+      padding-top: 1em;
+
       width: min(1000px, 100%);
       max-width: 1000px;
 
       & > .post-banner {
-        margin: -1em;
+        margin: -1em auto 0;
 
         img {
           filter: none;
@@ -66,21 +89,31 @@ main.post-page {
         background: linear-gradient(
           rgb(var(--ui-monochrome-05-rgb)),
           rgb(var(--ui-monochrome-01-rgb))
-        );
+          );
 
-        margin: -1em;
-        flex-direction: column;
+        flex-direction: row;
 
-        padding-bottom: 1em;
+        margin: 1em auto 0;
+
+        & > .title {
+          & > * {
+            margin: 0.5em;
+          }
+        }
+
+        & > .tags > .share_links {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
       }
 
       & > .post-content {
-        width: min(1000px, calc(100% - 2em));
         max-width: 1000px;
+
         word-wrap: break-word;
 
         & > * {
-          width: min(1000px, 100%);
           max-width: 100%;
         }
 
