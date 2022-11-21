@@ -9,7 +9,7 @@ export const NavigationItems = [
   {
     id: 1,
     label: 'Blog',
-    link: '/posts',
+    link: '/blog',
     active: true,
     hidden: false,
   },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PostCard } from '../../components/post_card';
+import { BlogCard } from '../../components/blog_card';
 
 const data = import.meta.glob('/public/jobs/**/*.md');
 
@@ -45,12 +45,12 @@ export const JobsPage = () => {
       </div>
       <br />
 
-      <div className='post-card-container'>
+      <div className='blog-card-container'>
         {jobs.list &&
           jobs.list
             .sort((a: any, b: any) => b.data.timestamp - a.data.timestamp)
             .map((work: any) => (
-              <PostCard key={work.data.title} {...work.data} type='jobs' />
+              <BlogCard key={work.data.title} {...work.data} type='jobs' />
             ))}
       </div>
     </main>

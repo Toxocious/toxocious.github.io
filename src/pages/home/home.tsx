@@ -32,22 +32,38 @@ export const HomePage = () => {
         </p>
 
         <p>
-          This is my blog and development portfolio, where I'll post about
+          This is my blog and development portfolio, where I'll blog about
           things that pique my interest, as well as show off work that I've
           created and have made open-source.
         </p>
 
         <p>
-          I've freelanced for clients that are located all over the world,
-          delivering my best work &mdash; and attitude &mdash; every single
-          time, and am currently looking to transition into full-time work.
+          I'm a software engineer with an avid interest in developing
+          applications from scratch and improving already existing applications.
+          Programming is my absolute favorite thing to do; whether I'm learning
+          about a new technology or how underlying code works behind the scenes,
+          or even planning out the achitecture for a new application, nothing
+          else brings me quite as much joy as programming does.
         </p>
 
         <p>
-          My set of skills is diverse, ranging from front-end technologies like
-          HTML, CSS, and JavaScript (TypeScript also, of course), all the way to
-          PHP, Java, some C#, and even C++! I've even managed and administrated
-          some Linux servers.
+          Are you looking for someone who can develop your next app?
+          <br />
+          Or someone who can pick up unfamiliar technology with ease and adapt
+          quickly?
+          <br />
+          Perhaps you're looking for a good culture fit AND someone who can
+          identify problems and come up with solutions for them.
+        </p>
+
+        <p>Look no further.</p>
+
+        <p>
+          I've learned numerous technologies and skills and have efficiently
+          adapted them to many different applications. I can quickly identify
+          problems and come up with potential solutions to them that quickly
+          resolve the issue and improve many aspects of the code base and user
+          experience.
         </p>
       </div>
     </main>

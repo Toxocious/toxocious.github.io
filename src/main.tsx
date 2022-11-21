@@ -7,12 +7,12 @@ import { Footer } from './components/footer';
 import { Nav } from './components/nav';
 
 import { HomePage } from './pages/home';
-import { PostsPage } from './pages/posts';
+import { BlogsPage } from './pages/blog';
 import { ProjectsPage } from './pages/projects';
 import { JobsPage } from './pages/jobs';
 import { Http404Page } from './pages/404';
 
-import { Post } from './features/post';
+import { Blog } from './features/blog';
 import { Project } from './features/project';
 import { Job } from './features/job';
 
@@ -27,8 +27,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Routes>
       <Route path='/' element={<HomePage />} />
 
-      <Route path='/posts' element={<PostsPage />} />
-      <Route path='/posts/:id' element={<Post />} />
+      <Route path='/blog' element={<BlogsPage />} />
+      <Route path='/blog/:id' element={<Blog />} />
 
       <Route path='/projects' element={<ProjectsPage />} />
       <Route path='/projects/:id' element={<Project />} />

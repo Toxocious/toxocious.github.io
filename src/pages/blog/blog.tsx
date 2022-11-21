@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { PostCard } from '../../components/post_card';
+import { BlogCard } from '../../components/blog_card';
 
-const data = import.meta.glob('/public/posts/**/*.md');
+const data = import.meta.glob('/public/blog/**/*.md');
 
-export const PostsPage = () => {
-  const [posts, setPosts]: [any, any] = useState({
+export const BlogsPage = () => {
+  const [blog, setBlogs]: [any, any] = useState({
     list: [],
   });
 
   const POSTS_LIST: Array<Object> = [];
 
   useEffect(() => {
-    const fetchPosts = () => {
+    const fetchBlogs = () => {
       Object.entries(data).forEach(async ([path, mod]) => {
         const mod_data: any = await mod();
 
@@ -20,20 +20,20 @@ export const PostsPage = () => {
           data: mod_data.attributes,
         });
 
-        setPosts((posts: any) => ({
-          ...posts,
+        setBlogs((blog: any) => ({
+          ...blog,
           list: POSTS_LIST,
         }));
       });
     };
 
-    fetchPosts();
+    fetchBlogs();
   }, []);
 
   return (
     <main>
       <h1 className='separator'>
-        <span>Blog Posts</span>
+        <span>Blog Blogs</span>
       </h1>
 
       <div>
@@ -45,12 +45,12 @@ export const PostsPage = () => {
       </div>
       <br />
 
-      <div className='post-card-container'>
-        {posts.list &&
-          posts.list
+      <div className='blog-card-container'>
+        {blog.list &&
+          blog.list
             .sort((a: any, b: any) => b.data.timestamp - a.data.timestamp)
             .map((proj: any) => (
-              <PostCard key={proj.data.title} {...proj.data} type='posts' />
+              <BlogCard key={proj.data.title} {...proj.data} type='blog' />
             ))}
       </div>
     </main>

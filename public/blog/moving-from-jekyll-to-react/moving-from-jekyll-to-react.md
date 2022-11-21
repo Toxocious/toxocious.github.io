@@ -13,21 +13,21 @@ Initially, I ran into some issues getting Jekyll set-up on my local machine. Aft
 
 That's fine! Not a big deal since I understand that it was my fault.
 
-After getting Jekyll set-up on my machine, all I had to do was to clone the blog template off of Github ([Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy)), revise a single file with some contact information and the like, add blog posts in the `_posts` directory, and then I could push to Github.
+After getting Jekyll set-up on my machine, all I had to do was to clone the blog template off of Github ([Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy)), revise a single file with some contact information and the like, add blog blog in the `_blog` directory, and then I could push to Github.
 
-It was simple to set-up, and even easier to add blog posts to.
+It was simple to set-up, and even easier to add blog blog to.
 
 **But wait..**
 
 I also wanted the blog template to list out any projects that I added into the newly created `_projects` directory. This is something that didn't work out of the box, admittedly, since the template didn't have support for it, which was fine since I was willing to spend time in adding the feature to my fork of the repository by myself.
 
-I took the time to look through the template repository to figure out how posts were being managed, from being added to the `_posts` directory, to then being built, bundled, and served with when you run `bundle exec jekyll serve`.
+I took the time to look through the template repository to figure out how blog were being managed, from being added to the `_blog` directory, to then being built, bundled, and served with when you run `bundle exec jekyll serve`.
 
-From there, I created a `_projects` directory, and copied 1-for-1 the logic that I saw being used to display posts from the `_posts` directory.
+From there, I created a `_projects` directory, and copied 1-for-1 the logic that I saw being used to display blog from the `_blog` directory.
 
 This is where I had some issues; the code just.. didn't work., and running `bundle exec jekyll serve` would serve me errors that were typically quite vague, and usually useless.
 
-The solution that I ended up doing after painstakingly debugging and looking through the code that was used to render the list of blog posts, was to add the following things to my `_config.yml` file:
+The solution that I ended up doing after painstakingly debugging and looking through the code that was used to render the list of blog blog, was to add the following things to my `_config.yml` file:
 
 ```yml
 # Updated defaults
@@ -35,13 +35,13 @@ defaults:
   - scope:
     # An empty string here means all files in the project
     path: _projects
-    type: posts
+    type: blog
   values:
     layout: project
     comments: false
     toc: true
     # DO NOT modify the following parameter unless you are confident enough
-    # to update the code of all other post links in this project.
+    # to update the code of all other blog links in this project.
     permalink: /project/:title/
 
 # Updated jekyll archives
@@ -55,7 +55,7 @@ jekyll-archives:
 
 After this, I had to create files to update the list of projects, display the list of all projects from the `_projects` directory, and one to display the information of a project (the page would essentially render the necessary project.md file).
 
-These were mostly just carbon copies of the files that were used to do these things for the blog posts, just with minor changes in logic (replacing "posts" with "projects"), which was quite simple.
+These were mostly just carbon copies of the files that were used to do these things for the blog blog, just with minor changes in logic (replacing "blog" with "projects"), which was quite simple.
 
 Despite the troubles that I had, using Jekyll wasn't terrible once I pieced the parts together.
 

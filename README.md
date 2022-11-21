@@ -30,8 +30,8 @@
   - [Building And Previewing](#building-and-previewing)
 - [Deploying To Github](#deploying-to-github)
 - [Updating Your Personal Information](#updating-your-personal-information)
-- [Adding Blog Posts](#adding-blog-posts)
-- [Adding Project Posts](#adding-project-posts)
+- [Adding Blog Blogs](#adding-blog-blog)
+- [Adding Project Blogs](#adding-project-blog)
 - [Adding Job History Pages](#adding-job-history-pages)
 - [License](#license)
 
@@ -44,11 +44,11 @@
     <summary>Desktop Previews</summary>
     <img src="./public/images/desktop_home_preview.png" title="Picture of the home page" alt="Picture of the home page" />
     <img src="./public/images/desktop_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" />
-    <img src="./public/images/desktop_blog_post_preview.png" title="Picture of a blog entry" alt="Picture of a blog entry" />
+    <img src="./public/images/desktop_blog_blog_preview.png" title="Picture of a blog entry" alt="Picture of a blog entry" />
     <img src="./public/images/desktop_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
-    <img src="./public/images/desktop_project_post_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
+    <img src="./public/images/desktop_project_blog_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
     <img src="./public/images/desktop_job_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
-    <img src="./public/images/desktop_job_post_preview.png" title="Picture of a job entry" alt="Picture of a job entry" />
+    <img src="./public/images/desktop_job_blog_preview.png" title="Picture of a job entry" alt="Picture of a job entry" />
   </details>
 
   <br />
@@ -57,11 +57,11 @@
     <summary>Mobile Previews</summary>
     <img src="./public/images/mobile_home_preview.png" title="Picture of the home page" alt="Picture of the home page" />
     <img src="./public/images/mobile_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" />
-    <img src="./public/images/mobile_blog_post_preview.png" title="PPicture of a blog entry" alt="PPicture of a blog entry" />
+    <img src="./public/images/mobile_blog_blog_preview.png" title="PPicture of a blog entry" alt="PPicture of a blog entry" />
     <img src="./public/images/mobile_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
-    <img src="./public/images/mobile_project_post_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
+    <img src="./public/images/mobile_project_blog_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
     <img src="./public/images/mobile_jobs_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
-    <img src="./public/images/mobile_job_post_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" />
+    <img src="./public/images/mobile_job_blog_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" />
   </details>
 </div>
 
@@ -75,7 +75,7 @@
 
 ## Features
 - Responsive layout and styling for mobile devices
-- Create and display blog `posts`
+- Create and display blog `blog`
 - Create and display `projects`
 - Create and display `work` history entries
 
@@ -169,50 +169,50 @@ export const CONFIGURATION = {
 };
 ```
 
-# Adding Blog Posts
-Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./public/posts` directory.
+# Adding Blog Blogs
+Adding a blog blog is as easy as adding a new folder that contains a Markdown file to the `./public/blog` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog post in the `./public/posts` directory would look like something like this:
+An example for a new blog blog in the `./public/blog` directory would look like something like this:
 ```
 ├─── public
-│   └─── posts
-│       └─── example-post
-|           ├─── example-post.md
-|           └─── example-post.png
-│       └─── blog-post-about-astro-js
-|           ├─── blog-post-about-astro-js.md
-|           └─── blog-post-about-astro-js.png
+│   └─── blog
+│       └─── example-blog
+|           ├─── example-blog.md
+|           └─── example-blog.png
+│       └─── blog-blog-about-astro-js
+|           ├─── blog-blog-about-astro-js.md
+|           └─── blog-blog-about-astro-js.png
 ```
 
 **Example**
-- Markdown Title: 'Example Blog Post'
-- Markdown File Name: 'example-blog-post.md'
+- Markdown Title: 'Example Blog Blog'
+- Markdown File Name: 'example-blog-blog.md'
 
-The codebase requires posts to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
+The codebase requires blog to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
 
-Posts are ordered from most to least recent.
+Blogs are ordered from most to least recent.
 
 **NOTE :: The `timestamp` field should be the current unix time * 1000**
 
-Here's an example `post` file.
+Here's an example `blog` file.
 ```markdown
 ---
-title: Example Blog Post
+title: Example Blog Blog
 timestamp: 1655667600000
-description: Example Blog Post Description! I show up in the mini card when all posts are being rendered.
+description: Example Blog Blog Description! I show up in the mini card when all blog are being rendered.
 ---
 
-I'm the content of the markdown post that will be rendered on the full markdown post page when visited.
+I'm the content of the markdown blog that will be rendered on the full markdown blog page when visited.
 ```
 
-# Adding Project Posts
+# Adding Project Blogs
 Adding a blog project is as easy as adding a new folder that contains a Markdown file to the `./public/projects` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog post in the `./public/projects` directory would look like something like this:
+An example for a new blog blog in the `./public/projects` directory would look like something like this:
 ```
 ├─── public
 │   └─── projects
@@ -270,11 +270,11 @@ Information about some example project should go here! Show off and let us know 
 ```
 
 # Adding Job History Pages
-Adding a job history post is as easy as adding a new Markdown file to the `./public/jobs` directory.
+Adding a job history blog is as easy as adding a new Markdown file to the `./public/jobs` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog post in the `./public/jobs` directory would look like something like this:
+An example for a new blog blog in the `./public/jobs` directory would look like something like this:
 ```
 ├─── public
 │   └─── jobs
@@ -287,8 +287,8 @@ An example for a new blog post in the `./public/jobs` directory would look like 
 ```
 
 **Example**
-- Markdown Title: 'Example Job Post'
-- Markdown File Name: 'example-job-post.md'
+- Markdown Title: 'Example Job Blog'
+- Markdown File Name: 'example-job-blog.md'
 
 The codebase requires job pages to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
 
@@ -299,12 +299,12 @@ Optional header fields are:
   - The image name for the banner.
   - The code base will look inside of `./public/jobs/<JOB_DIRECTORY>` for a .png file with this name
 - endTimestamp: A unix epoch timestamp of when you finished working there
-  - If omitted, the work post will default to 'Present', implying that you still work there or on the application
+  - If omitted, the work blog will default to 'Present', implying that you still work there or on the application
 
 Here's an example `jobs` file.
 ```markdown
 ---
-title: Example Job Post
+title: Example Job Blog
 timestamp: 1655667600000
 description: I was one of eight developers who worked to patch bug fixes, implement new features, enhance existing features, and handle dev ops.
 ---

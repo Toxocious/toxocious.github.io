@@ -4,24 +4,24 @@ import { useParams } from 'react-router-dom';
 import { marked } from 'marked';
 
 import { LoadingSpinner } from '../../components/loading_spinner';
-import { ShareLinks } from '../../features/share_links';
+import { ShareLinks } from '../share_links';
 
 import { DIR_PATHS } from '../../util/dir_path';
 import { formatDate } from '../../util/date_format';
 import { MarkdownParser, MarkdownDataType } from '../../util/md_parser';
 
-import './post.scss';
+import './blog.scss';
 
-type postStateType = {
+type blogStateType = {
   headingData: any;
   content: any;
 };
 
-export const Post = () => {
+export const Blog = () => {
   const [loadError, setLoadError] = useState('');
 
-  const [post, setPost]: [
-    postStateType,
+  const [blog, setBlog]: [
+    blogStateType,
     React.Dispatch<
       React.SetStateAction<{
         headingData: MarkdownDataType | any;
@@ -36,12 +36,12 @@ export const Post = () => {
   const file_name = useParams().id;
 
   useEffect(() => {
-    fetch(`${DIR_PATHS.posts}/${file_name}/${file_name}.md`)
+    fetch(`${DIR_PATHS.blog}/${file_name}/${file_name}.md`)
       .then((res: Response) => res.text())
       .then((res) => {
         const parsed_markdown: MarkdownDataType = MarkdownParser(res);
 
-        setPost({
+        setBlog({
           headingData: {
             banner: parsed_markdown.banner,
             description: parsed_markdown.description,
@@ -51,10 +51,10 @@ export const Post = () => {
           content: parsed_markdown.content,
         });
       })
-      .catch(() => setLoadError('We were unable to fetch the post'));
+      .catch(() => setLoadError('We were unable to fetch the blog'));
   }, []);
 
-  if (!post.content) {
+  if (!blog.content) {
     return (
       <main className='absolute-center'>
         <LoadingSpinner />
@@ -67,28 +67,28 @@ export const Post = () => {
   }
 
   const DATE_STRING = formatDate(
-    new Date(parseInt(post.headingData.timestamp))
+    new Date(parseInt(blog.headingData.timestamp))
   );
 
-  const ROUTE_PATH = post.headingData.title.replaceAll(' ', '-').toLowerCase();
+  const ROUTE_PATH = blog.headingData.title.replaceAll(' ', '-').toLowerCase();
 
-  const SHARE_DESCRIPTION = `Check out this awesome blog post!\n\n${post.headingData.title} ->`;
+  const SHARE_DESCRIPTION = `Check out this awesome blog blog!\n\n${blog.headingData.title} ->`;
 
   return (
-    <main className='post-page'>
-      <div className='post-container'>
-        {post.headingData.banner && (
-          <div className='post-banner'>
+    <main className='blog-page'>
+      <div className='blog-container'>
+        {blog.headingData.banner && (
+          <div className='blog-banner'>
             <img
-              src={`/posts/${ROUTE_PATH}/${post.headingData.banner}.png`}
-              alt='Image representing the blog post.'
+              src={`/blog/${ROUTE_PATH}/${blog.headingData.banner}.png`}
+              alt='Image representing the blog blog.'
             />
           </div>
         )}
 
-        <div className='post-header'>
+        <div className='blog-header'>
           <div className='title'>
-            <h2>{post.headingData.title}</h2>
+            <h2>{blog.headingData.title}</h2>
             <h4>{DATE_STRING}</h4>
           </div>
 
@@ -96,15 +96,15 @@ export const Post = () => {
             <ShareLinks
               twitter
               linkedin
-              title={post.headingData.title}
+              title={blog.headingData.title}
               description={SHARE_DESCRIPTION}
             />
           </div>
         </div>
 
         <div
-          className='post-content'
-          dangerouslySetInnerHTML={{ __html: marked(post.content) }}
+          className='blog-content'
+          dangerouslySetInnerHTML={{ __html: marked(blog.content) }}
         ></div>
       </div>
     </main>

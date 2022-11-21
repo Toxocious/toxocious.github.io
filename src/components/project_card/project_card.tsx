@@ -6,7 +6,7 @@ type ProjectCardType = {
   title: string;
   description: string;
   banner: string;
-  type: 'projects' | 'posts';
+  type: 'projects' | 'blog';
 };
 
 export const ProjectCard = ({

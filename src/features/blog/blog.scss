@@ -1,14 +1,14 @@
-main.post-page {
+main.blog-page {
   width: min(1000px, calc(100% - 2em));
   max-width: 1000px;
 
-  & > .post-container {
+  & > .blog-container {
     margin: 0 auto;
 
     width: min(1000px, calc(100% - 2em));
     max-width: 1000px;
 
-    & > .post-banner {
+    & > .blog-banner {
       width: 100%;
 
       background-color: rgba(var(--ui-monochrome-03-rgb), 1.00);
@@ -28,7 +28,7 @@ main.post-page {
       }
     }
 
-    & > .post-header {
+    & > .blog-header {
       width: calc(100% - 2em);
 
       background-color: rgba(var(--ui-monochrome-04-rgb), 1.00);
@@ -51,7 +51,7 @@ main.post-page {
       }
     }
 
-    & > .post-content {
+    & > .blog-content {
       max-width: 1000px;
 
       & > * {
@@ -62,17 +62,17 @@ main.post-page {
 }
 
 @media screen and (max-width: 450px) {
-  main.post-page {
+  main.blog-page {
     width: min(1000px, calc(100% - 2em));
     max-width: 100%;
 
-    & > .post-container {
+    & > .blog-container {
       padding-top: 1em;
 
       width: min(1000px, 100%);
       max-width: 1000px;
 
-      & > .post-banner {
+      & > .blog-banner {
         margin: -1em auto 0;
 
         img {
@@ -83,7 +83,7 @@ main.post-page {
         }
       }
 
-      & > .post-header {
+      & > .blog-header {
         background: linear-gradient(
           rgb(var(--ui-monochrome-05-rgb)),
           rgb(var(--ui-monochrome-01-rgb))
@@ -106,7 +106,7 @@ main.post-page {
         }
       }
 
-      & > .post-content {
+      & > .blog-content {
         max-width: 1000px;
 
         word-wrap: break-word;
