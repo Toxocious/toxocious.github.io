@@ -42,7 +42,7 @@ export const BlogCard = ({
         <div className='blog-card-banner'>
           <img
             src={`/${type}/${ROUTE_PATH}/${banner}.png`}
-            alt='Image representing the blog blog.'
+            alt='Image representing the blog post.'
           />
         </div>
       )}

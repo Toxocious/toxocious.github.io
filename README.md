@@ -170,11 +170,11 @@ export const CONFIGURATION = {
 ```
 
 # Adding Blog Blogs
-Adding a blog blog is as easy as adding a new folder that contains a Markdown file to the `./public/blog` directory.
+Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./public/blog` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog blog in the `./public/blog` directory would look like something like this:
+An example for a new blog post in the `./public/blog` directory would look like something like this:
 ```
 ├─── public
 │   └─── blog
@@ -212,7 +212,7 @@ Adding a blog project is as easy as adding a new folder that contains a Markdown
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog blog in the `./public/projects` directory would look like something like this:
+An example for a new blog post in the `./public/projects` directory would look like something like this:
 ```
 ├─── public
 │   └─── projects
@@ -274,7 +274,7 @@ Adding a job history blog is as easy as adding a new Markdown file to the `./pub
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog blog in the `./public/jobs` directory would look like something like this:
+An example for a new blog post in the `./public/jobs` directory would look like something like this:
 ```
 ├─── public
 │   └─── jobs

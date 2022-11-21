@@ -72,7 +72,7 @@ export const Blog = () => {
 
   const ROUTE_PATH = blog.headingData.title.replaceAll(' ', '-').toLowerCase();
 
-  const SHARE_DESCRIPTION = `Check out this awesome blog blog!\n\n${blog.headingData.title} ->`;
+  const SHARE_DESCRIPTION = `Check out this awesome blog post!\n\n${blog.headingData.title} ->`;
 
   return (
     <main className='blog-page'>
@@ -81,7 +81,7 @@ export const Blog = () => {
           <div className='blog-banner'>
             <img
               src={`/blog/${ROUTE_PATH}/${blog.headingData.banner}.png`}
-              alt='Image representing the blog blog.'
+              alt='Image representing the blog post.'
             />
           </div>
         )}
