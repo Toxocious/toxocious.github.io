@@ -89,7 +89,10 @@ export const Blog = () => {
         <div className='blog-header'>
           <div className='title'>
             <h2>{blog.headingData.title}</h2>
-            <h4>{DATE_STRING}</h4>
+            <h4>
+              <ion-icon name='calendar-outline'></ion-icon>
+              {DATE_STRING}
+            </h4>
           </div>
 
           <div className='tags'>

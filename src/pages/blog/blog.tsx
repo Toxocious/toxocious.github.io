@@ -33,15 +33,13 @@ export const BlogsPage = () => {
   return (
     <main>
       <h1 className='separator'>
-        <span>Blog Blogs</span>
+        <span>Blog Posts</span>
       </h1>
 
       <div>
         I like to talk about things that generally pique my interest, and you
-        can read about those things here.
-        <br />
-        <br />
-        Click on any entry to learn more.
+        can read about those things here. These topics typically range from
+        programming to productivity, but anything goes!
       </div>
       <br />
 

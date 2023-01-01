@@ -96,6 +96,10 @@ body, #root {
   flex-direction: column;
 }
 
+ion-icon {
+  font-size: 22px !important;
+}
+
 main {
   margin: 0 auto;
   padding: 1em;

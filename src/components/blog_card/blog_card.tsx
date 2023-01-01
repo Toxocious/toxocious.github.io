@@ -10,7 +10,6 @@ type BlogCardType = {
   timestamp: string;
   banner: string;
   type: string;
-  endTimestamp?: string;
 };
 
 export const BlogCard = ({
@@ -19,19 +18,9 @@ export const BlogCard = ({
   timestamp,
   banner,
   type,
-  endTimestamp,
 }: BlogCardType) => {
   let DATE_STRING = formatDate(new Date(timestamp));
-  if (endTimestamp) {
-    DATE_STRING = DATE_STRING.concat(
-      endTimestamp === 'Present'
-        ? ' — Present'
-        : ` — ${formatDate(new Date(parseInt(endTimestamp)))}`
-    );
-  }
   const ROUTE_PATH = title.replaceAll(' ', '-').toLowerCase();
-
-  let DATE_PREFIX = type === 'blog' ? 'Posted On' : 'Duration';
 
   return (
     <Link
@@ -50,7 +39,8 @@ export const BlogCard = ({
         <div className='blog-card-header'>
           <div className='blog-card-title'>{title}</div>
           <div className='blog-card-date'>
-            <b>{DATE_PREFIX}</b>: {DATE_STRING}
+            <ion-icon name='calendar-outline'></ion-icon>
+            <div>{DATE_STRING}</div>
           </div>
         </div>
         <div className='blog-card-description'>
