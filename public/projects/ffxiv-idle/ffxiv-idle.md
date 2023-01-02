@@ -9,7 +9,8 @@ show_forks: true
 show_stars: true
 show_license: true
 show_lines_of_code: true
-order: 4
+started_on: 1648179420000
+order: 5
 ---
 
 
@@ -21,7 +22,6 @@ This is an idle game based on Final Fantasy XIV, comprised of features that have
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
-  - [Screenshots](#screenshots)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
 - [Getting Started](#getting-started)

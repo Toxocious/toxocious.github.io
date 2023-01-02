@@ -50,11 +50,7 @@ export const ProjectsPage = () => {
           projects.list
             .sort((a: any, b: any) => a.data.order - b.data.order)
             .map((proj: any) => (
-              <ProjectCard
-                key={proj.data.title}
-                {...proj.data}
-                type='projects'
-              />
+              <ProjectCard key={proj.data.title} {...proj.data} />
             ))}
       </div>
     </main>

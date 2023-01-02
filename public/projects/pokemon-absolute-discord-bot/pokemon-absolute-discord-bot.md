@@ -1,6 +1,6 @@
 ---
 title: Pokemon Absolute Discord Bot
-description: A Discord bot that Pokemon Absolute and its community relies on for communication and support outside of the RPG.
+description: The official Pokemon Absolute Discord bot, used by its community for various QoL features and support outside of the RPG.
 repo_path: toxocious/absolute-discord-bot
 tags: Node.JS, TypeScript, MySQL
 banner: pokemon-absolute
@@ -9,6 +9,7 @@ show_forks: true
 show_stars: true
 show_license: true
 show_lines_of_code: true
+started_on: 1651133361000
 order: 3
 ---
 
