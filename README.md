@@ -30,8 +30,8 @@
   - [Building And Previewing](#building-and-previewing)
 - [Deploying To Github](#deploying-to-github)
 - [Updating Your Personal Information](#updating-your-personal-information)
-- [Adding Blog Blogs](#adding-blog-blog)
-- [Adding Project Blogs](#adding-project-blog)
+- [Adding Blog Posts](#adding-blog-posts)
+- [Adding Project Posts](#adding-project-posts)
 - [Adding Job History Pages](#adding-job-history-pages)
 - [License](#license)
 
@@ -47,21 +47,22 @@
     <img src="./public/images/desktop_blog_blog_preview.png" title="Picture of a blog entry" alt="Picture of a blog entry" />
     <img src="./public/images/desktop_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
     <img src="./public/images/desktop_project_blog_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
-    <img src="./public/images/desktop_job_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
-    <img src="./public/images/desktop_job_blog_preview.png" title="Picture of a job entry" alt="Picture of a job entry" />
+    <!-- <img src="./public/images/desktop_job_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
+    <img src="./public/images/desktop_job_blog_preview.png" title="Picture of a job entry" alt="Picture of a job entry" /> -->
   </details>
 
   <br />
 
   <details>
     <summary>Mobile Previews</summary>
-    <img src="./public/images/mobile_home_preview.png" title="Picture of the home page" alt="Picture of the home page" />
-    <img src="./public/images/mobile_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" />
-    <img src="./public/images/mobile_blog_blog_preview.png" title="PPicture of a blog entry" alt="PPicture of a blog entry" />
-    <img src="./public/images/mobile_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" />
-    <img src="./public/images/mobile_project_blog_preview.png" title="Picture of a project entry" alt="Picture of a project entry" />
-    <img src="./public/images/mobile_jobs_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
-    <img src="./public/images/mobile_job_blog_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" />
+    <h3>Some page content is cut in order to keep preview images friendly.</h3>
+    <img src="./public/images/mobile_home_preview.png" title="Picture of the home page" alt="Picture of the home page" width='300' />
+    <img src="./public/images/mobile_blog_preview.png" title="Picture of the main blog page" alt="Picture of the main blog page" width='300' />
+    <img src="./public/images/mobile_blog_blog_preview.png" title="Picture of a blog entry" alt="PPicture of a blog entry" width='300' />
+    <img src="./public/images/mobile_projects_preview.png" title="Picture of the main projects page" alt="Picture of the main projects page" width='300' />
+    <img src="./public/images/mobile_project_blog_preview.png" title="Picture of a project entry" alt="Picture of a project entry" width='300' />
+    <!-- <img src="./public/images/mobile_jobs_preview.png" title="Picture of the jobs page" alt="Picture of the jobs page" />
+    <img src="./public/images/mobile_job_blog_preview.png" title="Picture of a job entry" alt="Picture of the user-interface" /> -->
   </details>
 </div>
 
@@ -169,7 +170,7 @@ export const CONFIGURATION = {
 };
 ```
 
-# Adding Blog Blogs
+# Adding Blog Posts
 Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./public/blog` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
@@ -207,7 +208,7 @@ description: Example Blog Blog Description! I show up in the mini card when all 
 I'm the content of the markdown blog that will be rendered on the full markdown blog page when visited.
 ```
 
-# Adding Project Blogs
+# Adding Project Posts
 Adding a blog project is as easy as adding a new folder that contains a Markdown file to the `./public/projects` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
@@ -246,6 +247,11 @@ Optional header fields are:
   - If set to true, will display a badge of the repository's current license
 - show_lines_of_code: true
   - If set to true, will display a badge of the repository's current lines of code count
+- started_on: 1655667600000
+  - Set to a UNIX timestamp (in ms) to display the start date of your project.
+- ended_on: 1655696900000
+  - Set to a UNIX timestamp (in ms) to display the end date of your project.
+  - Omit completely to display " - Present" on the listing.
 - order: 1
   - The order to be placed when displaying a list of projects on the page
 
@@ -263,6 +269,7 @@ show_forks: true
 show_stars: true
 show_license: true
 show_lines_of_code: false
+started_on: 1655667600000
 order: 1
 ---
 
