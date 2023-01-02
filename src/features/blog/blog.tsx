@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { IonIcon } from '@ionic/react';
+import { calendarOutline } from 'ionicons/icons';
+
 import { marked } from 'marked';
 
 import { LoadingSpinner } from '../../components/loading_spinner';
@@ -90,7 +93,7 @@ export const Blog = () => {
           <div className='title'>
             <h2>{blog.headingData.title}</h2>
             <h4>
-              <ion-icon name='calendar-outline'></ion-icon>
+              <IonIcon icon={calendarOutline}></IonIcon>
               {DATE_STRING}
             </h4>
           </div>
