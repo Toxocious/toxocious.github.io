@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+import { IonIcon } from '@ionic/react';
+import { calendarOutline } from 'ionicons/icons';
+
 import { formatDate } from '../../util/date_format';
 
 import './blog_card.scss';
@@ -39,7 +42,7 @@ export const BlogCard = ({
         <div className='blog-card-header'>
           <div className='blog-card-title'>{title}</div>
           <div className='blog-card-date'>
-            <ion-icon name='calendar-outline'></ion-icon>
+            <IonIcon icon={calendarOutline}></IonIcon>
             <div>{DATE_STRING}</div>
           </div>
         </div>
