@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+import { IonIcon } from '@ionic/react';
+import { calendarOutline } from 'ionicons/icons';
+
 import { formatDate } from '../../util/date_format';
 
 import './project_card.scss';
@@ -42,7 +45,7 @@ export const ProjectCard = ({
         <div className='project-card-header'>
           <div className='project-card-title'>{title}</div>
           <div className='project-card-date'>
-            <ion-icon name='calendar-outline'></ion-icon>
+            <IonIcon icon={calendarOutline}></IonIcon>
             {STARTED_ON} - {ENDED_ON}
           </div>
         </div>
