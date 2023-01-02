@@ -96,6 +96,10 @@ body, #root {
   flex-direction: column;
 }
 
+ion-icon {
+  font-size: 22px !important;
+}
+
 main {
   margin: 0 auto;
   padding: 1em;
@@ -127,11 +131,7 @@ main {
   }
 }
 
-@media screen and (max-width: 450px) {
-  hr {
-    margin: 1em auto;
-  }
-}
+
 
 
 
@@ -142,25 +142,25 @@ main {
   display: flex;
 
   &::before {
-    background-color: var(--ui-dark-pink);
-    background-image: linear-gradient(left, rgb(var(--ui-monochrome-01-rgb)) 2%, var(--ui-dark-pink) 50%);
+    background-color: var(--syntax-gold);
+    background-image: linear-gradient(left, rgb(var(--ui-monochrome-01-rgb)) 2%, var(--syntax-gold) 50%);
     background-image: -o-linear-gradient(left,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -moz-linear-gradient(left,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -webkit-linear-gradient(left,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -ms-linear-gradient(left,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -webkit-gradient(linear,
         left bottom,
         right bottom,
         color-stop(0.02, rgb(var(--ui-monochrome-01-rgb))),
-        color-stop(0.5, var(--ui-dark-pink)));
+        color-stop(0.5, var(--syntax-gold)));
 
     content: '';
     display: block;
@@ -175,25 +175,25 @@ main {
   }
 
   &::after {
-    background-color: var(--ui-dark-pink);
-    background-image: linear-gradient(right, rgb(var(--ui-monochrome-01-rgb)) 2%, var(--ui-dark-pink) 50%);
+    background-color: var(--syntax-gold);
+    background-image: linear-gradient(right, rgb(var(--ui-monochrome-01-rgb)) 2%, var(--syntax-gold) 50%);
     background-image: -o-linear-gradient(right,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -moz-linear-gradient(right,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -webkit-linear-gradient(right,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -ms-linear-gradient(right,
         rgb(var(--ui-monochrome-01-rgb)) 2%,
-        var(--ui-dark-pink) 50%);
+        var(--syntax-gold) 50%);
     background-image: -webkit-gradient(linear,
         right bottom,
         left bottom,
         color-stop(0.02, rgb(var(--ui-monochrome-01-rgb))),
-        color-stop(0.5, var(--ui-dark-pink)));
+        color-stop(0.5, var(--syntax-gold)));
 
     content: '';
     display: block;
@@ -359,5 +359,30 @@ button,
   .button:hover:after {
     box-shadow: 0 0 0 2px var(--syntax-white);
     transform: scale(1) translate3d(-2px, -2px, 0)
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  hr {
+    margin: 1em auto;
+  }
+}
+
+/**
+  * Viewports > 1000px
+  */
+@media screen and (min-width: 1000px) {
+  html, body {
+    margin: 0.25em auto;
+
+    height: calc(100% - 0.5em);
+    width: calc(100% - 0.5em);
+
+    max-width: 1100px;
+  }
+
+  main {
+    min-height: calc(100vh - 16em);
   }
 }

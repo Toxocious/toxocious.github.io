@@ -7,13 +7,14 @@
   width: 100%;
 
   & > .blog-card {
-    background-color: rgba(var(--ui-monochrome-04-rgb), 1.0);
-
-    border-radius: 0.5em;
+    background-color: transparent;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 0.5em;
+
+    border-radius: 0.5em;
 
     padding: 0;
 
@@ -33,43 +34,34 @@
     }
 
     & > .blog-card-banner {
-      background: linear-gradient(
-        rgb(var(--ui-monochrome-04-rgb)),
-        rgb(var(--ui-monochrome-05-rgb))
-      );
-
-      border-top-left-radius: 0.5em;
-      border-bottom-left-radius: 0.5em;
+      border-radius: 0.5em;
 
       height: 140px;
       width: 140px;
 
       & > img {
-        border-top-left-radius: 0.5em;
-        border-bottom-left-radius: 0.5em;
+        border-radius: 0.5em;
 
         object-fit: cover;
-        object-position: right;
+        object-position: center;
 
-        height: 100%;
-        width: 100%;
+        height: 140px;
+        width: 140px;
       }
     }
 
     & > .blog-card-content {
+      box-shadow: 0 4px 6px -1px rgba(8, 3, 3, 0.1), 0 2px 4px -2px rgb(126 126 126 / 10%);
+
       display: flex;
       flex-direction: column;
 
       height: 140px;
-      width: calc(100% - 140px);
+      width: calc(100% - 140px - 0.5em);
 
       & > .blog-card-header {
-        background: linear-gradient(
-          rgb(var(--ui-monochrome-02-rgb)),
-          rgb(var(--ui-monochrome-04-rgb))
-        );
-
-        border-top-right-radius: 0.5em;
+        background: rgb(var(--ui-monochrome-04-rgb));
+        border-radius: 0.5em 0.5em 0 0;
 
         display: flex;
         flex-direction: row;
@@ -82,11 +74,28 @@
         }
 
         & > .blog-card-date {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.5em;
+          align-items: centers;
+          justify-content: center;
+
           margin-left: auto;
         }
       }
 
       & > .blog-card-description {
+        background: rgb(var(--ui-monochrome-05-rgb));
+        border-radius: 0 0 0.5em 0.5em;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
         padding: 0em 2em;
       }
     }
@@ -176,7 +185,7 @@
             padding: 0.5em 0;
             width: 100%;
 
-            background: rgb(var(--ui-monochrome-05-rgb));
+            background: rgb(var(--ui-monochrome-04-rgb));
           }
         }
 

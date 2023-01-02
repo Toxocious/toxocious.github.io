@@ -60,3 +60,9 @@ header {
     }
   }
 }
+
+@media screen and (min-width: 1000px) {
+  header {
+    border-radius: 0.5em 0.5em 0 0;
+  }
+}

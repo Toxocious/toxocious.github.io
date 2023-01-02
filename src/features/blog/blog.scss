@@ -45,6 +45,16 @@ main.blog-page {
       justify-content: space-between;
       align-items: center;
 
+      & > .title {
+        h4 {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.5em;
+          align-items: centers;
+        }
+      }
+
       & > .tags {
         text-align: left;
         max-width: 320px;
