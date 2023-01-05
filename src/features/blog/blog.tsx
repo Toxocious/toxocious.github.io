@@ -80,33 +80,37 @@ export const Blog = () => {
   return (
     <main className='blog-page'>
       <div className='blog-container'>
-        {blog.headingData.banner && (
-          <div className='blog-banner'>
-            <img
-              src={`/blog/${ROUTE_PATH}/${blog.headingData.banner}.png`}
-              alt='Image representing the blog post.'
-            />
-          </div>
-        )}
+        <div className='blog-head'>
+          {blog.headingData.banner && (
+            <div className='blog-banner'>
+              <img
+                src={`/blog/${ROUTE_PATH}/${blog.headingData.banner}.png`}
+                alt='Image representing the blog post.'
+              />
+            </div>
+          )}
 
-        <div className='blog-header'>
-          <div className='title'>
-            <h2>{blog.headingData.title}</h2>
-            <h4>
-              <IonIcon icon={calendarOutline}></IonIcon>
-              {DATE_STRING}
-            </h4>
-          </div>
+          <div className='blog-header'>
+            <div className='title'>
+              <h2>{blog.headingData.title}</h2>
+              <h4>
+                <IonIcon icon={calendarOutline}></IonIcon>
+                {DATE_STRING}
+              </h4>
+            </div>
 
-          <div className='tags'>
-            <ShareLinks
-              twitter
-              linkedin
-              title={blog.headingData.title}
-              description={SHARE_DESCRIPTION}
-            />
+            <div className='tags'>
+              <ShareLinks
+                twitter
+                linkedin
+                title={blog.headingData.title}
+                description={SHARE_DESCRIPTION}
+              />
+            </div>
           </div>
         </div>
+
+        <hr />
 
         <div
           className='blog-content'

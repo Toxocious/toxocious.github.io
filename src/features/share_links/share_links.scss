@@ -1,23 +1,50 @@
 .share_links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.69em;
+  justify-content: space-around;
+  align-items: center;
 
+  height: 100%;
 
-  & > a {
-    text-decoration: none;
-    border: none;
+  text-align: center;
 
-    & > svg {
-      fill: var(--syntax-white);
+  & > h3 {
+    margin: 0;
+    padding: 0;
+  }
 
-      transition: all 150ms ease-in-out;
+  .share_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.69em;
 
-      &::hover {
-        fill: orange;
-        color: orange;
+    & > a {
+      text-decoration: none;
+      border: none;
+
+      & > svg {
+        fill: var(--syntax-white);
+
+        transition: all 150ms ease-in-out;
+
+        &::hover {
+          fill: orange;
+          color: orange;
+        }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .share_links {
+    & > h3 {
+      display: none;
+    }
+
+    & > .share_container {
+      flex-direction: column;
     }
   }
 }
