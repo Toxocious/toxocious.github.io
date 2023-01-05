@@ -67,6 +67,30 @@ main.blog-page {
       & > * {
         max-width: 1000px;
       }
+
+      & > h1 {
+        border-left: 2px solid var(--syntax-gold);
+        background: rgba(var(--ui-monochrome-04-rgb), 1);
+        background: -moz-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+        background: linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#02a60c", GradientType=1);
+
+        border-radius: 2px;
+
+        padding: 0.5em 1em;
+      }
+
+      & > h2 {
+        display: flex;
+        gap: 0.5em;
+
+        color: var(--syntax-gold);
+      }
+
+      & > p {
+        text-indent: 1em;
+      }
     }
   }
 }
