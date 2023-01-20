@@ -5,7 +5,7 @@
 
   Other blog/portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, easy to add to, and painless to deploy to the web.
 
-  If you're interested in using this repository as a template, please fork it and star it!
+  If you're interested in using this repository as a template, please consider forking it and leaving a star.
 
   <img src='https://img.shields.io/github/issues/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
   <img src='https://img.shields.io/github/forks/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
@@ -13,6 +13,13 @@
   <img src='https://img.shields.io/github/license/toxocious/toxocious.github.io?style=for-the-badge&logo=appveyor' />
   <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FToxocious%toxocious.github.io">
     <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FToxocious%toxocious.github.io&countColor=%2337d67a" />
+  </a>
+  <br /><br />
+
+  Check us out on Discord if you have any questions or immediate feedback!
+
+  <a href="https://discord.gg/Km6btPhs" target="_blank">
+    <img src="https://discord.com/api/guilds/1002005327555862620/widget.png?style=banner2" alt="Discord Banner" />
   </a>
 </div>
 
