@@ -22,6 +22,7 @@
     <img src="https://discord.com/api/guilds/1002005327555862620/widget.png?style=banner2" alt="Discord Banner" />
   </a>
 </div>
+<br />
 
 
 
