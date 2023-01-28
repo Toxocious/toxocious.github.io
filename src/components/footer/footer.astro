@@ -1,0 +1,25 @@
+---
+import { config } from '../../config';
+
+import SocialLinks from '../social_links/social_links.astro';
+
+import './footer.scss';
+---
+
+<footer>
+  <div class='footer_container'>
+    <div class='copyright'>
+      <div>
+        &copy; {new Date().getFullYear()}
+        <b>{config.name}</b>
+      </div>
+      <div>
+        <a href='https://github.com/toxocious/toxocious.github.io'
+          >This website is open-source!</a
+        >
+      </div>
+    </div>
+
+    <SocialLinks />
+  </div>
+</footer>

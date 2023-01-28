@@ -1,9 +1,9 @@
 <div align="center">
-  <h1 align="center">Toxocious' React (w/ Vite) Blogfolio</h1>
+  <h1 align="center">Jess' Blog &amp; Portfolio</h1>
 
-  I created this blog/portfolio repository in order to showcase my own projects, blog about things that really pique my interest or to document things that I've experienced as a software engineer, and to showcase freelance jobs that I've done.
+  I created this blog / portfolio repository in order to showcase my own projects, blog about things that really pique my interest or to document things that I've experienced as a software engineer, and to showcase freelance jobs that I've done.
 
-  Other blog/portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, easy to add to, and painless to deploy to the web.
+  Other blog / portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, easy to add to, and painless to deploy to the web.
 
   If you're interested in using this repository as a template, please consider forking it and leaving a star.
 
@@ -40,7 +40,7 @@
 - [Updating Your Personal Information](#updating-your-personal-information)
 - [Adding Blog Posts](#adding-blog-posts)
 - [Adding Project Posts](#adding-project-posts)
-- [Adding Job History Pages](#adding-job-history-pages)
+- [Showcase Your Resume](#showcase-your-resume)
 - [License](#license)
 
 
@@ -77,25 +77,43 @@
 
 
 ## Tech Stack
-- Typescript
-- React
-- Vite
+- TypeScript
+- Astro
 - SASS
 
 ## Features
 - Responsive layout and styling for mobile devices
-- Create and display blog `blog`
-- Create and display `projects`
-- Create and display `work` history entries
+- Create and display blog posts
+- Create and display projects
+- Create and display work history
 
 
 
 # Getting Started
 ## Prequisites
-This project uses the **Yarn** package manager.
+This project uses the **pnpm** package manager.
 
+If you have NPM installed:
 ```sh
-npm i -g yarn
+npm i -g pnpm
+```
+
+If you don't have NPM installed and are on Windows:
+```sh
+# Windows Powershell
+iwr https://get.pnpm.io/install.ps1 -useb | iex
+```
+
+If you don't have NPM installed and are on a POSIX-based system w/ CURL:
+```sh
+# POSIX Systems w/ CURL
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+If you don't have NPM installed and are on a POSIX-based system w/o CURL:
+```sh
+# POSIX System w/o CURL
+wget -qO- https://get.pnpm.io/install.sh | sh -
 ```
 
 ## Installation
@@ -112,42 +130,42 @@ Clone the repository, install the necessary packages, and run the dev environmen
 cd toxocious.github.io
 
 ## Install all needed modules.
-yarn install
+pnpm install
 
 ## Run Vite
-yarn dev
+pnpm dev
 ```
 
 ## Building And Previewing
 Build the project so that you can run it statically locally or remotely.
 
 ```sh
-yarn build
+pnpm build
 ```
 
 Preview the build on a local network IP to preview the static generated site.
 
 ```sh
-yarn preview
+pnpm preview
 ```
+
+
 
 # Deploying To Github
 The app can now be deployed to the provider of your choice, but we'll cover deployment to Github here.
 
-1. Navigate to the `Actions` tab of your repository
-2. Find the `Node.js` action, and click `Configure`
-3. In the editor, change line 19 from `node-version: [12.x, 14.x, 16.x]` to `node-version: [16.x]`
-4. Add the `--force` flag to `npm ci` on line 29
-  - Should look like this: `npm ci --force`
-5. Commit the file
-6. Navigate to the `Settings` tab of your repository
-7. On the left-hand sidebar, click on the `Pages` link
-8. Set the `Branch` to `gh-pages` and press `Save`
+1. Open the `astro.config.mjs` file in the root directory of the repository
+2. Change the `site: 'https://toxocious.is-a.dev/'` value to the domain that you will be deploying to.
+3. Commit and push to the `main` branch of your repoository
 
 Once you've followed these steps and the deployment has completed, you can navigate to the URL associated with the Github Pages deployment in order to view your blog/portfolio.
 
+> NOTE: If you are deploying to a custom domain (not *.github.io), open `./public/CNAME` and put your custom domain there.
+
+
+
 # Updating Your Personal Information
-For ease of use and to allow for quick updating of your personal information, a configuration file is included (`./src/config/config.ts`).
+For ease of use and to allow for quick updating of your personal information, a configuration file is included (`./src/config/index.ts`).
 
 Various aspects of the site will grab your information from the values set in this file, such as your name, job title, and social links.
 
@@ -155,18 +173,16 @@ Currently, this file supports six key value pairs, which should be updated to us
 
 For any social links (git, linked_in, email, etc.), if you would like to omit the applicable buttons and links from your site, simply provide an empty string ('', quotes with nothing inside) and they will not be rendered to the page.
 
-**NOTE:: Your summary on the home page has to manually be edited in the `./src/pages/home/home.tsx` file.**
-
 **Example Configuration**
 ```ts
-export const CONFIGURATION = {
+export const config = {
   name: 'FIRST LAST',
   occupation: 'JOB TITLE',
-  location: 'SOMEWHERE, OVER HERE',
+  location: 'SOMEWHERE, OVER THE RAINBOW',
 
   email: 'example@example.com',
   github: 'USERNAME',
-  gitlab: 'USERNAME'
+  gitlab: 'USERNAME',
   linked_in: 'PROFILE_ID',
   twitter: 'USERNAME',
 
@@ -175,95 +191,128 @@ export const CONFIGURATION = {
   //    /public/resume
   // directory
   resume: 'software_engineer_resume.pdf'
+
+  // the paragraphs shown on the index/home page of the site
+  // you can have any number of paragraphs
+  // wrap each paragraph in quotes and end each one with a comma
+  summary: [
+    'hey, i am paragraph one!',
+
+    'let me tell you about something in this second paragraph',
+
+    'and look at me; we are in paragraph three now'
+  ],
 };
 ```
 
+
+
 # Adding Blog Posts
-Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./public/blog` directory.
+Adding a blog post is as easy as adding a new folder that contains a Markdown file to the `./src/content/blog` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog post in the `./public/blog` directory would look like something like this:
+An example for a new blog post would look like something like this:
+
+- Title: 'Lets Talk About Astro JS'
+- File Name: 'lets-talk-about-astro-js.md'
+
 ```
-├─── public
-│   └─── blog
-│       └─── example-blog
-|           ├─── example-blog.md
-|           └─── example-blog.png
-│       └─── blog-blog-about-astro-js
-|           ├─── blog-blog-about-astro-js.md
-|           └─── blog-blog-about-astro-js.png
+├─── src
+│   └─── content
+│       └─── blog
+|           └─── lets-talk-about-astro-js.md
 ```
 
-**Example**
-- Markdown Title: 'Example Blog Blog'
-- Markdown File Name: 'example-blog-blog.md'
+> NOTE: If you would like to associate a thumbnail with the blog article, the image for it must go inside of the `./public/blog/BLOG_FILE_NAME` directory.
 
-The codebase requires blog to have three header fields, **title**, **description**, and **timestamp** in order to correctly parse the markdown file.
+Due to how this code-base has been developed, each blog post is required to have a few header fields:
 
-Blogs are ordered from most to least recent.
+**Frontmatter Fields:**
+
+- title (**REQUIRED**)
+  - The title of your blog post that will be displayed on the site
+- description (**REQUIRED**)
+  - A brief description of your blog post that will be displayed on the site
+- timestamp (**REQUIRED**)
+  - The time at which you created the blog post, provided in UNIX time, multiplied by 1000
+- type (**REQUIRED**)
+  - Always set this to 'blog'
+- banner (**OPTIONAL**)
+  - The filename and file extension of the banner image to be used for the post's page
+
+If any required fields are missing, non-dismissable errors will be thrown, and your site will not be operable.
+
+Blogs are ordered from most to least recent based on the provided timestamp in each `.md` file.
 
 **NOTE :: The `timestamp` field should be the current unix time * 1000**
 
 Here's an example `blog` file.
 ```markdown
 ---
-title: Example Blog Blog
 timestamp: 1655667600000
-description: Example Blog Blog Description! I show up in the mini card when all blog are being rendered.
+title: Lets Talk About Astro JS
+description: I recently picked Astro JS back up after the major 2.0 update released. Read all about my experiences with the new launch!
 ---
 
-I'm the content of the markdown blog that will be rendered on the full markdown blog page when visited.
+# Header
+Stuff about Astro JS's major 2.0 launch; features, bug-fixes, etc.
 ```
 
+
+
 # Adding Project Posts
-Adding a blog project is as easy as adding a new folder that contains a Markdown file to the `./public/projects` directory.
+Adding a blog project is as easy as adding a new folder that contains a Markdown file to the `./src/content/projects` directory.
 
 File names must match the title listed in the Markdown file, but with spaces replaced to be hyphens.
 
-An example for a new blog post in the `./public/projects` directory would look like something like this:
+An example for a new project would look like something like this:
+
+- Title: 'My Astro Project'
+- File Name: 'my-astro-project.md'
+
 ```
-├─── public
-│   └─── projects
-│       └─── example-project
-|           ├─── example-project.md
-|           └─── example-project.png
-│       └─── runescape-api-project
-|           ├─── runescape-api-project.md
-|           └─── runescape-api-project.png
+├─── src
+│   └─── content
+│       └─── projects
+|           └─── my-astro-project.md
 ```
 
-**Example**
-- Markdown Title: 'Example Project'
-- Markdown File Name: 'example-project.md'
+Due to how this code-base has been developed, each project is required to have a few header fields:
 
-The codebase requires projects to have three header fields, **title**, **description**, and **timestamp**.
+**Frontmatter Fields:**
 
-Optional header fields are:
-- banner: pokemon-absolute
-  - The image name for the banner.
-  - The code base will look inside of `./public/projects/<PROJECT_DIR>/` for a .png file with this name
-- repo_path: git_username/repository_name
-  - This will display a button linking to the repository's source code if filled out
-- show_issues: true
-  - If set to true, will display a badge of the repository's current issue count
-- show_forks: true
-  - If set to true, will display a badge of the repository's current fork count
-- show_stars: true
-  - If set to true, will display a badge of the repository's current star count
-- show_license: true
-  - If set to true, will display a badge of the repository's current license
-- show_lines_of_code: true
-  - If set to true, will display a badge of the repository's current lines of code count
-- started_on: 1655667600000
-  - Set to a UNIX timestamp (in ms) to display the start date of your project.
-- ended_on: 1655696900000
-  - Set to a UNIX timestamp (in ms) to display the end date of your project.
-  - Omit completely to display " - Present" on the listing.
-- order: 1
-  - The order to be placed when displaying a list of projects on the page
+- type (**REQUIRED**)
+  - Always set this to 'projects'
+- title (**REQUIRED**)
+  - The title of your project that will be displayed on the site
+- description (**REQUIRED**)
+  - A brief description of your project that will be displayed on the site
+- started_on (**REQUIRED**)
+  - The time at which you created the project, provided in UNIX time, multiplied by 1000
+- ended_on (**OPTIONAL**)
+  - The time at which you finished the project, provided in UNIX time, multiplied by 1000.
+  - Omit completely to display " - Present" for the project's date display.
+- order (**OPTIONAL**)
+  - The order to be placed when displaying a list of projects on the site
+- banner (**OPTIONAL**)
+  - The filename and file extension of the banner image to be used for the post's page
+  - The image must be placed into the `./public/projects/PROJECT_NAME` directory
+- repo_path (**OPTIONAL**)
+  - Define the value as `git_username/repo_name`
+  - Will display a button linking to the project's source code if a value is defined
+- show_issues (**OPTIONAL**)
+  - Set as `true` in order to display a badge of the repo's current issue count
+- show_forks (**OPTIONAL**)
+  - Set as `true` in order to display a badge of the repo's current fork count
+- show_stars (**OPTIONAL**)
+  - Set as `true` in order to display a badge of the repo's current star count
+- show_license (**OPTIONAL**)
+  - Set as `true` in order to display a badge of the repo's current license count
+- show_issues (**OPTIONAL**)
+  - Set as `true` in order to display a badge of the repo's current issue count
 
-**NOTE :: The `timestamp` field should be the current unix time * 1000**
+If any required fields are missing, non-dismissable errors will be thrown, and your site will not be operable.
 
 Here's an example `project` file.
 ```markdown
@@ -271,12 +320,11 @@ Here's an example `project` file.
 title: Awesome Example Project
 tags: PHP, TypeScript, C++, Python, MySQL, Prisma, Rust
 description: An awesome example project markdown file to show off an awesome project!
-repo_path: example/project
+repo_path: example/awesome-project
 show_issues: true
 show_forks: true
 show_stars: true
 show_license: true
-show_lines_of_code: false
 started_on: 1655667600000
 order: 1
 ---
@@ -284,6 +332,22 @@ order: 1
 Information about some example project should go here! Show off and let us know what it's all about.
 ```
 
+
+
+# Showcase Your Resume
+This blog / portfolio supports displaying your resume if you so choose to.
+
+I recommend having your resume in the PDF format, so that it can be displayed in-browser, but other formats should work as well.
+
+Showing off your resume is done in a few stimple steps:
+
+1. Add your resume file to `./public/resume`
+2. Open `./src/config/index.ts`
+3. Change `resume: FILE_NAME.ext` to the file name and extension of your resume that is found in `./public/resume`
+
+
+
+<!--
 # Adding Job History Pages
 Adding a job history blog is as easy as adding a new Markdown file to the `./public/jobs` directory.
 
@@ -326,8 +390,7 @@ description: I was one of eight developers who worked to patch bug fixes, implem
 
 I'm the content of the markdown work page that will be rendered on the full markdown work page when visited.
 ```
-
-
+ -->
 
 
 

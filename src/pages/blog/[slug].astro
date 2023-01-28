@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+
+import { config } from '../../config';
+
+import Layout from '../../layouts/Blog.astro';
+
+import ShareLinks from '../../components/share_links/share_links.astro';
+
+import { formatDate } from '../../util/format_date';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const page_title = `${entry.data.title} — ${config.name}`;
+---
+
+<Layout title={page_title}>
+  <div class='blog-head'>
+    {
+      entry.data.banner && (
+        <div class='blog-banner'>
+          <img
+            src={`/blog/${entry.data.title
+              .toLowerCase()
+              .replaceAll(' ', '-')}/${entry.data.banner}.png`}
+            alt='Image representing the blog post.'
+          />
+        </div>
+      )
+    }
+
+    <div class='blog-header'>
+      <div class='title'>
+        <h2>{entry.data.title}</h2>
+        <h4>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='icon icon-tabler icon-tabler-calendar'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          >
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path
+              d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'
+            ></path>
+            <path d='M16 3l0 4'></path>
+            <path d='M8 3l0 4'></path>
+            <path d='M4 11l16 0'></path>
+            <path d='M11 15l1 0'></path>
+            <path d='M12 15l0 3'></path>
+          </svg>
+          <div>{formatDate(entry.data.timestamp)}</div>
+        </h4>
+      </div>
+
+      <div class='tags'>
+        <ShareLinks
+          title={entry.data.title}
+          description='tst'
+          twitter
+          linkedin
+        />
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class='blog-content'>
+    <Content />
+  </div>
+</Layout>

@@ -1,0 +1,53 @@
+---
+import Footer from '../components/footer/footer.astro';
+import Header from '../components/header/header.astro';
+import Navigation from '../components/nav/nav.astro';
+
+import '../stylesheets/main.scss';
+import '../stylesheets/animations.scss';
+import '../stylesheets/blog.scss';
+
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta name='robots' content='index' />
+    <meta name='description' content='My personal blog and portfolio.' />
+    <meta property='og:type' content='blog' />
+    <meta property='og:title' content={title} />
+    <meta property='og:site_name' content={title} />
+    <meta property='og:image' content='/favicons/favicon-32x32.png' />
+    <meta property='og:url' content='https://toxocious.is-a.dev/' />
+
+    <link rel='icon' type='image/svg+xml' href='/favicons/favicon.ico' />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <div class='container'>
+      <Header />
+      <Navigation />
+
+      <main class='blog-page'>
+        <div class='blog-container'>
+          <slot />
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>

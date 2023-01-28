@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+import { config } from '../../config';
+
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/card/card.astro';
+
+const projects = await getCollection('projects');
+
+const LAYOUT_TITLE = `${config.name} — Projects`;
+---
+
+<Layout title={LAYOUT_TITLE}>
+  <main>
+    <h1 class='separator'>
+      <span>Projects</span>
+    </h1>
+
+    <div>
+      I love to develop things in my spare time, whether it's big or small.
+      Check out some of the things that I've created over the years!
+    </div>
+    <br />
+
+    <div class='card-container'>
+      {
+        projects &&
+          projects
+            .sort((a: any, b: any) => a.data.order - b.data.order)
+            .map((proj: any) => <Card {...proj} type='projects' />)
+      }
+    </div>
+  </main>
+</Layout>

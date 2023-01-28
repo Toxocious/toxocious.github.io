@@ -1,0 +1,42 @@
+---
+import { config } from '../config';
+const page_title = `${config.name} — ${config.occupation}`;
+
+import Layout from '../layouts/Layout.astro';
+
+import SocialLinks from '../components/social_links/social_links.astro';
+
+import '../stylesheets/index.scss';
+---
+
+<Layout title={page_title}>
+  <main class='home'>
+    <div class='home-profile'>
+      <img
+        src='/favicons/original.png'
+        alt='Image depicting the owner'
+        height='192'
+        width='192'
+      />
+
+      <div class='home-profile-details'>
+        <div class='home-profile-info'>
+          <h2>{config.name}</h2>
+          <h2>{config.occupation}</h2>
+        </div>
+
+        <SocialLinks />
+      </div>
+    </div>
+
+    <div class='home-description'>
+      <p>
+        Hello! I am {config.name}, a {config.occupation} based in {
+          config.location
+        }.
+      </p>
+
+      {config.summary.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </main>
+</Layout>

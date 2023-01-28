@@ -1,0 +1,15 @@
+---
+import { QUOTES } from '../../constants/quotes';
+
+import './header.scss';
+
+const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+---
+
+<header>
+  <div class='header_container'>
+    <h3>
+      "{quote.quote}" &mdash; {quote.author}
+    </h3>
+  </div>
+</header>

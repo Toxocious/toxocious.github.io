@@ -1,29 +1,25 @@
-export const NavigationItems = [
+export const nav_links = [
   {
-    id: 0,
     label: 'Home',
-    link: '/',
+    href: '/',
     active: true,
     hidden: false,
   },
   {
-    id: 1,
     label: 'Blog',
-    link: '/blog',
+    href: '/blog',
     active: true,
     hidden: false,
   },
   {
-    id: 2,
     label: 'Projects',
-    link: '/projects',
+    href: '/projects',
     active: true,
     hidden: false,
   },
   {
-    id: 3,
     label: 'Jobs',
-    link: '/jobs',
+    href: '/jobs',
     active: true,
     hidden: true,
   },

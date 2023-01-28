@@ -1,32 +1,17 @@
 {
-  "name": "my-vue-app",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@example/basics",
   "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@ionic/react": "^6.4.1",
-    "fs": "^0.0.1-security",
-    "ionicons": "^6.0.4",
-    "marked": "^4.1.0",
-    "path": "^0.12.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "sass": "^1.54.2"
-  },
-  "devDependencies": {
-    "@types/marked": "^4.0.3",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^2.0.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0",
-    "vite-plugin-markdown": "^2.0.2",
-    "vite-tsconfig-paths": "^3.5.0"
+    "astro": "^2.0.1",
+    "sass": "^1.57.1"
   }
 }
