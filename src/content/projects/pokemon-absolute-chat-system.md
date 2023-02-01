@@ -1,6 +1,6 @@
 ---
 title: Pokemon Absolute Chat System
-description: A real-time socket-based system that is Pokemon Absolute uses and relies on for in-game chat communications.
+description: A websocket-based chat system that Pokemon Absolute uses and relies on for in-game communications.
 repo_path: toxocious/absolute-chat
 tags: Node.JS, TypeScript, Socket.io, MySQL
 banner: pokemon-absolute
