@@ -17,6 +17,7 @@ export const collections = {
       title: z.string(),
       description: z.string(),
       started_on: z.number(),
+      ended_on: z.number().optional(),
       tags: z.string().optional(),
       order: z.number().optional(),
       banner: z.string().optional(),

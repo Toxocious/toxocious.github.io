@@ -3,13 +3,16 @@ import { formatDate } from '../../util/format_date';
 
 import './card.scss';
 
-const { title, description, timestamp, banner, type, started_on } =
+const { title, description, timestamp, banner, type, started_on, ended_on } =
   Astro.props.data;
 
 const route_path = title.replaceAll(' ', '-').toLowerCase();
 
-const date =
-  type == 'projects' ? formatDate(started_on) : formatDate(timestamp);
+const date = type == 'blog' ? formatDate(timestamp) : formatDate(started_on);
+const date_ended =
+  type == 'projects' && typeof ended_on != 'undefined'
+    ? ` — ${formatDate(ended_on)}`
+    : ' — Present';
 ---
 
 <a
@@ -53,7 +56,10 @@ const date =
               <path d='M11 15l1 0' />
               <path d='M12 15l0 3' />
             </svg>
-            <div>{date}</div>
+            <div>
+              {date}
+              {type == 'projects' && date_ended}
+            </div>
           </div>
         )
       }
