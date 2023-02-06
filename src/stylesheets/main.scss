@@ -80,7 +80,11 @@ hr {
 }
 
 html {
-  background-color: rgb(var(--ui-monochrome-01-rgb));
+  background: rgb(var(--ui-monochrome-01-rgb));
+  background: -moz-radial-gradient(circle, rgb(var(--ui-monochrome-01-rgb)) 0%, rgb(var(--ui-monochrome-02-rgb)) 50%, rgb(var(--ui-monochrome-03-rgb)) 100%);
+  background: -webkit-radial-gradient(circle, rgb(var(--ui-monochrome-01-rgb)) 0%, rgb(var(--ui-monochrome-02-rgb)) 50%, rgb(var(--ui-monochrome-03-rgb)) 100%);
+  background: radial-gradient(circle, rgb(var(--ui-monochrome-01-rgb)) 0%, rgb(var(--ui-monochrome-02-rgb)) 50%, rgb(var(--ui-monochrome-03-rgb)) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#16161c",endColorstr="#1c1e26",GradientType=1);
 
   min-height: 100%;
 
@@ -135,6 +139,7 @@ body {
 
         padding: 0.5em 1em;
         margin: 0;
+        margin-bottom: 1em;
 
         & > p {
           margin: 0;
