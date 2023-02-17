@@ -22,4 +22,20 @@ export const config = {
 
     "If you're looking for someone to develop your dream idea, consider contacting me.",
   ],
+
+  /**
+   * The following section is for SEO purposes, and should be filled in accurately according to your version of this blog/portfolio.
+   */
+  seo: {
+    keywords: 'toxocious, jesse mack, software developer, software engineer, php, react, reactjs, node, nodejs, html, css, git, github',
+
+    description: "Jesse Mack's personal blog and portfolio as a software engineer.",
+
+    site_type: 'blog',
+
+    site_url: 'https://toxocious.is-a.dev/',
+
+    twitter_card_image: "images/twitter_card.png",
+    twitter_card_description: "Jesse Mack's personal blog and portfolio as a software engineer.",
+  }
 };

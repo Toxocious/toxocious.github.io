@@ -38,6 +38,7 @@
   - [Building And Previewing](#building-and-previewing)
 - [Deploying To Github](#deploying-to-github)
 - [Updating Your Personal Information](#updating-your-personal-information)
+- [Updating & Managing SEO](#updating--managing-seo)
 - [Adding Blog Posts](#adding-blog-posts)
 - [Adding Project Posts](#adding-project-posts)
 - [Showcase Your Resume](#showcase-your-resume)
@@ -204,6 +205,51 @@ export const config = {
   ],
 };
 ```
+
+
+
+# Updating & Managing SEO
+> This section piggy-backs off of the previous section.
+
+Whether you care or not, SEO is necessary in order for your website to be more easily findable. You can read more about SEO here: [https://moz.com/learn/seo/what-is-seo](https://moz.com/learn/seo/what-is-seo)
+
+We suggest that you utilize SEO to your advantage. You can do this by opening the [./src/config/index.ts](./src/config/index.ts) file, scrolling down to the aptly named `seo` section, and updating the values seen there as applicable to you.
+
+Note that any values that are omitted or are set to an empty string '' will be processed as though you do not want that specific SEO* to be applied to your copy of the site.
+
+Here's an example of an SEO configuration that I would personally use:
+```ts
+export const config = {
+  // ... previous config values
+
+  seo: {
+    // Keywords used by the search engine to help with displaying your website when the user's search query contains valid keywords.
+    keywords: 'toxocious, jesse mack, software developer, software engineer, php, react, reactjs, node, nodejs, html, css, git, github',
+
+    // Brief description of what your website is about.
+    // This is displayed to the user under the link to your website when it appears in the search engine.
+    description: "Jesse Mack's personal blog and portfolio as a software engineer.",
+
+    // What would you categorize your website as?
+    // Check out this StackOverflow answer for more information: https://stackoverflow.com/questions/49718112/open-graph-list-of-global-types#51701628
+    site_type: 'blog',
+
+    // The URL that your site will be deployed at.
+    // The trailing / is required.
+    site_url: 'https://toxocious.is-a.dev/',
+
+    // Replace the image with your version of a twitter card.
+    // This is displayed when a relevant link to your site is posted on twitter.
+    twitter_card_image: "images/twitter_card.png",
+
+    // This is the description to be shown on the card when it's posted on twitter.
+    // If omitted, it will default to the description set previously.
+    twitter_card_description: "Jesse Mack's personal blog and portfolio as a software engineer.",
+  }
+}
+```
+
+> * applicable only to SEO that make use of twitter and the like.
 
 
 

@@ -1,4 +1,6 @@
 ---
+import { config } from '../config';
+
 import Footer from '../components/footer/footer.astro';
 import Header from '../components/header/header.astro';
 import Navigation from '../components/nav/nav.astro';
@@ -17,23 +19,63 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta charset='utf-8' />
+    <meta name='robots' content='follow, index' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <meta name='robots' content='index' />
-    <meta name='description' content='My personal blog and portfolio.' />
-    <meta property='og:type' content='blog' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <meta name='generator' content={Astro.generator} />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='keywords' content={config.seo.keywords} />
+
+    <title>{title}</title>
+    <meta name='description' content={config.seo.description} />
+
+    <meta property='og:type' content={config.seo.site_type} />
     <meta property='og:title' content={title} />
     <meta property='og:site_name' content={title} />
     <meta property='og:image' content='/favicons/favicon-32x32.png' />
-    <meta property='og:url' content='https://toxocious.is-a.dev/' />
+    <meta property='og:url' content={config.seo.site_url} />
 
-    <link rel='icon' type='image/svg+xml' href='/favicons/favicon.ico' />
+    {
+      config.twitter && (
+        <meta name='twitter:site' content={`@${config.twitter}`} />
+      )
+    }
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta
+      name='twitter:image:alt'
+      content="Decorative image that shows the person's picture, name, and occupation."
+    />
+    {
+      config.seo.twitter_card_image && (
+        <meta
+          name='twitter:image'
+          content={config.seo.site_url.concat(config.seo.twitter_card_image)}
+        />
+      )
+    }
+    <meta
+      name='twitter:description'
+      content={config.seo.twitter_card_description ?? config.seo.description}
+    />
 
-    <title>{title}</title>
+    <link rel='canonical' href={config.seo.site_url} />
+    <link rel='apple-touch-icon' sizes='180x180' href='/favicons/favicon.ico' />
+    <link
+      rel='icon'
+      sizes='32x32'
+      type='image/svg+xml'
+      href='/favicons/favicon.ico'
+    />
+    <link
+      rel='icon'
+      sizes='16x16'
+      type='image/svg+xml'
+      href='/favicons/favicon.ico'
+    />
   </head>
 
   <body>
