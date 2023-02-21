@@ -9,7 +9,7 @@ export const config = {
   twitter: 'toxocious',
   email: 'mackjessed@gmail.com',
 
-  resume: 'software-engineer-resume.pdf',
+  resume: 'Jesse_Mack_Software_Developer_Resume.pdf',
 
   summary: [
     "This is my blog and development portfolio, where I'll talk about things that pique my interest as well as show off works that I've created and have made open-source.",
