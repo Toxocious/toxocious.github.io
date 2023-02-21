@@ -46,3 +46,17 @@
     stroke-dashoffset: -125px;
   }
 }
+
+@keyframes breathing {
+  0% {
+    opacity: .3
+  }
+
+  50% {
+    opacity: .03
+  }
+
+  to {
+    opacity: .3
+  }
+}
