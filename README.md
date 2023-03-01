@@ -18,7 +18,7 @@
 
   Check us out on Discord if you have any questions or immediate feedback!
 
-  <a href="https://discord.gg/Km6btPhs" target="_blank">
+  <a href="https://discord.gg/NRZ2zWfpwK" target="_blank">
     <img src="https://discord.com/api/guilds/1002005327555862620/widget.png?style=banner2" alt="Discord Banner" />
   </a>
 </div>
@@ -38,7 +38,7 @@
   - [Building And Previewing](#building-and-previewing)
 - [Deploying To Github](#deploying-to-github)
 - [Updating Your Personal Information](#updating-your-personal-information)
-- [Updating & Managing SEO](#updating--managing-seo)
+- [Updating \& Managing SEO](#updating--managing-seo)
 - [Adding Blog Posts](#adding-blog-posts)
 - [Adding Project Posts](#adding-project-posts)
 - [Showcase Your Resume](#showcase-your-resume)
