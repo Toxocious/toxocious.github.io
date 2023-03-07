@@ -52,9 +52,11 @@
 }
 
 a {
+  font-weight: bold;
   text-decoration: none;
   transition: 100ms ease-in-out;
 
+  padding-bottom: 1px;
   border-bottom: 1px solid var(--ui-dark-pink);
   color: var(--ui-dark-pink);
 
@@ -135,6 +137,7 @@ body {
 
       p {
         margin-block-start: 0;
+        line-height: 1.75em;
       }
 
       pre {
