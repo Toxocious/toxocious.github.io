@@ -13,40 +13,30 @@ main.project-page {
     max-width: 1000px;
 
     & > .project-banner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      width: 100%;
-
       img {
-        border-radius: 0.5em;
+        object-fit: cover;
+        background-position: center;
+        margin: 0 auto;
 
+        max-height: 130px;
+        min-height: 5em;
+
+        border-radius: 0.5em;
         width: 100%;
 
-        object-fit: cover;
-        max-height: 130px;
+        filter: drop-shadow(0px 0px 6px var(--ui-monochrome-06-hex));
+      }
+    }
+
+    &:has(.project-banner > img)
+    {
+      & > .project-header
+      {
+        margin-top: -2em;
       }
     }
 
     & > .project-header {
-      width: calc(100% - 2em);
-
-      padding: 0 1em;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-      & > .tags {
-        text-align: left;
-        max-width: 320px;
-      }
-    }
-
-    & > .project-badges {
       background-color: rgba(var(--ui-monochrome-04-rgb), 1.00);
       border: 1px solid var(--ui-monochrome-05-hex);
       border-radius: 0.5em;
@@ -54,12 +44,37 @@ main.project-page {
       filter: drop-shadow(0px 0px 6px var(--ui-monochrome-04-hex));
 
       padding: 1em;
+      margin-top: 0em;
 
       display: flex;
-      flex-direction: row;
+      align-self: center;
+      flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1em;
+
+      width: 90%;
+
+      & h2 {
+        margin: 0;
+      }
+
+      & > .project-header-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      & > .project-badges {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+      }
     }
 
     & > .project-content {
@@ -99,24 +114,75 @@ main.project-page {
 @media screen and (min-width: 450px) and (max-width: 999px) {
   main.project-page {
     & > .project-container {
-      & > .project-badges {
-        background: rgb(var(--ui-monochrome-03-rgb));
+      width: 100%;
 
-        border: 1px solid rgb(var(--ui-monochrome-05-rgb));
-        border-left: none;
-        border-right: none;
+      & > .project-banner {
+        img {
+          object-fit: cover;
+          background-position: center;
+          margin: 0 auto;
 
-        filter: none;
+          max-height: 130px;
+          min-height: 5em;
 
-        border-radius: 0;
+          border-radius: 0.5em;
+          width: 100%;
 
-        margin-left: -2em;
-        margin-top: 0;
-        margin-bottom: 0;
+          filter: drop-shadow(0px 0px 6px var(--ui-monochrome-06-hex));
+        }
+      }
+
+      &:has(.project-banner > img)
+      {
+        & > .project-header
+        {
+          margin-top: -2em;
+        }
+      }
+
+      & > .project-header {
+        background-color: rgba(var(--ui-monochrome-04-rgb), 1.00);
+        border: 1px solid var(--ui-monochrome-05-hex);
+        border-radius: 0.5em;
+
+        filter: drop-shadow(0px 0px 6px var(--ui-monochrome-04-hex));
 
         padding: 1em;
+        margin-top: 0em;
 
-        width: calc(100% + 2em);
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+
+        width: 90%;
+
+        & h2 {
+          margin: 0;
+        }
+
+        & > .project-header-info {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+
+          & > .tags > a > .text {
+            display: none;
+          }
+        }
+
+        & > .project-badges {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+        }
       }
     }
   }
@@ -128,51 +194,80 @@ main.project-page {
     max-width: 100%;
 
     & > .project-container {
-      padding-top: 1em;
-
       width: min(1000px, 100%);
       max-width: 1000px;
 
       & > .project-banner {
-        margin: -1em auto 0;
+        margin: -1em -2em;
+
+        width: calc(100% + 3em);
 
         img {
           object-fit: cover;
-
-          border-radius: 0.5em;
+          background-position: center;
+          margin: 0 auto;
 
           max-height: 130px;
-          min-height: 4em;
+          min-height: 5em;
+
+          border-radius: 0;
+          width: 100%;
+
+          filter: drop-shadow(0px 0px 6px var(--ui-monochrome-06-hex));
+        }
+      }
+
+      &:has(.project-banner > img)
+      {
+        & > .project-header
+        {
+          margin-top: 1em;
         }
       }
 
       & > .project-header {
-        flex-direction: column;
+        background-color: rgba(var(--ui-monochrome-04-rgb), 1.00);
+        border: 1px solid var(--ui-monochrome-05-hex);
+        border-radius: 0.5em;
 
-        padding-bottom: 0.7em;
-
-        & > h2 {
-          margin: 0.7em auto;
-        }
-      }
-
-      & > .project-badges {
-        background: rgb(var(--ui-monochrome-03-rgb));
-
-        border: 1px solid rgb(var(--ui-monochrome-05-rgb));
-        border-left: none;
-        border-right: none;
-
-        filter: none;
-
-        border-radius: 0;
-
-        margin-left: -1em;
-        margin-right: -1em;
-        margin-top: 0;
-        margin-bottom: 0;
+        filter: drop-shadow(0px 0px 6px var(--ui-monochrome-04-hex));
 
         padding: 1em;
+        margin-top: 0em;
+
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+
+        width: 90%;
+
+        & h2 {
+          margin: 0;
+        }
+
+        & > .project-header-info {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-around;
+
+          & > .tags > a > .text {
+            display: none;
+          }
+        }
+
+        & > .project-badges {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+        }
       }
 
       & > .project-content {

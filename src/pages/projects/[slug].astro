@@ -35,68 +35,67 @@ const page_title = `${config.name} — ${entry.data.title}`;
   }
 
   <div class='project-header'>
-    <h2>{entry.data.title}</h2>
-    <div class='tags'>
-      <a class='button gap' href={`https://github.com/${entry.data.repo_path}`}>
-        <div class='text'>Source Code</div>
-        <div class='icon'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            class='svg-icon'
-            width='44'
-            height='44'
-            viewBox='0 0 24 24'
-            stroke='#6f32be'
-            fill='none'
-          >
-            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-            <path
-              d='M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5'
-            ></path>
-            <line x1='10' y1='14' x2='20' y2='4'></line>
-            <polyline points='15 4 20 4 20 9'></polyline>
-          </svg>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  {
-    entry.data.repo_path && (
-      <div class='project-badges'>
-        {entry.data.show_issues && (
-          <img
-            alt='Issue Count'
-            src={`https://img.shields.io/github/issues/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
-          />
-        )}
-        {entry.data.show_forks && (
-          <img
-            alt='Fork Count'
-            src={`https://img.shields.io/github/forks/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
-          />
-        )}
-        {entry.data.show_stars && (
-          <img
-            alt='Star Count'
-            src={`https://img.shields.io/github/stars/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
-          />
-        )}
-        {entry.data.show_license && (
-          <img
-            alt='License'
-            src={`https://img.shields.io/github/license/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
-          />
-        )}
-        {entry.data.show_lines_of_code && (
-          <img
-            alt='Lines Of Code'
-            src={`https://img.shields.io/tokei/lines/github/${entry.data.repo_path}?style=for-the-badge`}
-          />
-        )}
+    <div class='project-header-info'>
+      <h2>{entry.data.title}</h2>
+      <div class='tags'>
+        <a
+          class='button gap'
+          href={`https://github.com/${entry.data.repo_path}`}
+        >
+          <div class='text'>Source Code</div>
+          <div class='icon'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              class='svg-icon'
+              width='44'
+              height='44'
+              viewBox='0 0 24 24'
+              stroke='#6f32be'
+              fill='none'
+            >
+              <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+              <path
+                d='M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5'
+              ></path>
+              <line x1='10' y1='14' x2='20' y2='4'></line>
+              <polyline points='15 4 20 4 20 9'></polyline>
+            </svg>
+          </div>
+        </a>
       </div>
-    )
-  }
+    </div>
+
+    {
+      entry.data.repo_path && (
+        <div class='project-badges'>
+          {entry.data.show_stars && (
+            <img
+              alt='Star Count'
+              src={`https://img.shields.io/github/stars/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
+            />
+          )}
+          {entry.data.show_forks && (
+            <img
+              alt='Fork Count'
+              src={`https://img.shields.io/github/forks/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
+            />
+          )}
+          {entry.data.show_issues && (
+            <img
+              alt='Issue Count'
+              src={`https://img.shields.io/github/issues/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
+            />
+          )}
+          {entry.data.show_license && (
+            <img
+              alt='License'
+              src={`https://img.shields.io/github/license/${entry.data.repo_path}?style=for-the-badge&logo=appveyor`}
+            />
+          )}
+        </div>
+      )
+    }
+  </div>
 
   <div class='project-content'>
     <Content />
