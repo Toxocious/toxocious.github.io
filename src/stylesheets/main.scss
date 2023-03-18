@@ -402,6 +402,24 @@ button,
   }
 }
 
+@media screen and (max-width: 200px) {
+  .separator {
+    display: flex;
+
+    &::before {
+      content: '';
+
+      display: none;
+    }
+
+    &>span {
+      display: flex;
+      flex: auto;
+      padding: 0 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 450px) {
   hr {
     margin: 1em auto;
@@ -413,15 +431,5 @@ button,
     margin: 0;
     padding: 0;
     width: 100%;
-
-    main {
-      min-height: calc(100vh - 15.5em);
-    }
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  main {
-    min-height: calc(100vh - 16.5em);
   }
 }

@@ -5,6 +5,8 @@ footer {
 
   position: relative;
 
+  margin-top: 1em;
+
   &::before {
     align-items: center;
     animation: animation-wave-x 10s linear infinite reverse;
@@ -42,7 +44,7 @@ footer {
 
 @media screen and (max-width: 450px) {
   footer {
-    margin-bottom: 0;
+    margin: 1em -1em 0;
 
     & > .footer_container {
       flex-direction: column;

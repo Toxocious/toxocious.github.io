@@ -1,4 +1,11 @@
-main.blog-page {
+.blog-page {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+
+  min-height: calc(100vh - 17.5em);
+
   width: min(1000px, calc(100% - 2em));
   max-width: 1000px;
 
@@ -98,7 +105,7 @@ main.blog-page {
 }
 
 @media screen and (max-width: 450px) {
-  main.blog-page {
+  .blog-page {
     width: min(1000px, calc(100% - 2em));
     max-width: 100%;
 

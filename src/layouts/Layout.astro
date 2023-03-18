@@ -1,9 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
+
 import { config } from '../config';
 
 import Footer from '../components/footer/footer.astro';
 import Header from '../components/header/header.astro';
-import Navigation from '../components/nav/nav.astro';
+
+import Card from '../components/card/card.astro';
+
+const projects = await getCollection('projects');
+const posts = await getCollection('blog');
 
 import '../stylesheets/main.scss';
 import '../stylesheets/animations.scss';
@@ -80,11 +86,59 @@ const { title } = Astro.props;
   <body>
     <div class='container'>
       <Header />
-      <Navigation />
 
       <slot />
 
-      <Footer />
+      <section class='general-page'>
+        <div class='general-container'>
+          <h1 class='separator'>
+            <span>Blog Posts</span>
+          </h1>
+
+          <div>
+            I like to talk about things that generally pique my interest, and
+            you can read about those things here. These topics typically range
+            from programming to productivity, but anything goes!
+          </div>
+          <br />
+
+          <div class='card-container'>
+            {
+              posts &&
+                posts
+                  .sort((a: any, b: any) => b.data.timestamp - a.data.timestamp)
+                  .map((proj: any) => <Card {...proj} type='blog' />)
+            }
+          </div>
+        </div>
+      </section>
+      <br />
+
+      <section class='general-page'>
+        <div class='general-container'>
+          <h1 class='separator'>
+            <span>Projects</span>
+          </h1>
+
+          <div>
+            I love to develop things in my spare time, whether it's big or
+            small. Check out some of the things that I've created over the
+            years!
+          </div>
+          <br />
+
+          <div class='card-container'>
+            {
+              projects &&
+                projects
+                  .sort((a: any, b: any) => a.data.order - b.data.order)
+                  .map((proj: any) => <Card {...proj} type='projects' />)
+            }
+          </div>
+        </div>
+
+        <Footer />
+      </section>
     </div>
   </body>
 </html>
