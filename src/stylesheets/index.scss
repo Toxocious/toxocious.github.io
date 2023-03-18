@@ -1,6 +1,22 @@
+.container > .content
+{
+  display: flex;
+  flex-direction: column;
+  gap: 8em;
+
+  margin-top: 1em;
+
+  & > *
+  {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .home {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 3em;
 
   & > .home-description {
