@@ -11,7 +11,7 @@ export const config = {
 
   resume: 'Jesse_Mack_Software_Developer_Resume.pdf',
 
-  summary: 'A software engineer with big dreams',
+  summary: 'A software engineer with modest dreams',
 
   /**
    * The following section is for SEO purposes and should be filled in accurately according to your version of this blog/portfolio.
