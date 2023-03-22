@@ -125,12 +125,7 @@
       color: var(--syntax-grey);
 
       font-size: 1em;
-
-      &::before,
-      &::after
-      {
-        content: '"';
-      }
+      text-align: center;
     }
   }
 }
