@@ -1,24 +1,10 @@
 footer {
-  background-color: rgb(var(--ui-monochrome-04-rgb));
-
   flex: 0 0 auto;
-
-  position: relative;
 
   margin-top: 1em;
 
-  &::before {
-    align-items: center;
-    animation: animation-wave-x 10s linear infinite reverse;
-    background-repeat: no-repeat;
-    background: linear-gradient(90deg, #fff0 70%, #fff6 95%, #fff0);
-    background-size: 500% 500%;
-    content: "";
-    height: 1px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+  position: relative;
+  z-index: 2;
 
   & > .footer_container {
     display: flex;
@@ -27,7 +13,7 @@ footer {
     align-items: center;
     justify-content: space-between;
 
-    max-width: min(1000px, 100%);
+    max-width: min(1100px, 100%);
     margin: 0 auto;
     padding: 1em;
 
@@ -44,25 +30,12 @@ footer {
 
 @media screen and (max-width: 450px) {
   footer {
-    margin: 1em -1em 0;
-
     & > .footer_container {
       flex-direction: column;
       justify-content: center;
       gap: 1em;
 
       text-align: center;
-    }
-  }
-}
-
-@media screen and (min-width: 1001px) {
-  footer {
-    border-radius: 0.5em;
-    box-shadow: 0 4px 6px -1px rgba(var(--ui-monochrome-05-rgb), 0.2), 0 2px 4px -2px rgba(var(--ui-monochrome-05-rgb), 0.2);
-
-    &::before {
-      animation: none;
     }
   }
 }

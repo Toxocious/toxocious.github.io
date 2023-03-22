@@ -29,7 +29,7 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
-  - [Screenshots](#screenshots)
+  - [Screenshots - OUTDATED](#screenshots---outdated)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
 - [Getting Started](#getting-started)
@@ -47,7 +47,7 @@
 
 
 # About The Project
-## Screenshots
+## Screenshots - OUTDATED
 <div align="center">
   <details>
     <summary>Desktop Previews</summary>
@@ -193,16 +193,8 @@ export const config = {
   // directory
   resume: 'software_engineer_resume.pdf'
 
-  // the paragraphs shown on the index/home page of the site
-  // you can have any number of paragraphs
-  // wrap each paragraph in quotes and end each one with a comma
-  summary: [
-    'hey, i am paragraph one!',
-
-    'let me tell you about something in this second paragraph',
-
-    'and look at me; we are in paragraph three now'
-  ],
+  // brief blurb about yourself or something
+  summary: 'A software engineer with big dreams',
 };
 ```
 

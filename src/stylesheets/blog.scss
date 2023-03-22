@@ -1,4 +1,4 @@
-.blog-page {
+.general-page {
   display: flex;
   flex-direction: column;
 
@@ -9,139 +9,90 @@
   width: min(1000px, calc(100% - 2em));
   max-width: 1000px;
 
-  &>.blog-container {
-    margin: 0 auto;
+  &>.blog-head {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
 
-    width: min(1000px, calc(100% - 2em));
-    max-width: 1000px;
+    width: 100%;
 
-    &>.blog-head {
+    &>.blog-banner {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 2em;
 
-      width: 100%;
+      &>img {
+        filter: drop-shadow(0 4px 6px rgba(214, 213, 213, 0.3));
 
-      &>.blog-banner {
-        display: flex;
+        border-radius: 0.5em;
 
-        &>img {
-          filter: drop-shadow(0 4px 6px rgba(214, 213, 213, 0.3));
+        max-height: 100px;
+        max-width: 100px;
 
-          border-radius: 0.5em;
-
-          max-height: 100px;
-          max-width: 100px;
-
-          object-fit: cover;
-        }
-      }
-
-      &>.blog-header {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-
-        min-height: 100px;
-
-        &>.title {
-          display: flex;
-          flex-direction: column;
-
-          height: 100%;
-
-          justify-content: space-around;
-
-          &>* {
-            margin: 0;
-            padding: 0;
-          }
-
-          &>h4 {
-            display: flex;
-            gap: 1em;
-          }
-        }
-
-        &>.tags {
-          margin-left: auto;
-        }
+        object-fit: cover;
       }
     }
 
-    &>.blog-content {
-      max-width: 1000px;
+    &>.blog-header {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
 
-      &>* {
-        max-width: 1000px;
-      }
+      min-height: 100px;
 
-      &>h1 {
-        border-left: 2px solid var(--syntax-gold);
-        background: rgba(var(--ui-monochrome-04-rgb), 1);
-        background: -moz-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
-        background: linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 1) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#02a60c", GradientType=1);
-
-        border-radius: 2px;
-
-        padding: 0.5em 1em;
-      }
-
-      &>h2 {
+      &>.title {
         display: flex;
-        gap: 0.5em;
+        flex-direction: column;
 
-        color: var(--syntax-gold);
+        height: 100%;
+
+        justify-content: space-around;
+
+        &>* {
+          margin: 0;
+          padding: 0;
+        }
+
+        &>h4 {
+          display: flex;
+          gap: 1em;
+        }
       }
 
-      &>p {
-        text-indent: 1em;
+      &>.tags {
+        margin-left: auto;
       }
     }
   }
-}
 
-@media screen and (max-width: 450px) {
-  .blog-page {
-    width: min(1000px, calc(100% - 2em));
-    max-width: 100%;
+  &>.blog-content {
+    max-width: 1000px;
 
-    &>.blog-container {
-      width: min(1000px, 100%);
+    &>* {
       max-width: 1000px;
+    }
 
-      &>.blog-head {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2em;
+    &>h1 {
+      border-left: 2px solid var(--syntax-gold);
+      background: rgba(var(--ui-monochrome-04-rgb), 0.5);
+      background: -moz-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 0.5) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 0.5) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+      background: linear-gradient(90deg, rgba(var(--ui-monochrome-04-rgb), 0.5) 0%, rgb(var(--ui-monochrome-01-rgb)) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#02a60c", GradientType=1);
 
-        width: 100%;
-      }
+      border-radius: 4px 0 0 4px;
 
-      &>.blog-content {
-        max-width: 1000px;
+      padding: 0.5em 1em;
+    }
 
-        word-wrap: break-word;
+    &>h2 {
+      display: flex;
+      gap: 0.5em;
 
-        &>* {
-          max-width: 100%;
-        }
+      color: var(--syntax-gold);
+    }
 
-        &>pre,
-        &>pre>code {
-          white-space: pre-wrap;
-          white-space: -moz-pre-wrap;
-          white-space: -pre-wrap;
-          white-space: -o-pre-wrap;
-          word-wrap: break-word;
-
-          overflow-x: auto;
-        }
-      }
+    &>p {
+      text-indent: 1em;
     }
   }
 }

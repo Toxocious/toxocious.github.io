@@ -9,6 +9,10 @@
     text-decoration: none;
     border: none;
 
+    & > span {
+      display: none;
+    }
+
     & > svg {
       fill: var(--syntax-white);
 
@@ -17,6 +21,30 @@
       &::hover {
         fill: orange;
         color: orange;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px)
+{
+  .container .social_links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.69em;
+
+    & > a {
+      gap: 1em;
+
+      justify-content: flex-start;
+
+      text-decoration: none;
+      border: none;
+
+      & > span {
+        display: block;
       }
     }
   }
