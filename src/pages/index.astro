@@ -1,64 +1,20 @@
 ---
-import { getCollection } from 'astro:content';
+import { Splash } from '../components/splash';
 
-import { config } from '../config';
-const page_title = `${config.name} — ${config.occupation}`;
-
-import Layout from '../layouts/Layout.astro';
-
-import Card from '../components/card/card.astro';
-
-const projects = await getCollection('projects');
-const posts = await getCollection('blog');
-
-import '../stylesheets/index.scss';
+import '../css/global.css';
 ---
 
-<Layout title={page_title}>
-  <section class='general-page'>
-    <div class='general-container'>
-      <h1 class='separator'>
-        <span>Projects</span>
-      </h1>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <!-- <meta name='generator' content={Astro.generator} />pnpm  -->
+    <title>Astro</title>
+  </head>
+  <body>
+    <Splash client:load />
 
-      <div>
-        I love to develop things in my spare time, whether it's big or small.
-        Check out some of the things that I've created over the years!
-      </div>
-      <br />
-
-      <div class='card-container'>
-        {
-          projects &&
-            projects
-              .sort((a: any, b: any) => a.data.order - b.data.order)
-              .map((proj: any) => <Card {...proj} type='projects' />)
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class='general-page'>
-    <div class='general-container'>
-      <h1 class='separator'>
-        <span>Blog Posts</span>
-      </h1>
-
-      <div>
-        I like to talk about things that generally pique my interest, and you
-        can read about those things here. These topics typically range from
-        programming to productivity, but anything goes!
-      </div>
-      <br />
-
-      <div class='card-container'>
-        {
-          posts &&
-            posts
-              .sort((a: any, b: any) => b.data.timestamp - a.data.timestamp)
-              .map((proj: any) => <Card {...proj} type='blog' />)
-        }
-      </div>
-    </div>
-  </section>
-</Layout>
+    <h1>Astro</h1>
+  </body>
+</html>
