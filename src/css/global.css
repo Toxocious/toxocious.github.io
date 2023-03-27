@@ -10,13 +10,6 @@
   --background-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -37,26 +30,29 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
 .grid-background {
   /* background: url("/grid-light.svg"); */
   background-size: 40px 40px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .grid-background {
-    /* background: url("/grid.svg"); */
-    background-size: 40px 40px;
-  }
 }
 
 .loading {
   mask-image: linear-gradient(black var(--stop, 100%),
       transparent var(--stop, 100%));
   display: var(--loading-display, flex);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  .grid-background {
+    /* background: url("/grid.svg"); */
+    background-size: 40px 40px;
+  }
 }
