@@ -1,71 +1,76 @@
 ---
-import { formatDate } from '../../util/format_date';
+import Button from '../button/button.astro';
+import Tag from '../tag/tag.astro';
 
-import './card.scss';
+import Github from '../../svg/github.astro';
+import Globe from '../../svg/globe.astro';
 
-const { title, description, timestamp, banner, type, started_on, ended_on } =
-  Astro.props.data;
+const { title, description, tags, image, repository, website } = Astro.props;
 
-const route_path = title.replaceAll(' ', '-').toLowerCase();
-
-const date = type == 'blog' ? formatDate(timestamp) : formatDate(started_on);
-const date_ended =
-  type == 'projects' && typeof ended_on != 'undefined'
-    ? ` — ${formatDate(ended_on)}`
-    : ' — Present';
+const entry_content = await Astro.slots.render('default');
 ---
 
-<a
-  href={`/${type}/${route_path}`}
-  class={'card button' + (!banner ? ' no-banner' : '')}
+<article
+  class='w-full rounded-lg flex flex-wrap max-[600px]:flex-col flex-row max-[600px]:gap-0 gap-6'
 >
-  {
-    banner && (
-      <div class='card-banner'>
-        <img
-          src={`/${type}/${route_path}/${banner}.png`}
-          alt='Image representing the blog post.'
-        />
-      </div>
-    )
-  }
+  <section class='flex flex-wrap flex-col gap-2'>
+    <img
+      class='backdrop-blur-[4px] object-cover bg-no-repeat bg-center max-[600px]:rounded-b-none rounded-lg shadow-md h-20 max-[600px]:w-full w-20 bg-gray2 border border-gray-700'
+      src={`/logos/${image}`}
+      alt='depicts the project/blog post'
+    />
 
-  <div class='card-content'>
-    <div class='card-header'>
-      <div class='card-title'>{title}</div>
+    <section class='flex flex-wrap flex-row'>
       {
-        date && (
-          <div class='card-date'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              class='icon icon-tabler icon-tabler-calendar'
-              width='24'
-              height='24'
-              viewBox='0 0 24 24'
-              stroke-width='2'
-              stroke='currentColor'
-              fill='none'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            >
-              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-              <path d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z' />
-              <path d='M16 3l0 4' />
-              <path d='M8 3l0 4' />
-              <path d='M4 11l16 0' />
-              <path d='M11 15l1 0' />
-              <path d='M12 15l0 3' />
-            </svg>
-            <div>
-              {date}
-              {type == 'projects' && date_ended}
-            </div>
-          </div>
+        repository && (
+          <Button
+            element_class='max-[600px]:rounded-none max-[600px]:grow max-[600px]:order-last'
+            title='View Source Code'
+            href={repository}
+          >
+            <Github />
+          </Button>
         )
       }
-    </div>
-    <div class='card-description'>
-      <div>{description ?? 'No Description'}</div>
-    </div>
-  </div>
-</a>
+      {
+        website && (
+          <Button
+            element_class='max-[600px]:rounded-none max-[600px]:grow max-[600px]:order-last'
+            title='View Website'
+            href={website}
+          >
+            <Globe />
+          </Button>
+        )
+      }
+    </section>
+  </section>
+
+  <section
+    class='flex flex-col grow p-4 backdrop-blur-[4px] shadow-md max-[600px]:rounded-t-none rounded-lg min-[600px]:w-[calc(100%-104px)] max-[600px]:text-center max-[600px]:p-2'
+  >
+    <section
+      class='flex flex-row flex-wrap gap-8 max-[600px]:flex-col max-[600px]:gap-0'
+    >
+      <font class='mb-3 text-xl leading-6 not-italic'>
+        {title}
+      </font>
+
+      <font
+        class='mb-3 text-l leading-6 not-italic font-thin text-slate-300 flex flex-wrap gap-2 self-center min-[600px]:ml-auto'
+      >
+        {tags.map((tag: string) => <Tag tag={tag} />)}
+      </font>
+    </section>
+
+    <font
+      class='text-lg leading-6 not-italic font-thin text-slate-200'
+      set:html={entry_content
+        ? entry_content
+            .replaceAll('◦ ', '<br />◦ ')
+            .replace('<br />', '')
+            .trim()
+        : description}
+    />
+  </section>
+</article>

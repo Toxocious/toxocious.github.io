@@ -1,32 +1,53 @@
 import { z, defineCollection } from 'astro:content';
 
-export const collections = {
-  'blog': defineCollection({
-    schema: z.object({
-      type: z.string(),
-      title: z.string(),
-      description: z.string(),
-      banner: z.string().optional(),
-      timestamp: z.number(),
-    })
+const contributionsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    image: z.string(),
+    repository: z.string().optional(),
+    website: z.string().optional(),
+    order: z.number(),
   }),
+});
 
-  'projects': defineCollection({
-    schema: z.object({
-      type: z.string(),
-      title: z.string(),
-      description: z.string(),
-      started_on: z.number(),
-      ended_on: z.number().optional(),
-      tags: z.string().optional(),
-      order: z.number().optional(),
-      banner: z.string().optional(),
-      repo_path: z.string().optional(),
-      show_issues: z.boolean().optional(),
-      show_forks: z.boolean().optional(),
-      show_stars: z.boolean().optional(),
-      show_license: z.boolean().optional(),
-      show_lines_of_code: z.boolean().optional(),
-    })
+const projectsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    tags: z.array(z.string()),
+    image: z.string(),
+    repository: z.string().optional(),
+    website: z.string().optional(),
+    order: z.number(),
   }),
+});
+
+const volunteerCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    image: z.string(),
+    repository: z.string().optional(),
+    website: z.string().optional(),
+    order: z.number(),
+  }),
+});
+
+const workCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    image: z.string(),
+    repository: z.string().optional(),
+    website: z.string().optional(),
+    order: z.number(),
+  }),
+});
+
+export const collections = {
+  'contributions': contributionsCollection,
+  'projects': projectsCollection,
+  'volunteer': volunteerCollection,
+  'work': workCollection,
 };
