@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
 
@@ -35,7 +33,7 @@ function LoadingAnimation({ onComplete }: { onComplete: () => void })
   const [toggled, setToggled] = React.useState(false);
 
   return (
-    <h1 className="flex flex-col font-bold text-[7rem] flex">
+    <h1 className="flex flex-col font-bold text-[7rem] flex text-center">
       <motion.div
         className="block"
         layout

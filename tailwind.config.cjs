@@ -29,6 +29,10 @@ module.exports = {
         gray11: "hsl(240deg 4.48%, 62.8%)",
         gray12: "hsl(240deg 4.48%, 93.0%)",
       },
+
+      boxShadow: {
+        'md': '0 4px 10px 0px rgb(69 69 69 / 0.1), 0 4px 10px 0px rgb(69 69 69 / 0.1)',
+      },
     },
   },
   plugins: [],

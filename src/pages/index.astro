@@ -1,20 +1,138 @@
 ---
+import { config } from '../_config';
+
 import { Splash } from '../components/splash';
 
-import '../css/global.css';
+import Profile from '../components/profile/profile.astro';
+
+import Work from '../components/work/work.astro';
+import Oss from '../components/oss/oss.astro';
+import Volunteer from '../components/volunteer/volunteer.astro';
+import Projects from '../components/projects/projects.astro';
+
+import '../css/global.scss';
+import '../css/background.scss';
 ---
 
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='robots' content='follow, index' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta name='robots' content='index' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <meta name='generator' content={Astro.generator} />
     <meta name='viewport' content='width=device-width' />
-    <!-- <meta name='generator' content={Astro.generator} />pnpm  -->
-    <title>Astro</title>
+    <meta name='keywords' content={config.seo.keywords} />
+
+    <title>{config.name} &mdash; {config.occupation}</title>
+    <meta name='description' content={config.seo.description} />
+
+    <meta property='og:type' content={config.seo.site_type} />
+    <meta
+      property='og:title'
+      content={config.name + ' — ' + config.occupation}
+    />
+    <meta
+      property='og:site_name'
+      content={config.name + ' — ' + config.occupation}
+    />
+    <meta property='og:image' content='/favicons/favicon-32x32.png' />
+    <meta property='og:url' content={config.seo.site_url} />
+
+    {
+      config.twitter && (
+        <meta name='twitter:site' content={`@${config.twitter}`} />
+      )
+    }
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta
+      name='twitter:title'
+      content={config.name + ' — ' + config.occupation}
+    />
+    <meta
+      name='twitter:image:alt'
+      content="Decorative image that shows the person's picture, name, and occupation."
+    />
+    {
+      config.seo.twitter_card_image && (
+        <meta
+          name='twitter:image'
+          content={config.seo.site_url.concat(config.seo.twitter_card_image)}
+        />
+      )
+    }
+    <meta
+      name='twitter:description'
+      content={config.seo.twitter_card_description ?? config.seo.description}
+    />
+
+    <link rel='canonical' href={config.seo.site_url} />
+    <link rel='apple-touch-icon' sizes='180x180' href='/favicons/favicon.ico' />
+    <link
+      rel='icon'
+      sizes='32x32'
+      type='image/svg+xml'
+      href='/favicons/favicon.ico'
+    />
+    <link
+      rel='icon'
+      sizes='16x16'
+      type='image/svg+xml'
+      href='/favicons/favicon.ico'
+    />
   </head>
-  <body>
+
+  <body class='bg-neutral-900'>
+    <!-- Initial splash animation on page load -->
     <Splash client:load />
 
-    <h1>Astro</h1>
+    <!-- Background FX -->
+    <div class='background'>
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
+    </div>
+
+    <!-- Content container -->
+    <main
+      class='max-w-[717px] mx-auto flex flex-col justify-center content-center max-w-5xl'
+    >
+      <!-- Profile section -->
+      <section
+        class='min-[717px]:text-left text-center h-screen mx-auto flex flex-col gap-20 justify-center content-center'
+      >
+        <Profile />
+      </section>
+
+      <!-- Work -->
+      <section
+        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
+      >
+        <Work />
+      </section>
+
+      <!-- Volunteer experience -->
+      <section
+        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
+      >
+        <Volunteer />
+      </section>
+
+      <!-- Open source contributions -->
+      <section
+        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
+      >
+        <Oss />
+      </section>
+
+      <!-- Projects -->
+      <section
+        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
+      >
+        <Projects />
+      </section>
+    </main>
   </body>
 </html>
