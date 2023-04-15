@@ -1,7 +1,7 @@
 ---
 title: "The Pokemon Kingdom"
 tags: [ "February 2017 - Present" ]
-image: "/the-pokemon-kingdom.png"
+image: "the-pokemon-kingdom.png"
 website: "https://tpkrpg.net/"
 order: 1
 ---

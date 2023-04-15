@@ -1,7 +1,7 @@
 ---
 title: "Destiny Item Manager"
 tags: [ "TypeScript, SASS" ]
-image: "/destiny-item-manager.png"
+image: "destiny-item-manager.png"
 repository: "https://github.com/DestinyItemManager/DIM"
 website: "https://destinyitemmanager.com/"
 order: 1

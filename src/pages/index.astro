@@ -38,7 +38,7 @@ import '../css/background.scss';
       property='og:site_name'
       content={config.name + ' — ' + config.occupation}
     />
-    <meta property='og:image' content='/favicons/favicon-32x32.png' />
+    <meta property='og:image' content='/favicons/favicon.ico' />
     <meta property='og:url' content={config.seo.site_url} />
 
     {
@@ -69,18 +69,30 @@ import '../css/background.scss';
     />
 
     <link rel='canonical' href={config.seo.site_url} />
-    <link rel='apple-touch-icon' sizes='180x180' href='/favicons/favicon.ico' />
+
+    <link
+      rel='apple-touch-icon'
+      sizes='180x180'
+      type='image/svg+xml'
+      href='/favicons/android-chrome-180x180.png'
+    />
+    <link
+      rel='icon'
+      sizes='192x192'
+      type='image/svg+xml'
+      href='/favicons/android-chrome-192x192.png'
+    />
     <link
       rel='icon'
       sizes='32x32'
       type='image/svg+xml'
-      href='/favicons/favicon.ico'
+      href='/favicons/favicon-32x32.png'
     />
     <link
       rel='icon'
       sizes='16x16'
       type='image/svg+xml'
-      href='/favicons/favicon.ico'
+      href='/favicons/favicon-16x16.png'
     />
   </head>
 

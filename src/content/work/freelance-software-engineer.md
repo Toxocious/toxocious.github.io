@@ -1,7 +1,7 @@
 ---
 title: "Freelance Software Engineer"
 tags: [ "October 2019 - Present" ]
-image: "/absolute.png"
+image: "freelance-software-engineer.png"
 order: 1
 ---
 

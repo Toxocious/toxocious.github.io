@@ -8,6 +8,8 @@ import Globe from '../../svg/globe.astro';
 const { title, description, tags, image, repository, website } = Astro.props;
 
 const entry_content = await Astro.slots.render('default');
+
+console.log('card image:', image);
 ---
 
 <article
