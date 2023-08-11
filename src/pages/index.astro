@@ -10,7 +10,6 @@ import Oss from '../components/oss/oss.astro';
 import Projects from '../components/projects/projects.astro';
 
 import '../css/global.scss';
-import '../css/background.scss';
 ---
 
 <html lang='en'>
@@ -97,29 +96,22 @@ import '../css/background.scss';
 
   <body class='bg-slate-900 leading-relaxed text-slate-400 antialiased'>
     <!-- Initial splash animation on page load -->
-    <!-- <Splash client:load /> -->
-
-    <!-- Background FX -->
-    <div class='background'>
-      <div id='stars'></div>
-      <div id='stars2'></div>
-      <div id='stars3'></div>
-    </div>
+    <Splash client:load />
 
     <!-- Content container -->
     <main
-      class='xl:flex xl:flex-row xl:justify-between xl:gap-4 px-6 py-6 font-sans mx-auto md:px-12 md:py-20 xl:px-24 xl:py-0'
+      class='xl:flex xl:flex-row xl:gap-4 sm:justify-items-center px-6 py-6 justify-center mx-auto md:px-12 md:py-20 xl:px-24 xl:py-0'
     >
       <!-- Profile -->
       <section
-        class='xl:min-w-[400px] xl:sticky xl:top-6 xl:flex xl:flex-col xl:justify-between xl:self-start py-12'
+        class='xl:min-w-[400px] xl:sticky xl:top-0 xl:flex xl:flex-col xl:justify-between xl:self-start'
       >
         <Profile />
       </section>
 
       <!-- Experience, Contributions, and Projects -->
       <section
-        class='flex flex-col flex-wrap justify-center content-center gap-20 py-12 justify-center content-center'
+        class='max-w-[667px] flex flex-col flex-wrap content-center gap-20 py-12'
       >
         <!-- Work -->
         <section

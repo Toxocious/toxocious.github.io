@@ -5,33 +5,37 @@ import Social from '../social/social.astro';
 ---
 
 <div
-  class='self-start flex flex-row flex-wrap gap-5 justify-center content-center p-4 text-center'
+  class='flex flex-col flex-wrap gap-5 justify-center content-center text-center xl:flex-col xl:min-w-[400px] xl:items-center xl:min-h-screen xl:justify-between xl:p-12 xl:bg-gray4 transition-all'
 >
-  <div
-    class='w-[200px] h-[300px] text-5xl font-bold rounded-lg flex items-center justify-center bg-gray2 overflow-hidden shadow-md'
-  >
-    <img
-      class='h-auto max-w-full'
-      src='/me.jpg'
-      alt='The creator of the website'
-    />
-  </div>
-
-  <div class='flex flex-col'>
-    <font class='custom-header mb-3 text-4xl font-bold text-slate-200'>
-      {config.name}
-    </font>
-
-    <font
-      class='custom-header mb-3 text-2xl leading-6 not-italic font-thin text-slate-300'
+  <div class='flex flex-row flex-col items-center gap-5'>
+    <div
+      class='w-[200px] h-[300px] text-5xl font-bold rounded-lg flex items-center justify-center bg-gray2 overflow-hidden shadow-md'
     >
-      {config.occupation}
-    </font>
+      <img
+        class='h-auto max-w-full'
+        src='/me.jpg'
+        alt='The creator of the website'
+      />
+    </div>
 
-    <font class='max-w-md grow'>
-      {config.summary}
-    </font>
+    <div class='flex flex-col'>
+      <div class='flex flex-col'>
+        <font class='custom-header mb-3 text-4xl font-bold text-slate-200'>
+          {config.name}
+        </font>
 
-    <Social />
+        <font
+          class='custom-header mb-3 text-2xl leading-6 not-italic font-thin text-slate-300'
+        >
+          {config.occupation}
+        </font>
+
+        <font class='max-w-md grow'>
+          {config.summary}
+        </font>
+      </div>
+    </div>
   </div>
+
+  <Social />
 </div>

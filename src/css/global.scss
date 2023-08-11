@@ -56,6 +56,11 @@ a {
   display: var(--loading-display, flex);
 }
 
+main {
+  position: relative;
+  z-index: 2;
+}
+
 h1 {
   font-size: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
 }

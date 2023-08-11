@@ -20,7 +20,7 @@ const entry_content = await Astro.slots.render('default');
 ---
 
 <article
-  class='w-full rounded-lg flex flex-wrap flex-col gap-0 justify-center p-4 sm:flex-row sm:gap-6 hover:bg-gray-800 transition-all'
+  class='w-full rounded-lg flex flex-wrap flex-col gap-0 justify-center p-4 sm:flex-row sm:gap-6 hover:bg-gray5 transition-all'
 >
   <section class='flex flex-wrap flex-col gap-2'>
     {
@@ -33,9 +33,12 @@ const entry_content = await Astro.slots.render('default');
 
     <div class='flex flex-wrap flex-row gap-2'>
       <img
-        class='max-[599px]:hidden block object-cover bg-no-repeat bg-center max-[600px]:rounded-b-none rounded-lg h-20 max-[600px]:w-full w-20'
+        class='max-w-[599px]:hidden block object-cover bg-no-repeat bg-center max-[600px]:rounded-b-none rounded-lg h-20 max-[600px]:w-full w-20'
         src={`/logos/${image}`}
         alt='depicts the project/blog post'
+        style={title == 'The Pokemon Kingdom'
+          ? 'image-rendering: pixelated;'
+          : ''}
       />
 
       <section
