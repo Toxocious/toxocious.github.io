@@ -6,15 +6,13 @@ const projectEntries = await getCollection('projects');
 import Card from '../card/card.astro';
 ---
 
-<section class='flex flex-col flex-wrap gap-5 backdrop-blur-[2px] p-4'>
-  <font class='custom-header text-3xl font-bold text-slate-200'>
-    &mdash; Projects
+<section class='flex flex-col flex-wrap'>
+  <font class='custom-header text-3xl font-bold text-slate-200 text-center'>
+    Projects
   </font>
 </section>
 
-<section
-  class='flex flex-row flex-wrap gap-10 justify-center content-center p-4'
->
+<section class='flex flex-row flex-wrap justify-center content-center p-4'>
   {
     projectEntries
       .sort((a, b) => a.data.order - b.data.order)

@@ -1,8 +1,9 @@
 ---
 title: "Freelance Software Engineer"
-tags: [ "October 2019 - Present" ]
+date_string: "Oct 2019 - Present"
+tags: [ "" ]
 image: "freelance-software-engineer.png"
-order: 1
+order: 0
 ---
 
 ◦ Improved MySQL database performance by 30% through optimizing field indexing and queries

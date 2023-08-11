@@ -1,6 +1,8 @@
 ---
 title: "The Pokemon Kingdom"
-tags: [ "February 2017 - Present" ]
+role: "Volunteer Software Engineer"
+date_string: "Feb 2017 - Present"
+tags: [ "" ]
 image: "the-pokemon-kingdom.png"
 website: "https://tpkrpg.net/"
 order: 1

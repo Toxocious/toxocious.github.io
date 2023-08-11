@@ -5,66 +5,95 @@ import Tag from '../tag/tag.astro';
 import Github from '../../svg/github.astro';
 import Globe from '../../svg/globe.astro';
 
-const { title, description, tags, image, repository, website } = Astro.props;
+const {
+  title,
+  description,
+  tags,
+  image,
+  repository,
+  website,
+  date_string,
+  role,
+} = Astro.props;
 
 const entry_content = await Astro.slots.render('default');
 ---
 
 <article
-  class='w-full rounded-lg flex flex-wrap max-[600px]:flex-col flex-row max-[600px]:gap-0 gap-6'
+  class='w-full rounded-lg flex flex-wrap flex-col gap-0 justify-center p-4 sm:flex-row sm:gap-6 hover:bg-gray-800 transition-all'
 >
   <section class='flex flex-wrap flex-col gap-2'>
-    <img
-      class='backdrop-blur-[4px] object-cover bg-no-repeat bg-center max-[600px]:rounded-b-none rounded-lg shadow-md h-20 max-[600px]:w-full w-20 bg-gray2 border border-gray-700'
-      src={`/logos/${image}`}
-      alt='depicts the project/blog post'
-    />
+    {
+      date_string && (
+        <b class='uppercase text-sm text-slate-500 max-[600px]:text-center'>
+          {date_string}
+        </b>
+      )
+    }
 
-    <section class='flex flex-wrap flex-row'>
-      {
-        repository && (
-          <Button
-            element_class='max-[600px]:rounded-none max-[600px]:grow max-[600px]:order-last'
-            title='View Source Code'
-            href={repository}
-          >
-            <Github />
-          </Button>
-        )
-      }
-      {
-        website && (
-          <Button
-            element_class='max-[600px]:rounded-none max-[600px]:grow max-[600px]:order-last'
-            title='View Website'
-            href={website}
-          >
-            <Globe />
-          </Button>
-        )
-      }
-    </section>
+    <div class='flex flex-wrap flex-row gap-2'>
+      <img
+        class='max-[599px]:hidden block object-cover bg-no-repeat bg-center max-[600px]:rounded-b-none rounded-lg h-20 max-[600px]:w-full w-20'
+        src={`/logos/${image}`}
+        alt='depicts the project/blog post'
+      />
+
+      <section
+        class='flex flex-wrap flex-col max-[599px]:min-w-full max-[599px]:flex-row max-[599px]:content-center max-[599px]:justify-center'
+      >
+        {
+          website && (
+            <Button
+              element_class='max-[600px]:rounded-none max-[600px]:order-last self-baseline'
+              title='View Website'
+              href={website}
+            >
+              <Globe />
+            </Button>
+          )
+        }
+        {
+          repository && (
+            <Button
+              element_class='max-[600px]:rounded-none max-[600px]:order-last self-baseline'
+              title='View Source Code'
+              href={repository}
+            >
+              <Github />
+            </Button>
+          )
+        }
+      </section>
+    </div>
   </section>
 
   <section
-    class='flex flex-col grow p-4 backdrop-blur-[4px] shadow-md max-[600px]:rounded-t-none rounded-lg min-[600px]:w-[calc(100%-104px)] max-[600px]:text-center max-[600px]:p-2'
+    class='flex flex-col grow max-[600px]:rounded-t-none rounded-lg max-[600px]:text-center max-[600px]:p-2 lg:max-w-[440px]'
   >
     <section
       class='flex flex-row flex-wrap gap-8 max-[600px]:flex-col max-[600px]:gap-0'
     >
-      <font class='mb-3 text-xl leading-6 not-italic'>
+      <font class='mb-3 text-xl leading-6 not-italic text-slate-200'>
         {title}
       </font>
 
       <font
-        class='mb-3 text-l leading-6 not-italic font-thin text-slate-300 flex flex-wrap gap-2 self-center min-[600px]:ml-auto'
+        class='mb-3 text-l leading-6 not-italic font-thin text-white flex flex-wrap gap-2 self-center min-[600px]:ml-auto'
       >
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </font>
     </section>
 
+    {
+      role && (
+        <font class='mb-3 text-lg leading-6 not-italic text-slate-400'>
+          {role}
+        </font>
+      )
+    }
+
     <font
-      class='text-lg leading-6 not-italic font-thin text-slate-200'
+      class='leading-6 not-italic text-gray-400'
       set:html={entry_content
         ? entry_content
             .replaceAll('◦ ', '<br />◦ ')

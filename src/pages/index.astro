@@ -7,7 +7,6 @@ import Profile from '../components/profile/profile.astro';
 
 import Work from '../components/work/work.astro';
 import Oss from '../components/oss/oss.astro';
-import Volunteer from '../components/volunteer/volunteer.astro';
 import Projects from '../components/projects/projects.astro';
 
 import '../css/global.scss';
@@ -96,9 +95,9 @@ import '../css/background.scss';
     />
   </head>
 
-  <body class='bg-neutral-900'>
+  <body class='bg-slate-900 leading-relaxed text-slate-400 antialiased'>
     <!-- Initial splash animation on page load -->
-    <Splash client:load />
+    <!-- <Splash client:load /> -->
 
     <!-- Background FX -->
     <div class='background'>
@@ -109,41 +108,39 @@ import '../css/background.scss';
 
     <!-- Content container -->
     <main
-      class='max-w-[717px] mx-auto flex flex-col justify-center content-center max-w-5xl'
+      class='xl:flex xl:flex-row xl:justify-between xl:gap-4 px-6 py-6 font-sans mx-auto md:px-12 md:py-20 xl:px-24 xl:py-0'
     >
-      <!-- Profile section -->
+      <!-- Profile -->
       <section
-        class='min-[717px]:text-left text-center h-screen mx-auto flex flex-col gap-20 justify-center content-center'
+        class='xl:min-w-[400px] xl:sticky xl:top-6 xl:flex xl:flex-col xl:justify-between xl:self-start py-12'
       >
         <Profile />
       </section>
 
-      <!-- Work -->
+      <!-- Experience, Contributions, and Projects -->
       <section
-        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
+        class='flex flex-col flex-wrap justify-center content-center gap-20 py-12 justify-center content-center'
       >
-        <Work />
-      </section>
+        <!-- Work -->
+        <section
+          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
+        >
+          <Work />
+        </section>
 
-      <!-- Volunteer experience -->
-      <section
-        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
-      >
-        <Volunteer />
-      </section>
+        <!-- Open source contributions -->
+        <section
+          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
+        >
+          <Oss />
+        </section>
 
-      <!-- Open source contributions -->
-      <section
-        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
-      >
-        <Oss />
-      </section>
-
-      <!-- Projects -->
-      <section
-        class='w-full mx-auto flex flex-col flex-wrap justify-center content-center p-4'
-      >
-        <Projects />
+        <!-- Projects -->
+        <section
+          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
+        >
+          <Projects />
+        </section>
       </section>
     </main>
   </body>
