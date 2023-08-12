@@ -42,6 +42,8 @@ const workCollection = defineCollection({
     repository: z.string().optional(),
     website: z.string().optional(),
     order: z.number(),
+    role: z.string().optional(),
+    date_string: z.string(),
   }),
 });
 

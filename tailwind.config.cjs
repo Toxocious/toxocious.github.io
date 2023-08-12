@@ -16,6 +16,7 @@ module.exports = {
           900: "hsla(240deg 4.48%, 3%)",
           full: "hsla(240deg 4.48%, 0%)",
         },
+
         gray1: "hsl(240deg 4.48%, 8.5%)",
         gray2: "hsl(240deg 4.48%, 11.0%)",
         gray3: "hsl(240deg 4.48%, 13.6%)",

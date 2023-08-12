@@ -6,15 +6,12 @@ const workEntries = await getCollection('work');
 import Card from '../card/card.astro';
 ---
 
-<section class='flex flex-col flex-wrap gap-5 backdrop-blur-[2px] p-4'>
-  <font class='custom-header text-3xl font-bold text-slate-200'>
-    &mdash; Work Experience
+<!-- <section class='flex flex-col flex-wrap'>
+  <font class='custom-header text-3xl font-bold text-slate-200 text-center'>
+    Experience
   </font>
-</section>
-
-<section
-  class='flex flex-row flex-wrap gap-10 justify-center content-center p-4'
->
+</section> -->
+<section class='flex flex-row flex-wrap justify-center content-center'>
   {
     workEntries
       .sort((a, b) => a.data.order - b.data.order)
@@ -25,6 +22,8 @@ import Card from '../card/card.astro';
           image={workEntry.data.image}
           repository={workEntry.data.repository}
           website={workEntry.data.website}
+          role={workEntry.data.role}
+          date_string={workEntry.data.date_string}
         >
           {workEntry.body}
         </Card>
