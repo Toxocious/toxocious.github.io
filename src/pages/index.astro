@@ -1,13 +1,7 @@
 ---
 import { config } from '../_config';
 
-import { Splash } from '../components/splash';
-
-import Profile from '../components/profile/profile.astro';
-
-import Work from '../components/work/work.astro';
-import Oss from '../components/oss/oss.astro';
-import Projects from '../components/projects/projects.astro';
+import SocialBar from '../components/social_bar/social_bar.astro';
 
 import '../css/global.scss';
 ---
@@ -94,46 +88,31 @@ import '../css/global.scss';
     />
   </head>
 
-  <body class='bg-slate-900 leading-relaxed text-slate-400 antialiased'>
-    <!-- Initial splash animation on page load -->
-    <Splash client:load />
-
-    <!-- Content container -->
+  <body
+    class='bg-gradient-to-r from-sky-600 to-violet-600 leading-relaxed antialiased flex flex-col h-screen p-2'
+  >
     <main
-      class='xl:flex xl:flex-row xl:gap-4 sm:justify-items-center px-6 py-6 justify-center mx-auto md:px-12 md:py-20 xl:px-24 xl:py-0'
+      class='bg-slate-800 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 max-w-5xl mx-auto relative z-20'
     >
-      <!-- Profile -->
-      <section
-        class='xl:min-w-[400px] xl:sticky xl:top-0 xl:flex xl:flex-col xl:justify-between xl:self-start'
-      >
-        <Profile />
-      </section>
+      <SocialBar />
 
-      <!-- Experience, Contributions, and Projects -->
-      <section
-        class='max-w-[667px] flex flex-col flex-wrap content-center gap-20 py-12'
-      >
-        <!-- Work -->
-        <section
-          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
-        >
-          <Work />
+      <div class='w-full max-w-5xl sm:mx-auto flex flex-col gap-4 md:flex-row'>
+        <section class='text-slate-100 rounded-lg flex flex-col items-center'>
+          <img
+            class='h-auto max-h-96 rounded-lg'
+            src='/me.jpg'
+            alt='The creator of the website'
+          />
         </section>
 
-        <!-- Open source contributions -->
-        <section
-          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
-        >
-          <Oss />
-        </section>
+        <section class='flex flex-col gap-4 rounded-lg md:flex-1'>
+          <article>It me.</article>
 
-        <!-- Projects -->
-        <section
-          class='w-full mx-auto flex flex-col flex-wrap justify-center content-center'
-        >
-          <Projects />
+          <article class='bg-slate-700 text-slate-100 p-4 rounded-lg'>
+            experience
+          </article>
         </section>
-      </section>
+      </div>
     </main>
   </body>
 </html>
