@@ -1,6 +1,8 @@
 ---
 import { config } from '../_config';
 
+import { Splash } from '../components/splash';
+
 import SocialBar from '../components/social_bar/social_bar.astro';
 
 import '../css/global.scss';
@@ -18,7 +20,7 @@ import '../css/global.scss';
     <meta name='viewport' content='width=device-width' />
     <meta name='keywords' content={config.seo.keywords} />
 
-    <title>{config.name} &mdash; {config.occupation}</title>
+    <title>{config.name}</title>
     <meta name='description' content={config.seo.description} />
 
     <meta property='og:type' content={config.seo.site_type} />
@@ -88,9 +90,9 @@ import '../css/global.scss';
     />
   </head>
 
-  <body
-    class='bg-gradient-to-r from-sky-600 to-violet-600 leading-relaxed antialiased flex flex-col h-screen p-2'
-  >
+  <body class='loading-relaxed antialiased flex flex-col h-screen sm:p-2'>
+    <!-- Initial splash animation on page load -->
+    <Splash client:load />
     <main
       class='bg-slate-800 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 max-w-5xl mx-auto relative z-20'
     >

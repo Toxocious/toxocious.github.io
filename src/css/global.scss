@@ -4,6 +4,10 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --light-grey: rgb(41 41 41 / 1);
+  --mid-grey: rgb(32 32 32 / 1);
+  --dark-grey: rgb(23 23 23 /1);
 }
 
 * {
@@ -22,6 +26,11 @@ body {
 }
 
 body {
+  background: var(--mid-grey);
+  background: -moz-radial-gradient(circle, var(--light-grey) 0%, var(--mid-grey) 69%, var(--dark-grey) 100%);
+  background: -webkit-radial-gradient(circle, var(--light-grey) 0%, var(--mid-grey) 69%, var(--dark-grey) 100%);
+  background: radial-gradient(circle, var(--light-grey) 0%, var(--mid-grey) 69%, var(--dark-grey) 100%);
+
   height: 100vh;
 }
 
@@ -30,12 +39,17 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
+}
+
 .custom-header {
   font-family: 'Nunito';
 }
 
-h1 {
-  font-size: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
+.loading {
+  mask-image: linear-gradient(black var(--stop, 100%), transparent var(--stop, 100%));
+  display: var(--loading-display, flex);
 }
 
 @media (prefers-color-scheme: dark) {
