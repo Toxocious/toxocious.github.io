@@ -4,6 +4,7 @@ import { config } from '../_config';
 import { Splash } from '../components/splash';
 
 import SocialBar from '../components/social_bar/social_bar.astro';
+import Card from '../components/card/card.astro';
 
 import '../css/global.scss';
 ---
@@ -92,7 +93,7 @@ import '../css/global.scss';
 
   <body class='loading-relaxed antialiased flex flex-col h-screen sm:p-2'>
     <!-- Initial splash animation on page load -->
-    <Splash client:load />
+    <!-- <Splash client:load /> -->
 
     <!-- Mobile & Tablet Layout -->
     <main
@@ -106,7 +107,7 @@ import '../css/global.scss';
         class='bg-slate-800 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 overflow-auto'
       >
         <div
-          class='w-full h-full max-w-5xl mx-auto flex flex-col gap-8 md:flex-row'
+          class='w-full h-full max-w-5xl mx-auto flex flex-col gap-4 md:flex-row md:gap-8'
         >
           <section class='text-slate-100 rounded-lg flex flex-col items-center'>
             <img
@@ -117,23 +118,31 @@ import '../css/global.scss';
           </section>
 
           <section class='flex flex-col gap-4 pb-4 rounded-lg md:flex-1'>
-            <article>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestiae consequatur quam accusamus, inventore quae earum.
-              Voluptates, ex a perferendis consectetur provident, ut in
-              dignissimos nulla quae, alias iure illum autem placeat tenetur
-              mollitia odit dolorem inventore amet dolore exercitationem fuga?
-              Quibusdam molestiae labore similique quaerat, maiores
-              necessitatibus dolorem a doloremque voluptates exercitationem qui
-              distinctio nulla aliquid dolores rem sequi tempora.
+            <article class='flex flex-col gap-2 text-center md:text-left'>
+              <p class='md:text-xl'>
+                Hello there!<br />
+                I'm
+                <font
+                  class='bg-gradient-to-r from-primary to-danger bg-clip-text text-transparent font-bold'
+                >
+                  {config.name}
+                </font>, a <b>{config.occupation}</b>.
+              </p>
+              <p>
+                {config.summary}
+              </p>
             </article>
 
             {
-              new Array(20).fill('').map((_) => (
+              new Array(10).fill('').map((_) => (
                 <>
-                  <article class='bg-slate-700 text-slate-100 p-4 shadow-lg rounded-lg'>
-                    experience
-                  </article>
+                  <Card
+                    image={
+                      'https://github.com/Toxocious/Absolute/raw/master/images/Assets/banner.png'
+                    }
+                    title='bepis to the extrepis'
+                    description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus neque earum, culpa asperiores ad alias ipsum unde soluta expedita pariatur!'
+                  />
                 </>
               ))
             }

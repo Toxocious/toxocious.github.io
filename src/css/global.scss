@@ -1,10 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap");
-
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
   --light-grey: rgb(41 41 41 / 1);
   --mid-grey: rgb(32 32 32 / 1);
   --dark-grey: rgb(23 23 23 /1);
@@ -12,6 +6,7 @@
 
 * {
   box-sizing: border-box;
+
   padding: 0;
   margin: 0;
 
@@ -41,10 +36,6 @@ a {
 
 h1 {
   font-size: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
-}
-
-.custom-header {
-  font-family: 'Nunito';
 }
 
 .loading {
