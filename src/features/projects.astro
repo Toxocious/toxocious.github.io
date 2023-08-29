@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+const projectEntries = await getCollection('projects');
+
+import Card from '../components/card/card.astro';
+---
+
+<section class='flex flex-col gap-4 md:pb-4'>
+  <section class='flex flex-col gap-2 text-center md:text-left'>
+    <font class='text-3xl font-bold text-slate-200'>Projects</font>
+
+    <p>
+      When I'm not actively working with a client or volunteering my services, I
+      love to work on projects that personally interest me.
+    </p>
+
+    <p>Here's some personal projects that I've dedicated time towards.</p>
+  </section>
+
+  <section class='flex flex-row flex-wrap justify-center content-center gap-4'>
+    {
+      projectEntries
+        .sort((a, b) => a.data?.order - b.data?.order)
+        .map((projectEntry) => (
+          <Card
+            title={projectEntry.data.title}
+            description={projectEntry.data.description}
+            tags={projectEntry.data.tags}
+            image={projectEntry.data.image}
+            position={projectEntry.data.position}
+            date_stamp={projectEntry.data.date_stamp}
+            repository_link={projectEntry.data.repository_link}
+            website_link={projectEntry.data.website_link}
+          >
+            {projectEntry.body}
+          </Card>
+        ))
+    }
+  </section>
+</section>

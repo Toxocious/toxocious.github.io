@@ -4,7 +4,10 @@ import { config } from '../_config';
 import { Splash } from '../components/splash';
 
 import SocialBar from '../components/social_bar/social_bar.astro';
-import Card from '../components/card/card.astro';
+
+import Projects from '../features/projects.astro';
+import Contributions from '../features/oss.astro';
+import Experience from '../features/work.astro';
 
 import '../css/global.scss';
 ---
@@ -97,19 +100,19 @@ import '../css/global.scss';
 
     <!-- Mobile & Tablet Layout -->
     <main
-      class='bg-gradient-to-br from-rose-400 to-violet-600 h-full w-full flex flex-col justify-self-center rounded-lg gap-1 p-1 mx-auto lg:hidden'
+      class='bg-gradient-to-br from-neutral-700 to-emerald-600 h-full w-full flex flex-col justify-self-center rounded-lg gap-1 p-1 mx-auto max-w-5xl'
     >
       <!-- Social Media Links -->
       <SocialBar />
 
       <!-- Content Container -->
       <div
-        class='bg-slate-800 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 overflow-auto'
+        class='bg-neutral-900 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 overflow-auto'
       >
         <div
           class='w-full h-full max-w-5xl mx-auto flex flex-col gap-4 md:flex-row md:gap-8'
         >
-          <section class='text-slate-100 rounded-lg flex flex-col items-center'>
+          <section class='flex flex-col items-center'>
             <img
               class='h-auto max-h-96 shadow-lg rounded-lg grayscale hover:grayscale-0 hover:ease-in-out duration-500'
               src='/me.jpg'
@@ -117,9 +120,11 @@ import '../css/global.scss';
             />
           </section>
 
-          <section class='flex flex-col gap-4 pb-4 rounded-lg md:flex-1'>
-            <article class='flex flex-col gap-2 text-center md:text-left'>
-              <p class='md:text-xl'>
+          <section class='flex flex-col gap-12 pb-4 rounded-lg md:flex-1'>
+            <article
+              class='flex flex-col gap-2 pt-8 text-center md:text-left md:pt-0'
+            >
+              <p class='text-xl'>
                 Hello there!<br />
                 I'm
                 <font
@@ -133,23 +138,9 @@ import '../css/global.scss';
               </p>
             </article>
 
-            {
-              new Array(10).fill('').map((_) => (
-                <>
-                  <Card
-                    image={
-                      'https://github.com/Toxocious/Absolute/raw/master/images/Assets/banner.png'
-                    }
-                    title='bepis to the extrepis'
-                    description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus neque earum, culpa asperiores ad alias ipsum unde soluta expedita pariatur!'
-                  />
-                </>
-              ))
-            }
-
-            <div class='hidden md:block'>
-              <br />
-            </div>
+            <Experience />
+            <Contributions />
+            <Projects />
           </section>
         </div>
       </div>
@@ -157,7 +148,43 @@ import '../css/global.scss';
     <!-- End // Mobile & Tablet Layout -->
 
     <!-- Desktop Layout -->
-    <main class='hidden lg:block'>BEPIS TO THE EXTREPIS</main>
+    <!-- <main
+      class='hidden lg:block lg:h-full lg:flex lg:flex-col lg:gap-4 lg:max-w-5xl lg:mx-auto lg:w-full'
+    >
+      <SocialBar />
+
+      <div class='flex flex-row gap-8'>
+        <section class='flex flex-col items-center sticky top-0 max-w-xs'>
+          <img
+            class='h-auto max-h-96 shadow-lg rounded-lg grayscale hover:grayscale-0 hover:ease-in-out duration-500'
+            src='/me.jpg'
+            alt='The creator of the website'
+          />
+
+          <article
+            class='flex flex-col gap-2 pt-8 text-center md:text-left md:pt-0'
+          >
+            <p class='text-xl'>
+              Hello there!<br />
+              I'm
+              <font
+                class='bg-gradient-to-r from-primary to-danger bg-clip-text text-transparent font-bold'
+              >
+                {config.name}
+              </font>, a <b>{config.occupation}</b>.
+            </p>
+            <p>
+              {config.summary}
+            </p>
+          </article>
+        </section>
+
+        <section class='flex flex-col gap-8'>
+          <Experience />
+          <Projects />
+        </section>
+      </div>
+    </main> -->
     <!-- End // Desktop Layout -->
   </body>
 </html>

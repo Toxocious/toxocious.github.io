@@ -1,0 +1,41 @@
+---
+import { config } from '../_config';
+import Card from '../components/card/card.astro';
+
+import { getCollection } from 'astro:content';
+const workEntries = await getCollection('work');
+---
+
+<section class='flex flex-col gap-4'>
+  <section class='flex flex-col gap-2 text-center md:text-left'>
+    <font class='text-3xl font-bold text-slate-200'>Experience</font>
+
+    <p>
+      Between freelancing and volunteering my services, I've acrued a fair bit
+      of experience during my time as a {config.occupation}.
+    </p>
+
+    <p>Here's a little bit of information about my work experience.</p>
+  </section>
+
+  <section class='flex flex-row flex-wrap justify-center content-center gap-4'>
+    {
+      workEntries
+        .sort((a, b) => a.data?.order - b.data?.order)
+        .map((workEntry) => (
+          <Card
+            title={workEntry.data.title}
+            description={workEntry.data.description}
+            tags={workEntry.data.tags}
+            image={workEntry.data.image}
+            position={workEntry.data.position}
+            date_stamp={workEntry.data.date_stamp}
+            repository_link={workEntry.data.repository_link}
+            website_link={workEntry.data.website_link}
+          >
+            {workEntry.body}
+          </Card>
+        ))
+    }
+  </section>
+</section>

@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+const contributions = await getCollection('contributions');
+
+import Card from '../components/card/card.astro';
+---
+
+<section class='flex flex-col gap-4 md:pb-4'>
+  <section class='flex flex-col gap-2 text-center md:text-left'>
+    <font class='text-3xl font-bold text-slate-200'>
+      Open Source Contributions
+    </font>
+
+    <p>
+      When I have spare time on my hands, I'll occasionally opt to contribute to
+      open-source repositories that I personally use and enjoy.
+    </p>
+
+    <p>Here's some personal contributions that I've dedicated time towards.</p>
+  </section>
+
+  <section class='flex flex-row flex-wrap justify-center content-center gap-4'>
+    {
+      contributions
+        .sort((a, b) => a.data?.order - b.data?.order)
+        .map((projectEntry) => (
+          <Card
+            title={projectEntry.data.title}
+            description={projectEntry.data.description}
+            tags={projectEntry.data.tags}
+            image={projectEntry.data.image}
+            position={projectEntry.data.position}
+            date_stamp={projectEntry.data.date_stamp}
+            repository_link={projectEntry.data.repository_link}
+            website_link={projectEntry.data.website_link}
+          >
+            {projectEntry.body}
+          </Card>
+        ))
+    }
+  </section>
+</section>

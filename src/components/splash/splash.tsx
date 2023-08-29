@@ -7,7 +7,7 @@ export function Splash()
 
   return (
     <motion.div
-      className="bg-slate-800 text-slate-200 inset-0 flex flex-col items-center justify-center loading fixed z-20 pointer-events-none"
+      className="bg-neutral-900 text-slate-200 inset-0 flex flex-col items-center justify-center loading fixed z-20 pointer-events-none"
       animate={controls}
       initial={{ "--stop": "100%" } as any}
       aria-hidden="true"
