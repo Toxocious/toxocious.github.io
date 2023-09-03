@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import RunningPikachu from '../assets/running_pikachu.gif';
+
+import Layout from '../layouts/index.astro';
+
+import Button from '../components/button/button.astro';
+---
+
+<Layout>
+    <section class="flex flex-col justify-center items-center gap-2 flex-1">
+        <Image
+            class="mb-4"
+            src={RunningPikachu}
+            title="Pikachu running animations"
+            alt="Pikachu running animations"
+            height="200"
+            width="200"
+        />
+
+        <h1 class="text-center text-lg">
+            Pikachu tried, but wasn't able to find this page.
+        </h1>
+
+        <Button onclick="javascript:history.go(-1)">Go Back?</Button>
+    </section>
+</Layout>
