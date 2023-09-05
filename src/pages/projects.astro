@@ -1,11 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-
-import { config } from '../_config';
+import { getCollection } from 'astro:content';
 
 import Layout from '../layouts/index.astro';
 
-import Link from '../components/link/link.astro';
+const projects = await getCollection('projects');
 ---
 
 <Layout title="Articles">
@@ -14,8 +12,68 @@ import Link from '../components/link/link.astro';
             <h1>Projects help keep things entertaining.</h1>
         </div>
 
-        <section class="flex flex-col gap-14">
-            <>Test</>
+        <section class="flex flex-col gap-6">
+            {
+                projects.length > 0 ? (
+                    projects
+                        .sort((a, b) => a.data?.order - b.data?.order)
+                        .map((project) => (
+                            <article class="flex flex-col gap-2">
+                                <p class="text-sm m-0 text-neutral-600 dark:text-neutral-400">
+                                    {project.data.date_stamp ?? ''}
+                                </p>
+                                <h2 class="text-base m-0">
+                                    {project.data.website_link ||
+                                    project.data.repository_link ? (
+                                        <a
+                                            href={
+                                                project.data?.website_link ||
+                                                project?.data.repository_link
+                                            }
+                                            class="text-lg hover:underline hover:underline-offset-4"
+                                        >
+                                            {project.data.title}
+                                        </a>
+                                    ) : (
+                                        <span class="text-lg hover:underline hover:underline-offset-4">
+                                            {project.data.title}
+                                        </span>
+                                    )}
+                                </h2>
+                                <p class="text-base m-0 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                                    {project.data.description}
+                                </p>
+                                <p class="m-0">
+                                    {project.data.website_link && (
+                                        <a
+                                            href={project.data.website_link}
+                                            class="text-base hover:underline hover:underline-offset-4"
+                                        >
+                                            {project.data.title ==
+                                            'Freelance Software Engineer'
+                                                ? 'Resumé →'
+                                                : 'Website →'}
+                                        </a>
+                                    )}
+                                    {project.data.repository_link && (
+                                        <a
+                                            href={project.data.repository_link}
+                                            class="text-base hover:underline hover:underline-offset-4"
+                                        >
+                                            Source Code →
+                                        </a>
+                                    )}
+                                </p>
+                            </article>
+                        ))
+                ) : (
+                    <div>
+                        <h1 class="text-lg text-center">
+                            I haven't uploaded any projects yet.
+                        </h1>
+                    </div>
+                )
+            }
         </section>
     </section>
 </Layout>
