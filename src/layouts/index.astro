@@ -36,6 +36,7 @@ const { title, hide_social_links, transition_type } = Astro.props;
             property="og:site_name"
             content={config.name + ' — ' + config.occupation}
         />
+        <meta name="og:description" content={config.seo.description} />
         <meta property="og:image" content="/favicons/favicon.ico" />
         <meta property="og:url" content={config.seo.site_url} />
 

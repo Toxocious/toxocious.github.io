@@ -85,6 +85,7 @@
 - Responsive mobile-first layout
 - Toggleable light and dark mode
 - Individual pages for all of your content needs
+- Automatically updating RSS feed based on your articles
 - A sick Absol and Shiny Absol decal in the corner of every page
 - Easily readable and expandable code base for feature development and refinement
 

@@ -12,7 +12,7 @@ export const config = {
     resume: 'Jesse_Mack_Software_Engineer_Resume.pdf',
 
     get summary() {
-        return `I'm a ${this.occupation} and aspiring entrepreneur living in ${config.location}, and I love making things and having lots of side projects going on. I also enjoy solving complex puzzles and brainstorming new ideas.`;
+        return `I'm a ${this.occupation} and aspiring entrepreneur living in ${config.location}, and I love making things and having lots of side projects going on.`;
     },
     get headline() {
         return `Hey, my name is ${config.name}.`;
