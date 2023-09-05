@@ -1,12 +1,12 @@
 <div align="center">
-  <img src='./public/banner.png' />
+  <img src='./public/previews/combined_preview.png' width='720' />
   <br /><br />
 
-  <h1 align="center">My Portfolio</h1>
+  <h1 align="center">My Personal Website</h1>
 
-  I created this portfolio repository in order to showcase my own projects and to showcase freelance jobs that I've done.
+  A personal website is a pretty important thing to have as a software engineer, so I wanted to put something together that would match what I envision and want in a personal website &mdash; an outlet for me to describe myself and the things that I've worked on, while occasionally dumping my brain in a blog article or two.
 
-  Other portfolio templates didn't cut it for me, and I wanted to create something that was easy to use, easy to add to, and painless to deploy to the web.
+  It comes with beautiful gradients, outstanding typography, mobile responsiveness, and a small personal touch with a nice Pokemon decal; what more could I possibly want?
 
   If you're interested in using this repository as a template, please consider forking it and leaving a star.
 
@@ -35,6 +35,7 @@
 - [About The Project](#about-the-project)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
+  - [Updating To Fit Your Information](#updating-to-fit-your-information)
 - [License](#license)
 
 
@@ -43,22 +44,32 @@
 <div align="center">
   <details>
     <summary>Desktop Previews</summary>
-    <img src="./public/previews/desktop_1.png" />
-    <img src="./public/previews/desktop_2.png" />
-    <img src="./public/previews/desktop_3.png" />
-    <img src="./public/previews/desktop_4.png" />
+    <img src="./public/previews/desktop/light_home.png" width='720' />
+    <img src="./public/previews/desktop/dark_home.png" width='720' />
+    <img src="./public/previews/desktop/light_about.png" width='720' />
+    <img src="./public/previews/desktop/dark_about.png" width='720' />
+    <img src="./public/previews/desktop/light_articles.png" width='720' />
+    <img src="./public/previews/desktop/dark_articles.png" width='720' />
+    <img src="./public/previews/desktop/light_experience.png" width='720' />
+    <img src="./public/previews/desktop/dark_experience.png" width='720' />
+    <img src="./public/previews/desktop/light_projects.png" width='720' />
+    <img src="./public/previews/desktop/dark_projects.png" width='720' />
   </details>
 
   <br />
 
   <details>
     <summary>Mobile Previews</summary>
-    <img src="./public/previews/mobile_1.png" width='300' />
-    <img src="./public/previews/mobile_2.png" width='300' />
-    <img src="./public/previews/mobile_3.png" width='300' />
-    <img src="./public/previews/mobile_4.png" width='300' />
-    <img src="./public/previews/mobile_5.png" width='300' />
-    <img src="./public/previews/mobile_6.png" width='300' />
+    <img src="./public/previews/mobile/light_home.png" width='300' />
+    <img src="./public/previews/mobile/dark_home.png" width='300' />
+    <img src="./public/previews/mobile/light_about.png" width='300' />
+    <img src="./public/previews/mobile/dark_about.png" width='300' />
+    <img src="./public/previews/mobile/light_articles.png" width='300' />
+    <img src="./public/previews/mobile/dark_articles.png" width='300' />
+    <img src="./public/previews/mobile/light_experience.png" width='300' />
+    <img src="./public/previews/mobile/dark_experience.png" width='300' />
+    <img src="./public/previews/mobile/light_projects.png" width='300' />
+    <img src="./public/previews/mobile/dark_projects.png" width='300' />
   </details>
 </div>
 
@@ -69,14 +80,21 @@
 - TypeScript
 - Astro
 - Tailwind
-- SASS
 
 ## Features
-- Responsive layout and styling for mobile devices
-- Create and display work history
-- Create and display volunteer experience
-- Create and display open-source contributions
-- Create and display projects
+- Responsive mobile-first layout
+- Toggleable light and dark mode
+- Individual pages for all of your content needs
+- A sick Absol and Shiny Absol decal in the corner of every page
+- Easily readable and expandable code base for feature development and refinement
+
+## Updating To Fit Your Information
+I tried to keep page information as modular as I possibly could. Updating your name, occupation, etc. is as easy as opening the [dedicated config]() file and adjusting the information accordingly. This will handle almost everything for you, which is fantastic.
+
+What it *doesn't* handle though, is the content on the *About* page, which is currently manually written. It's easy enough to update that stuff to your liking; just open the page in your editor of choice and go from there.
+
+Updating your work history, open source contributions, and project list is extremely easy as well. Add a Markdown file into any one of the three `src/content` folders, add the frontmatter and content of the file, and it'll automatically be found and displayed on your website. Adding a blog article is just as easy, which is wonderful.
+If you get confused on what your Markdown files should have, you can check out and use my existing files as a reference.
 
 
 
