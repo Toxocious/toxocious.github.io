@@ -1,0 +1,116 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+import { config } from '../_config';
+
+import Header from '../components/header/header.astro';
+import Footer from '../components/footer/footer.astro';
+
+const { title, hide_social_links, transition_type } = Astro.props;
+---
+
+<html transition:animate={transition_type ?? 'fade'}>
+    <head>
+        <ViewTransitions />
+
+        <title>{title && `${title} — `}Jesse Mack</title>
+
+        <meta charset="utf-8" />
+        <meta name="robots" content="follow, index" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="index" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="keywords" content={config.seo.keywords} />
+
+        <meta name="description" content={config.seo.description} />
+
+        <meta property="og:type" content={config.seo.site_type} />
+        <meta
+            property="og:title"
+            content={config.name + ' — ' + config.occupation}
+        />
+        <meta
+            property="og:site_name"
+            content={config.name + ' — ' + config.occupation}
+        />
+        <meta property="og:image" content="/favicons/favicon.ico" />
+        <meta property="og:url" content={config.seo.site_url} />
+
+        {
+            config.twitter && (
+                <meta name="twitter:site" content={`@${config.twitter}`} />
+            )
+        }
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content={config.name + ' — ' + config.occupation}
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Decorative image that shows the person's picture, name, and occupation."
+        />
+        {
+            config.seo.twitter_card_image && (
+                <meta
+                    name="twitter:image"
+                    content={config.seo.site_url.concat(
+                        config.seo.twitter_card_image
+                    )}
+                />
+            )
+        }
+        <meta
+            name="twitter:description"
+            content={config.seo.twitter_card_description ??
+                config.seo.description}
+        />
+
+        <link rel="home" href={config.seo.site_url} />
+        <link rel="canonical" href={config.seo.site_url} />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            type="image/svg+xml"
+            href="/favicons/android-chrome-192x192.png"
+        />
+        <link
+            rel="icon"
+            sizes="192x192"
+            type="image/svg+xml"
+            href="/favicons/android-chrome-192x192.png"
+        />
+        <link
+            rel="icon"
+            sizes="32x32"
+            type="image/svg+xml"
+            href="/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            sizes="16x16"
+            type="image/svg+xml"
+            href="/favicons/favicon-16x16.png"
+        />
+    </head>
+
+    <body
+        class="flex flex-col min-h-screen text-neutral-800 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-200 via-red-200 to-yellow-100 selection:bg-violet-600 selection:text-slate-200 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] dark:from-gray-800 dark:via-gray-900 dark:to-black dark:text-neutral-500"
+    >
+        <Header />
+
+        <main class="flex flex-col flex-1 items-center px-4 py-4 lg:px-0">
+            <div
+                class="max-w-4xl w-full text-neutral-800 dark:text-neutral-200 flex flex-col flex-1"
+            >
+                <slot />
+            </div>
+        </main>
+
+        <Footer hide_social_links={hide_social_links} />
+    </body>
+</html>

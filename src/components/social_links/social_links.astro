@@ -1,0 +1,74 @@
+---
+import { config } from '../../_config';
+
+import Button from '../button/button.astro';
+
+import Email from '../../svg/email.astro';
+import Github from '../../svg/github.astro';
+import Gitlab from '../../svg/gitlab.astro';
+import Linkedin from '../../svg/linkedin.astro';
+import Resume from '../../svg/resume.astro';
+import Twitter from '../../svg/twitter.astro';
+---
+
+<>
+    {
+        config.linked_in && (
+            <Button
+                href={`https://linkedin.com/in/${config.linked_in}`}
+                title='View My LinkedIn'
+            >
+                <Linkedin />
+            </Button>
+        )
+    }
+
+    {
+        config.github && (
+            <Button
+                title='View My Github Profile'
+                href={`https://github.com/${config.github}`}
+            >
+                <Github />
+            </Button>
+        )
+    }
+
+    {
+        config.gitlab && (
+            <Button
+                title='View My Gitlab Profile'
+                href={`https://gitlab.com/${config.github}`}
+            >
+                <Gitlab />
+            </Button>
+        )
+    }
+
+    {
+        config.twitter && (
+            <Button
+                href={`https://twitter.com/${config.twitter}`}
+                title='View My Twitter'
+            >
+                <Twitter />
+            </Button>
+        )
+    }
+
+    {
+        config.email && (
+            <Button href={`mailto:${config.email}`} title='Send Me An Email'>
+                <Email />
+            </Button>
+        )
+    }
+
+    {
+        config.resume && (
+            <Button href={`/resume/${config.resume}`} title='View My Resume'>
+                <Resume />
+            </Button>
+        )
+    }
+</>

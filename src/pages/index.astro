@@ -1,190 +1,26 @@
 ---
 import { config } from '../_config';
 
-import { Splash } from '../components/splash';
+import Layout from '../layouts/index.astro';
 
-import SocialBar from '../components/social_bar/social_bar.astro';
-
-import Projects from '../features/projects.astro';
-import Contributions from '../features/oss.astro';
-import Experience from '../features/work.astro';
-
-import '../css/global.scss';
+import SocialLinks from '../components/social_links/social_links.astro';
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='robots' content='follow, index' />
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <meta name='robots' content='index' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
-    <meta name='generator' content={Astro.generator} />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='keywords' content={config.seo.keywords} />
-
-    <title>{config.name}</title>
-    <meta name='description' content={config.seo.description} />
-
-    <meta property='og:type' content={config.seo.site_type} />
-    <meta
-      property='og:title'
-      content={config.name + ' — ' + config.occupation}
-    />
-    <meta
-      property='og:site_name'
-      content={config.name + ' — ' + config.occupation}
-    />
-    <meta property='og:image' content='/favicons/favicon.ico' />
-    <meta property='og:url' content={config.seo.site_url} />
-
-    {
-      config.twitter && (
-        <meta name='twitter:site' content={`@${config.twitter}`} />
-      )
-    }
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta
-      name='twitter:title'
-      content={config.name + ' — ' + config.occupation}
-    />
-    <meta
-      name='twitter:image:alt'
-      content="Decorative image that shows the person's picture, name, and occupation."
-    />
-    {
-      config.seo.twitter_card_image && (
-        <meta
-          name='twitter:image'
-          content={config.seo.site_url.concat(config.seo.twitter_card_image)}
-        />
-      )
-    }
-    <meta
-      name='twitter:description'
-      content={config.seo.twitter_card_description ?? config.seo.description}
-    />
-
-    <link rel='canonical' href={config.seo.site_url} />
-
-    <link
-      rel='apple-touch-icon'
-      sizes='180x180'
-      type='image/svg+xml'
-      href='/favicons/android-chrome-180x180.png'
-    />
-    <link
-      rel='icon'
-      sizes='192x192'
-      type='image/svg+xml'
-      href='/favicons/android-chrome-192x192.png'
-    />
-    <link
-      rel='icon'
-      sizes='32x32'
-      type='image/svg+xml'
-      href='/favicons/favicon-32x32.png'
-    />
-    <link
-      rel='icon'
-      sizes='16x16'
-      type='image/svg+xml'
-      href='/favicons/favicon-16x16.png'
-    />
-  </head>
-
-  <body class='loading-relaxed antialiased flex flex-col h-screen sm:p-2'>
-    <!-- Initial splash animation on page load -->
-    <Splash client:load />
-
-    <!-- Mobile & Tablet Layout -->
-    <main
-      class='bg-gradient-to-br from-neutral-700 to-emerald-600 h-full w-full flex flex-col justify-self-center rounded-lg gap-1 p-1 mx-auto max-w-5xl'
+<Layout hide_social_links>
+    <div
+        class="flex flex-col items-center justify-center place-self-center flex-1 gap-6 w-full prose prose-neutral dark:prose-invert"
     >
-      <!-- Social Media Links -->
-      <SocialBar />
-
-      <!-- Content Container -->
-      <div
-        class='bg-neutral-900 h-full w-full flex flex-col justify-self-center rounded-lg gap-4 p-4 overflow-auto'
-      >
-        <div
-          class='w-full h-full max-w-5xl mx-auto flex flex-col gap-4 md:flex-row md:gap-8'
+        <h1
+            class="w-full text-4xl mb-0 bg-gradient-to-r from-rose-500 to-violet-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-neutral-200"
         >
-          <section class='flex flex-col items-center'>
-            <img
-              class='h-auto max-h-96 shadow-lg rounded-lg grayscale hover:grayscale-0 hover:ease-in-out duration-500'
-              src='/me.jpg'
-              alt='The creator of the website'
-            />
-          </section>
+            {config.headline}
+        </h1>
+        <p class="w-full text-xl mb-0 mt-0">
+            {config.summary}
+        </p>
 
-          <section class='flex flex-col gap-12 pb-4 rounded-lg md:flex-1'>
-            <article
-              class='flex flex-col gap-2 pt-8 text-center md:text-left md:pt-0'
-            >
-              <p class='text-xl'>
-                Hello there!<br />
-                I'm
-                <font
-                  class='bg-gradient-to-r from-primary to-danger bg-clip-text text-transparent font-bold'
-                >
-                  {config.name}
-                </font>, a <b>{config.occupation}</b>.
-              </p>
-              <p>
-                {config.summary}
-              </p>
-            </article>
-
-            <Experience />
-            <Contributions />
-            <Projects />
-          </section>
-        </div>
-      </div>
-    </main>
-    <!-- End // Mobile & Tablet Layout -->
-
-    <!-- Desktop Layout -->
-    <!-- <main
-      class='hidden lg:block lg:h-full lg:flex lg:flex-col lg:gap-4 lg:max-w-5xl lg:mx-auto lg:w-full'
-    >
-      <SocialBar />
-
-      <div class='flex flex-row gap-8'>
-        <section class='flex flex-col items-center sticky top-0 max-w-xs'>
-          <img
-            class='h-auto max-h-96 shadow-lg rounded-lg grayscale hover:grayscale-0 hover:ease-in-out duration-500'
-            src='/me.jpg'
-            alt='The creator of the website'
-          />
-
-          <article
-            class='flex flex-col gap-2 pt-8 text-center md:text-left md:pt-0'
-          >
-            <p class='text-xl'>
-              Hello there!<br />
-              I'm
-              <font
-                class='bg-gradient-to-r from-primary to-danger bg-clip-text text-transparent font-bold'
-              >
-                {config.name}
-              </font>, a <b>{config.occupation}</b>.
-            </p>
-            <p>
-              {config.summary}
-            </p>
-          </article>
+        <section class="flex flex-row gap-2 items-left w-full">
+            <SocialLinks />
         </section>
-
-        <section class='flex flex-col gap-8'>
-          <Experience />
-          <Projects />
-        </section>
-      </div>
-    </main> -->
-    <!-- End // Desktop Layout -->
-  </body>
-</html>
+    </div>
+</Layout>

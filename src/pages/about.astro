@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+
+import { config } from '../_config';
+
+import Layout from '../layouts/index.astro';
+
+import Link from '../components/link/link.astro';
+
+import Selfie from '../assets/me.jpg';
+---
+
+<Layout title="About">
+    <section class="max-w-2xl w-full mx-auto">
+        <div class="prose prose-zinc dark:prose-invert max-w-none mx-auto">
+            <Image
+                src={Selfie}
+                title="Portrait of the website creator"
+                alt="Portrait of the website creator"
+                width="192"
+                class="transition-all ease-in-out duration-300 grayscale rounded-lg shadow-lg mx-auto mb-10 w-56 sm:w-48 sm:ml-6 sm:float-right sm:rotate-3 hover:grayscale-0 sm:hover:rotate-4 sm:hover:scale-105"
+            />
+
+            <h1>
+                Hey there!
+                <span class="whitespace-nowrap">
+                    I'm {config.name}.
+                </span>
+            </h1>
+
+            <p>
+                I've been tinkering with programming languages since I was a
+                teenager. Since then, I've done everything from designing
+                websites to building the servers they run on. These days my
+                passion is building web applications with PHP, TypeScript,
+                Astro, and Tailwind.
+            </p>
+
+            <p>Some awesome projects I've worked on include:</p>
+
+            <ul>
+                <li>
+                    A popular online <Link href="https://tpkrpg.net">
+                        Pok&eacute;mon game
+                    </Link>
+                </li>
+                <li>
+                    A <Link href="https://github.com/Toxocious/Aetherim">
+                        C++ library
+                    </Link> to improve modding capabilities in Unity
+                </li>
+                <li>
+                    An <Link href="https://destinyitemmanager.com/">
+                        inventory manager
+                    </Link> for Destiny 2
+                </li>
+            </ul>
+
+            <p>
+                I care deeply about open-source software, privacy, best
+                practices, open standards, idiomatic code, and great user and
+                developer experiences.
+            </p>
+
+            <p>
+                When I'm not coding, I enjoy cooking, spicy food, dark beer,
+                vibing to synthwave music, playing video games, and studying
+                Japanese.
+            </p>
+        </div>
+    </section>
+</Layout>

@@ -1,8 +1,9 @@
 ---
-title: "The Pokemon Kingdom"
+title: "The Pokémon Kingdom"
 position: "Volunteer Software Engineer"
 date_stamp: "Feb 2017 - Present"
 tags: [ 'PHP', 'JavaScript', 'TypeScript', 'jQuery', 'SQL', 'Python', 'Docker', 'Websockets' ]
+description: "The Pokémon Kingdom is an up-to-date online Pokémon RPG with an expansive variety of gameplay to offer. We have a widespread and active community of Pokémon fans, both new and old."
 image: "the-pokemon-kingdom.png"
 website_link: "https://tpkrpg.net/"
 order: 1

@@ -1,0 +1,11 @@
+---
+const { href, new_tab, font_size } = Astro.props;
+---
+
+<a
+    href={href}
+    target={(new_tab && '_blank') || '_self'}
+    class=`transition ease-in-out duration-200 text-slate-600 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 ${font_size ?? 'text-base'}`
+>
+    <slot />
+</a>

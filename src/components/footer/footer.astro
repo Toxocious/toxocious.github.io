@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+
+import { config } from '../../_config';
+
+import Button from '../button/button.astro';
+import Link from '../link/link.astro';
+
+import SocialLinks from '../social_links/social_links.astro';
+
+import ShinyAbsol from '../../assets/shiny-mega-absol.png';
+import Absol from '../../assets/mega-absol.png';
+
+const { hide_social_links } = Astro.props;
+---
+
+<footer
+    class="flex flex-row justify-between items-center gap-2 px-4 py-4 w-full sm:mx-auto lg:sticky lg:top-0 lg:px-0 text-slate-600 dark:text-neutral-500"
+>
+    <div
+        class="max-w-4xl w-full mx-auto flex flex-col justify-between items-center gap-2"
+    >
+        <section
+            class="flex flex-row flex-wrap gap-8 text-sm text-center order-2"
+        >
+            <div>&copy; 2023 Jesse Mack</div>
+
+            <div>
+                <Link
+                    href="https://github.com/Toxocious/toxocious.github.io"
+                    font_size="text-sm"
+                    new_tab
+                >
+                    This website is open source
+                </Link>
+            </div>
+        </section>
+
+        {
+            !hide_social_links && (
+                <section class="flex flex-row gap-2 order-1">
+                    <SocialLinks />
+                </section>
+            )
+        }
+
+        <div
+            transition:persist
+            class="hidden sm:block fixed bottom-0 right-0 mb-[-100px] mr-[-100px]"
+        >
+            <Image
+                src={ShinyAbsol}
+                alt="Shiny Absol"
+                width="200"
+                class="block dark:hidden drop-shadow-[0px_35px_35px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_35px_35px_rgba(255,255,255,0.25)]"
+            />
+
+            <Image
+                src={Absol}
+                alt="Absol"
+                width="200"
+                class="hidden dark:block drop-shadow-[0px_35px_35px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_35px_35px_rgba(255,255,255,0.25)]"
+            />
+        </div>
+    </div>
+</footer>

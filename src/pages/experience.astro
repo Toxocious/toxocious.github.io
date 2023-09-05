@@ -1,0 +1,168 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../layouts/index.astro';
+
+const work = await getCollection('work');
+const contributions = await getCollection('contributions');
+---
+
+<Layout title="Experience">
+    <section class="flex flex-col gap-12 w-full max-w-2xl mx-auto">
+        <section>
+            <div
+                class="prose prose-zinc dark:prose-invert max-w-none mx-auto mb-6"
+            >
+                <h1>
+                    Currently freelancing, but actively looking to transition to
+                    full-time.
+                </h1>
+            </div>
+
+            <section class="flex flex-col gap-6">
+                {
+                    work.length > 0 ? (
+                        work
+                            .sort((a, b) => a.data?.order - b.data?.order)
+                            .map((work) => (
+                                <article class="flex flex-col gap-2">
+                                    <p class="text-sm m-0 text-neutral-600 dark:text-neutral-400">
+                                        {work.data.date_stamp ?? ''}
+                                    </p>
+                                    <h2 class="text-base m-0">
+                                        {work.data.website_link ||
+                                        work.data.repository_link ? (
+                                            <a
+                                                href={
+                                                    work.data?.website_link ||
+                                                    work?.data.repository_link
+                                                }
+                                                class="text-lg hover:underline hover:underline-offset-4"
+                                            >
+                                                {work.data.title}
+                                            </a>
+                                        ) : (
+                                            <span class="text-lg hover:underline hover:underline-offset-4">
+                                                {work.data.title}
+                                            </span>
+                                        )}
+                                    </h2>
+                                    <p class="text-base m-0 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                                        {work.data.description}
+                                    </p>
+                                    <p class="m-0">
+                                        {work.data.website_link && (
+                                            <a
+                                                href={work.data.website_link}
+                                                class="text-base hover:underline hover:underline-offset-4"
+                                            >
+                                                {work.data.title ==
+                                                'Freelance Software Engineer'
+                                                    ? 'Resumé →'
+                                                    : 'Website →'}
+                                            </a>
+                                        )}
+                                        {work.data.repository_link && (
+                                            <a
+                                                href={work.data.repository_link}
+                                                class="text-base hover:underline hover:underline-offset-4"
+                                            >
+                                                Source Code →
+                                            </a>
+                                        )}
+                                    </p>
+                                </article>
+                            ))
+                    ) : (
+                        <div>
+                            <h1 class="text-lg text-center">
+                                I haven't uploaded any work experience yet.
+                            </h1>
+                        </div>
+                    )
+                }
+            </section>
+        </section>
+
+        <section>
+            <div
+                class="prose prose-zinc dark:prose-invert max-w-none mx-auto mb-6"
+            >
+                <h1>
+                    I enjoy contributing to open source projects that I
+                    personally use.
+                </h1>
+            </div>
+
+            <section class="flex flex-col gap-6">
+                {
+                    contributions.length > 0 ? (
+                        contributions
+                            .sort((a, b) => a.data?.order - b.data?.order)
+                            .map((contribution) => (
+                                <article class="flex flex-col gap-2">
+                                    <p class="text-sm m-0 text-neutral-600 dark:text-neutral-400">
+                                        {contribution.data.date_stamp ?? ''}
+                                    </p>
+                                    <h2 class="text-base m-0">
+                                        {contribution.data.website_link ||
+                                        contribution.data.repository_link ? (
+                                            <a
+                                                href={
+                                                    contribution.data
+                                                        ?.website_link ||
+                                                    contribution.data
+                                                        .repository_link
+                                                }
+                                                class="text-lg hover:underline hover:underline-offset-4"
+                                            >
+                                                {contribution.data.title}
+                                            </a>
+                                        ) : (
+                                            <span class="text-lg hover:underline hover:underline-offset-4">
+                                                {contribution.data.title}
+                                            </span>
+                                        )}
+                                    </h2>
+                                    <p class="text-base m-0 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                                        {contribution.data.description}
+                                    </p>
+                                    <p class="m-0 flex flex-row flex-wrap gap-5">
+                                        {contribution.data.website_link && (
+                                            <a
+                                                href={
+                                                    contribution.data
+                                                        .website_link
+                                                }
+                                                class="text-base hover:underline hover:underline-offset-4"
+                                            >
+                                                Website →
+                                            </a>
+                                        )}
+                                        {contribution.data.repository_link && (
+                                            <a
+                                                href={
+                                                    contribution.data
+                                                        .repository_link
+                                                }
+                                                class="text-base hover:underline hover:underline-offset-4"
+                                            >
+                                                Source Code →
+                                            </a>
+                                        )}
+                                    </p>
+                                </article>
+                            ))
+                    ) : (
+                        <div>
+                            <h1 class="text-lg text-center">
+                                I haven't contributed to any open-source
+                                projects yet.
+                            </h1>
+                        </div>
+                    )
+                }
+            </section>
+        </section>
+    </section>
+</Layout>

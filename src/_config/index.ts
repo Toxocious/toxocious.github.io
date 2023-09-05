@@ -1,7 +1,7 @@
 export const config = {
     name: 'Jesse Mack',
     occupation: 'Software Engineer',
-    location: 'Arizona, United States',
+    location: 'Arizona',
 
     github: 'toxocious',
     gitlab: '',
@@ -12,10 +12,10 @@ export const config = {
     resume: 'Jesse_Mack_Software_Engineer_Resume.pdf',
 
     get summary() {
-        return `Hey there! I'm ${config.name} from ${config.location}, and I love to make beautiful things, solve complex puzzles, and brainstorm new ideas.`;
+        return `I'm a ${this.occupation} and aspiring entrepreneur living in ${config.location}, and I love making things and having lots of side projects going on. I also enjoy solving complex puzzles and brainstorming new ideas.`;
     },
     get headline() {
-        return `${this.occupation} and aspiring entrepreneur`;
+        return `Hey, my name is ${config.name}.`;
     },
 
     seo: {
@@ -31,7 +31,8 @@ export const config = {
         site_url: 'https://toxocious.is-a.dev/',
 
         twitter_card_image: 'images/twitter_card.png',
-        twitter_card_description:
-            "Jesse Mack's personal portfolio as a software engineer.",
+        get twitter_card_description() {
+            return config.summary;
+        },
     },
 };

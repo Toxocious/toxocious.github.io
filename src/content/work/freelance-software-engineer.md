@@ -2,6 +2,8 @@
 title: "Freelance Software Engineer"
 date_stamp: "Oct 2019 - Present"
 tags: [ 'PHP', 'TypeScript', 'Python', 'SQL', 'React', 'Express', 'Websockets' ]
+description: "I've accomplished many things during my time freelancing as a Software Engineer, from joining teams in order to optimize their databases and queries, to hunting down pesky bugs that are hard to find and problematic, integrating websockets that empower dynamic updates of product metrics, and much more."
+website_link: "/resume/Jesse_Mack_Software_Engineer_Resume.pdf"
 image: "freelance-software-engineer.png"
 order: 0
 ---

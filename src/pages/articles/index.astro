@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../layouts/index.astro';
+
+import { format_date } from '../../util/format_date';
+
+const articles = await getCollection('articles');
+---
+
+<Layout title="Articles">
+    <section class="flex flex-col gap-6 w-full max-w-2xl mx-auto">
+        <div class="prose prose-zinc dark:prose-invert max-w-none">
+            <h1>Thoughts much too long for Twitter.</h1>
+        </div>
+
+        <section class="flex flex-col gap-6">
+            {
+                articles.length > 0 ? (
+                    articles
+                        .sort((a, b) => b.data.date - a.data.date)
+                        .map((article) => (
+                            <article class="flex flex-col gap-2">
+                                <p class="text-sm m-0 text-neutral-600 dark:text-neutral-400">
+                                    {format_date(new Date(article.data.date))}
+                                </p>
+                                <h2 class="text-base m-0">
+                                    <a
+                                        href={`/articles/${article.slug}`}
+                                        class="text-lg hover:underline hover:underline-offset-4"
+                                    >
+                                        {article.data.title}
+                                    </a>
+                                </h2>
+                                <p class="text-base m-0 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                                    {article.data.description}
+                                </p>
+                                <p class="m-0">
+                                    <a
+                                        href={`/articles/${article.slug}`}
+                                        class="text-base hover:underline hover:underline-offset-4"
+                                    >
+                                        Read article →
+                                    </a>
+                                </p>
+                            </article>
+                        ))
+                ) : (
+                    <div>
+                        <h1 class="text-lg text-center">
+                            I haven't posted any brain dumps yet.
+                        </h1>
+                    </div>
+                )
+            }
+        </section>
+    </section>
+</Layout>
