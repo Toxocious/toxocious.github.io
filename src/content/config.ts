@@ -18,22 +18,8 @@ const markdownSchema = {
     date: z.number(),
 };
 
-const experienceSchema = {
-    title: z.string(),
-    description: z.string(),
-    order: z.number(),
-    date_stamp: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    website_link: z.string().url().optional(),
-    repository_link: z.string().url().optional(),
-};
-
 const articleCollection = defineCollection({
     schema: z.object(markdownSchema),
-});
-
-const experienceCollection = defineCollection({
-    schema: z.object(experienceSchema),
 });
 
 const contributionsCollection = defineCollection({
@@ -51,7 +37,6 @@ const workCollection = defineCollection({
 export const collections = {
     articles: articleCollection,
     contributions: contributionsCollection,
-    experience: experienceCollection,
     projects: projectsCollection,
     work: workCollection,
 };
