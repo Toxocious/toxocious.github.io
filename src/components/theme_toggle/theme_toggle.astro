@@ -36,7 +36,7 @@ import Button from '../button/button.astro';
     </svg>
 </Button>
 
-<script>
+<script is:inline>
     const themeToggleDarkIcon = document.getElementById(
         'theme-toggle-dark-icon'
     );
@@ -45,13 +45,15 @@ import Button from '../button/button.astro';
     );
     const themeToggleBtn = document.getElementById('theme-toggle');
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    const STORAGE_KEY = 'jdm-site-theme';
 
-    function toggleTheme(activeTheme: string) {
+    function toggleTheme(activeTheme) {
+        localStorage.setItem(STORAGE_KEY, activeTheme);
+
         const isDarkMode = activeTheme === 'dark';
+
         document.documentElement.classList.toggle('dark', isDarkMode);
         document.documentElement.classList.toggle('light', !isDarkMode);
-        localStorage.setItem(STORAGE_KEY, activeTheme);
+
         themeToggleDarkIcon?.classList.toggle('hidden', isDarkMode);
         themeToggleLightIcon?.classList.toggle('hidden', !isDarkMode);
     }
@@ -80,9 +82,9 @@ import Button from '../button/button.astro';
     const theme = (() => {
         if (
             typeof localStorage !== 'undefined' &&
-            localStorage.getItem('jdm-site-theme')
+            localStorage.getItem(STORAGE_KEY)
         ) {
-            return localStorage.getItem('jdm-site-theme');
+            return localStorage.getItem(STORAGE_KEY);
         }
 
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -92,13 +94,8 @@ import Button from '../button/button.astro';
         return 'light';
     })();
 
-    if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-    } else {
-        document.documentElement.classList.add('dark');
-    }
+    window.localStorage.setItem(STORAGE_KEY, theme);
 
-    window.localStorage.setItem('jdm-site-theme', theme!);
     document.addEventListener('astro:after-swap', function () {
         if (localStorage.getItem(STORAGE_KEY) === 'dark')
             document.documentElement.classList.toggle('dark', true);

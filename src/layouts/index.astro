@@ -106,6 +106,15 @@ const { title, hide_social_links, transition_type } = Astro.props;
             type="image/svg+xml"
             href="/favicons/favicon-16x16.png"
         />
+
+        <script is:inline>
+            const STORAGE_KEY = 'jdm-site-theme';
+
+            if (typeof localStorage !== 'undefined') {
+                const LOCAL_THEME = localStorage.getItem(STORAGE_KEY);
+                document.documentElement.classList.add(LOCAL_THEME);
+            }
+        </script>
     </head>
 
     <body
