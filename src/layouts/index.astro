@@ -13,7 +13,7 @@ const { title, hide_social_links, transition_type } = Astro.props;
     <head>
         <ViewTransitions />
 
-        <title>{title && `${title} — `}Jesse Mack</title>
+        <title>{title ? `${title} — ${config.name}` : `${config.name}`}</title>
 
         <meta charset="utf-8" />
         <meta name="robots" content="follow, index" />
@@ -122,7 +122,10 @@ const { title, hide_social_links, transition_type } = Astro.props;
     >
         <Header />
 
-        <main class="flex flex-col flex-1 items-center px-4 py-4 lg:px-0">
+        <main
+            transition:name="main-content"
+            class="flex flex-col flex-1 items-center px-4 py-4 lg:px-0"
+        >
             <div
                 class="max-w-4xl w-full text-neutral-800 dark:text-neutral-200 flex flex-col flex-1"
             >

@@ -1,9 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-
-import { config } from '../../_config';
-
-import Button from '../button/button.astro';
 import Link from '../link/link.astro';
 
 import SocialLinks from '../social_links/social_links.astro';
@@ -15,6 +11,9 @@ const { hide_social_links } = Astro.props;
 ---
 
 <footer
+    transition:persist
+    transition:persist-props
+    transition:name="footer"
     class="flex flex-row justify-between items-center gap-2 px-4 py-4 w-full sm:mx-auto lg:sticky lg:top-0 lg:px-0 text-slate-600 dark:text-neutral-500"
 >
     <div
