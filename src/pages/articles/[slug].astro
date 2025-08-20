@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
+import { Image } from 'astro:assets';
+
 import Layout from '../../layouts/index.astro';
 
 import { format_date } from '../../util/format_date';
@@ -8,6 +10,7 @@ import { format_date } from '../../util/format_date';
 import Calendar from '../../svg/calendar.astro';
 import Clock from '../../svg/clock.astro';
 
+//
 export async function getStaticPaths() {
     const articlesEntries = await getCollection('articles');
 
@@ -19,10 +22,33 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await entry.render();
+
+const articleImages = import.meta.glob('/src/assets/articles/*.png');
+const imagePath = `/src/assets/articles/${entry.slug}.png`;
+const bannerImageImporter = articleImages[imagePath];
+
+let bannerImage = null;
+if (bannerImageImporter) {
+    bannerImage = (await bannerImageImporter()).default;
+}
 ---
 
 <Layout title={entry.data.title}>
     <section class="max-w-2xl w-full mx-auto flex flex-col gap-4">
+        {
+            bannerImage && (
+                <div>
+                    <Image
+                        src={bannerImage}
+                        alt={`Banner for ${entry.data.title}`}
+                        class="w-full h-auto rounded-lg shadow-mb-4 drop-shadow-[0px_0px_20px_rgba(0,0,0,0.25)] dark:drop-shadow-[0px_0px_20px_rgba(255,255,255,0.25)]"
+                        width={768}
+                        height={432}
+                    />
+                </div>
+            )
+        }
+
         <div class="flex flex-row flex-wrap gap-6 items-center text-xs">
             <div
                 class="flex flex-row flex-wrap items-center gap-1 text-neutral-600 dark:text-neutral-400"

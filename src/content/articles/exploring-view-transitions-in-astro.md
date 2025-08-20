@@ -1,5 +1,5 @@
 ---
-title: "Exploring ViewTransitions in Astro: A Seamless Journey"
+title: "Exploring ViewTransitions in Astro"
 description: Discover how Astro's ViewTransitions transform web page transitions into seamless, captivating journeys, blending the power of static site generation with dynamic user experiences.
 date: 1693782724222
 ---
